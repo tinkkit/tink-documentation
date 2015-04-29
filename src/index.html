@@ -1,30 +1,50 @@
 <!doctype html>
-<html ng-app="tink.skeleton">
-<head>
-  <meta charset="utf-8">
-  <title>Tink module</title>
-  <meta name="description" content="">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
+<html class="no-js has-nav-left {{theme.active}}" data-ng-class="{'front-page': !sidenav.visible}" data-ng-app="tinkApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Tink documentation brick by brick</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
+    <!-- endbower -->
+  </head>
+  <body data-ng-swipe-right="openMenu()" data-ng-swipe-left="closeMenu()">
+  <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <nav data-tink-top-nav data-ng-include=" 'views/top-nav.html' " class="nav-top"></nav>
+
+  <div data-tink-nav-aside data-auto-select="true" data-toggle-id="sideNav1" data-ng-include=" 'views/sidenav.html' " class="nav-left nav-aside"></div>
+
+  <div>
+    <div class="main" role="main" data-ng-view="" data-autoscroll="true"></div>
+  </div>
+
+
+
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/tink-api-javascript/dist/tink-api-javascript.js"></script>
+  <script src="bower_components/tink-api-angular/dist/tink-api-angular.js"></script>
+  <script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>
   <!-- endbower -->
-</head>
-<body>
 
-<tink-skeleton data-text="Skeleton is working fine!"></tink-skeleton>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/start.js"></script>
+  <script src="scripts/controllers/docs.js"></script>
+  <script src="scripts/controllers/sidenav.js"></script>
 
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<!-- endbower -->
 
-<script src="scripts/directives/skeleton.js"></script>
-</body>
+  </body>
 </html>
