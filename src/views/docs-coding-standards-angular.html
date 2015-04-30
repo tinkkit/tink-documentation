@@ -1,0 +1,241 @@
+<div class="container">
+	<h1>AngularJs guidelines</h1>
+	<hr>
+
+	<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Getters Setters</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">Declare modules without a variable using the setter syntax.</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+					//Bad
+					var app = angular.module('app', [
+					    'ngAnimate',
+					    'ngRoute',
+					    'app.shared',
+					    'app.dashboard'
+					]);
+
+					//Good
+					angular
+				      .module('app', [
+				         'ngAnimate',
+				         'ngRoute',
+				         'app.shared',
+				         'app.dashboard'
+				    ]);
+					</hljs>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">When using a module, avoid using a variable and instead use chaining with the getter syntax.</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+					//Bad
+					var app = angular.module('app');
+					app.controller('SomeController', SomeController);
+					function SomeController() { }
+
+					//Good
+					angular
+					    .module('app')
+					    .controller('SomeController', SomeController);
+
+					function SomeController() { }
+								</hljs>
+		</div>
+	</div>
+	<div class="row">
+				<div class="col-md-6">Only set once and get for all other instances.</div>
+				<div class="col-md-6">
+				<hljs data-format="js">
+					// To set a module
+					angular.module('app', []);
+
+					// To get a module
+					angular.module('app');
+				</hljs>
+		</div>
+	</div>
+</div>
+</section>
+	<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Controllers</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">Use the controller As syntax over the classic controller with $scope syntax.</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+					//Bad
+					var app = angular.module('app', [
+					    'ngAnimate',
+					    'ngRoute',
+					    'app.shared',
+					    'app.dashboard'
+					]);
+
+					//Good
+					angular
+				      .module('app', [
+				         'ngAnimate',
+				         'ngRoute',
+				         'app.shared',
+				         'app.dashboard'
+				    ]);
+					</hljs>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">Use camelCase to name your controller.</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+					//Good
+					module.controller('mainCtrl', function ($scope) {
+
+					});
+					</hljs>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">When using a module, avoid using a variable and instead use chaining with the getter syntax. This Helps avoid using $parent calls in Views with nested controllers.</div>
+				<div class="col-md-6">
+					<hljs data-format="html">
+					//Bad
+					<div ng-controller="Customer">
+					    {{ name }}
+					</div>
+
+					//Good
+					<div ng-controller="Customer as customer">
+					   {{ customer.name }}
+					</div>
+					</hljs>
+		</div>
+	</div>
+</div>
+</section>
+	<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Services</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">Placing logic in a service or a factory, rather than directly in the controller, can lead to better reuse across multiple controllers. It is also easier to isolate in a unit test and allows the calling logic in the controller to be easily mocked.</div>
+				<div class="col-md-6">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<p>
+				<div class="col-md-6">Use camelCase to name your service.</div>
+				</p>
+				<div class="col-md-6">
+				<p>
+					<hljs data-format="js">
+					//Good
+					module.factory('dataService', function ($scope) {
+
+					});
+					</hljs>
+				</p>
+				</div>
+			</div>
+</section>
+<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Attributes</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">Always add <code>data-</code> prefix to a custom attribute</div>
+				<div class="col-md-6">
+					<hljs data-format="html">
+						<input type="text" placeholder="dd/mm/yyyy" data-ng-model="selectedDate" tink-datepicker />
+					</hljs>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">Where u can, use <code>ngShow</code> over <code>ngIf</code>, <code>ngIf</code> creates a new scope and is in the most cases slower than <code>ngShow</code>.</div>
+				<div class="col-md-6">
+				</div>
+			</div>
+</div>
+</section>
+	<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Templates</h1>
+		</header>
+
+
+<div class="panel-body">
+			<div class="row">
+             <div class="col-xs-12">
+             <p>
+              Use <code>ng-bind</code> or <code>ng-cloak</code> instead of simple {{ }} to prevent flashing content.
+             </p>
+             <p>
+              Avoid writing complex expressions in the templates.
+             </p>
+             <p>
+              When you need to set the src of an image dynamically use <code>ng-src</code> instead of src with {{ }} template.
+             </p>
+             <p>
+              When you need to set the href of an anchor tag dynamically use <code>ng-href</code> instead of href with {{ }} template.
+             </p>
+             </div>
+            </div>
+</div>
+</section>
+<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Routing</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">Use resolve to resolve dependencies before the view is shown.</div>
+				<div class="col-md-6">
+					&nbsp;
+				</div>
+			</div>
+</div>
+</section>
+<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Other</h1>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+             <div class="col-xs-12">
+             <p>
+              Use angularJs built-in injections.
+			 <ul>
+			  <li><code>$timeout</code> instead of <code>setTimeout</code></li>
+			  <li><code>$interval</code> instead of <code>setInterval</code></li>
+			  <li><code>$window</code> instead of <code>window</code></li>
+			  <li><code>$document</code> instead of <code>document</code></li>
+			  <li><code>$http</code> instead of <code>$.ajax</code></li>
+			 </ul>
+             </p>
+             <p>
+              Use promises <code>($q)</code> instead of callbacks. It will make your code look more elegant and clean.
+             </p>
+             <p>
+              Placing bindable members at the top of the controller in alphabetical order makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View.
+             </p>
+             </div>
+            </div>
+        </div>
+</section>
+</div>

@@ -1,0 +1,288 @@
+
+<div class="container">
+
+  <h1>Helper classes</h1>
+  <hr>
+
+  <!-- RESPONSIVE HIDE/ SHOW -->
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Show and hide content via media queries</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>These classes can be used to toggle visibility based on the active viewport. Perfectly suited for displaying elements on mobile and hiding them on wider screens for instance.</p>
+        </div>
+        <div class="col-xs-12">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped responsive-utilities">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>
+                    Extra small devices
+                    <small>Phones (&lt;480px)</small>
+                  </th>
+                  <th>
+                    Small devices
+                    <small>Tablets (≥768px)</small>
+                  </th>
+                  <th>
+                    Medium devices
+                    <small>Desktops (≥992px)</small>
+                  </th>
+                  <th>
+                    Large devices
+                    <small>Desktops (≥1200px)</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>.visible-xs-*</code></th>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.visible-sm-*</code></th>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.visible-md-*</code></th>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.visible-lg-*</code></th>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><code>.hidden-xs</code></th>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.hidden-sm</code></th>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.hidden-md</code></th>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                  <td class="is-visible">Visible</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.hidden-lg</code></th>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-visible">Visible</td>
+                  <td class="is-hidden">Hidden</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p>The visibility classes per breakpoint each come in 3 variations, dependent on the css <code>display</code> property.</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Group of classes</th>
+                  <th>CSS <code>display</code></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>.visible-*-block</code></th>
+                  <td><code>display: block;</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.visible-*-inline</code></th>
+                  <td><code>display: inline;</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>.visible-*-inline-block</code></th>
+                  <td><code>display: inline-block;</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>For example, for the smallest breakpoint, these will be <code>.visible-xs-inline</code>, <code>.visible-xs-block</code> and <code>.visible-xs-inline-block</code></p>
+        </div>
+      </div>
+  </section>
+
+  <!-- SCREEN READER AND KEYBOARD NAVIGATION -->
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Screen reader and keyboard navigation</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>Developers sometimes use <code>display: none</code> to hide content, but that can be problematic for screenreaders. There is a possibility to use <code>sr-only</code> to hide an element, except for screenreaders, for which they might be vital information. Combine with <code>sr-only-focusable</code> to show the element when it gets focus.</p>
+          <p>For good measure, you should add the ARIA attribute <code>aria-hidden="true"</code></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <a class="sr-only sr-only-focusable" aria-hidden="true" href="#content">Skip to main content</a>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELPERS POSITIONING -->
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Positioning and floats</h1>
+    </header>
+    <div class="panel-body">
+      <p>In 99% of the situations you will rely on the grid and its containers for positioning purposes, but sometimes, you might need to re-position an element individually. Helper classes are meant for those situations.</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>Adding a <code>position: relative</code> to an element, with <code>!important</code> to avoid specificity issues.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="relative">Relative positioning</div>
+          </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>Clear a float by adding the <code>.clearfix</code> class to the parent element.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <hljs data-format="html">
+          <div class="clearfix">some div content</div>
+        </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>Center an element easy by applying a <code>.center-block</code> class to it, which turns it into <code>display: block</code> and adds even left- and right- margins to it.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="center-block">centered block content</div>
+          </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>Float an element left or right with the Pull classes. <code>!important</code> got added to avoid specificity issues.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="pull-right">Right floated content</div>
+            <div class="pull-left">Left floated content</div>
+          </hljs>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HELPERS -->
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Margins</h1>
+    </header>
+    <div class="panel-body">
+      <p>Can be applied on all elements, examples on paragraphs here.</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p class="margin-top"><code>.margin-top</code></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <p class="mt">Paragraph with top-margin</p>
+          </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p class="margin-bottom"><code>.margin-bottom</code></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <hljs data-format="html">
+          <p class="mb">Paragraph with bottom-margin</p>
+        </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p class="margin-left"><code>.margin-left</code></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <hljs data-format="html">
+          <p class="ml">Paragraph with left-margin</p>
+        </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p class="margin-right"><code>.margin-right</code></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <hljs data-format="html">
+          <p class="mr">Paragraph with right-margin</p>
+        </hljs>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HELPERS HIDE / SHOW -->
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Show and hide</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>With these helper classes you can force a specific element to be hidden or shown with the use of the <code>.hide</code> and <code>.show</code> classes. Both use <code>!important</code> to avoid specificity conflicts. (Code example uses paragraph tags)
+          <br>
+          <code>.invisible</code> can be used to toggle the visibility of an element, without affecting it's display.
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <p class="show">This paragraph is shown</p>
+            <p class="hide">This is a hidden element.</p>
+            <p class="invisible">This element's display is unmodified but it is hidden as well.</p>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

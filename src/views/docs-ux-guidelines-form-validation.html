@@ -1,0 +1,180 @@
+<div class="container" data-ng-controller="formValidationPart1Ctrl">
+	<h1>Forms</h1>
+	<hr>
+
+	<section class="panel">
+		<header class="panel-heading">
+			<i class="fa fa-th-large"></i>
+			<h1 class="panel-title">Form validatie</h1>
+		</header>
+		<div class="panel-body">
+
+      <h2 class="h3">Atomen van een veld</h2>
+      <p class="callout"><strong>TL;DR</strong> Een veld in een formulier is meer dan het input field alleen.</p>
+      <p>Een veld in een formulier bestaat uit veel meer dan het invulveld alleen. Hieronder zie je een schema van de 5 atomen die samen de form field-molecule vormen. Elk heeft zijn functie, en samen zorgen ze voor een gebruikservaring die zo vlot en foutloos mogelijk is.</p>
+      <p>
+        <figure>
+          <img src="images/ux/atomen.png" alt="Atomen van een veld" class="center-block non-responsive" />
+        </figure>
+      </p>
+      <ol>
+        <li>
+          <h3 class="h4">Label</h3>
+          <p>Korte omschrijving van het veld. Staat links gealigneerd boven het veld, en staat in bold type. Labels die boven het veld staan reduceren de tijd die gebruikers nodig hebben om een form te vervolledigen, zeker bij data die bekend is (velden worden niet voor de eerste keer ingevuld). Uitzonderingen op label-plaatsing zijn steeds mogelijk, afhankelijk van context of project. <a href="http://www.lukew.com/ff/entry.asp?1502" title="LukeW | Web Application Form Design" rel="external" target="_blank">Meer weten?</a></p>
+        </li>
+        <li>
+          <h3 class="h4">Input label</h3>
+          <p>Moet niet altijd ingevuld worden, kan extra context of verduidelijking bieden bij label. Let wel: gebruik nooit een input label zonder een ander label boven of naast het input field, dit zorgt ervoor dat de gebruiker het label doet verdwijnen zodra hij begint te typen en is zeer ongebruiksvriendelijk. <a href="http://www.uxmatters.com/mt/archives/2013/02/dont-put-labels-inside-text-boxes-unless-youre-luke-w.php" title="Don’t Put Labels Inside Text Boxes (Unless You’re Luke W) :: UXmatters" rel="external" target="_blank">Meer weten?</a></p>
+        </li>
+        <li>
+          <h3 class="h4">Omschrijving</h3>
+          <p>Moet eveneens niet altijd ingevuld worden, kan extra context of verduidelijking bieden bij label, en heeft minder last van de plaatsbeperking die geldt bij het input label. Dit is de juiste locatie voor langere uitleg, password recovery of password strength indicators.</p>
+        </li>
+        <li>
+          <h3 class="h4">Validatie-icoon</h3>
+          <p>Wordt gebruikt om snelle feedback te geven aan de gebruiker en kan verschillende vormen aannemen.</p>
+        </li>
+        <li>
+          <h3 class="h4">Foutboodschap</h3>
+          <p>Bij negatieve validatie (error) kan deze foutboodschap verduidelijken wat er aan de hand is. Meer info over foutboodschappen en hun functie vind je <a href="#error-messages">verderop</a>.</p>
+        </li>
+      </ol>
+      <h2 class="h3">Gedrag van een veld</h2>
+      <p>Hieronder een concreet voorbeeld: een veld dat valideert op Active Directory-usernames.</p>
+      <form name="signupForm" novalidate>
+
+        <div class="row form-group" data-ng-class="{'has-error':(signupForm.user.$dirty|| signupForm.submitted) && signupForm.user.$invalid && !signupForm.user.$focused ,'has-success':(signupForm.user.$dirty|| signupForm.submitted) && signupForm.user.$valid && !signupForm.user.$focused }">
+          <div class="col-xs-12">
+            <label for="tink-username-example">Gebruikersnaam</label>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="validation"><input danny-check name="user" data-ng-model="signup.user" type="text" id="tink-username-example" placeholder="Vul uw gebruikersnaam in" data-ng-focus required></div>
+            <span class="help-block">Je gebruikersnaam is 'danny'.</span>
+          </div>
+          <div class="col-xs-12 col-sm-6" data-ng-show="(signupForm.user.$dirty|| signupForm.submitted) && signupForm.user.$invalid && !signupForm.user.$focused">
+            <span class="text-danger" data-ng-show="signupForm.user.$error.required">Dit veld mag niet leeg zijn.</span>
+            <span class="text-danger" data-ng-show="signupForm.user.$error.dannyValid && !signupForm.user.$error.required">Geef een geldige gebruikersnaam in.</span>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-xs-12">
+            <button data-ng-click="signup()" type="button" class="btn-primary">Valideren</button>
+          </div>
+        </div>
+        <hr>
+
+      </form>
+      <p>
+        <figure>
+          <img src="images/ux/gedrag-empty.png" alt="Empty state" class="non-responsive" />
+          <figcaption>Empty state</figcaption>
+        </figure>
+      </p>
+      <p>
+        <figure>
+          <img src="images/ux/gedrag-positief.png" alt="Positieve validatie" class="non-responsive" />
+          <figcaption>Positieve validatie</figcaption>
+        </figure>
+      </p>
+      <p>
+        <figure>
+          <img src="images/ux/gedrag-negatief.png" alt="Negatieve validatie" class="non-responsive" />
+          <figcaption>Negatieve validatie</figcaption>
+        </figure>
+      </p>
+
+      <h2 class="h3">Validatie van een veld</h2>
+
+      <p class="callout"><strong>TL;DR</strong> Tink gebruikt niet de standaard Angular instant validatie, maar valideert onBlur.</p>
+      <p>Tink gebruikt bij validatie van een veld niet de standaard Angular-methode van validatie (na elke key stroke), maar gebruikt het onBlur-event voor validatie: zodra je de focus weghaalt van een veld naar een ander veld (via TAB of door op een ander veld te klikken) wordt er validatie gedaan op de gegeven input. <a href="http://alistapart.com/article/inline-validation-in-web-forms#section8" title="Inline Validation in Web Forms · An A List Apart Article" rel="external" target="_blank">Meer weten?</a></p>
+
+      <!-- Voorbeeld 1: Angular-style validatie
+      Voorbeeld 2: Tink-validatie
+      (werkende voorbeelden die je kan testen bouwen: crf. DO - DON’T) -->
+
+      <h2 class="h3" id="error-messages">Foutboodschappen</h2>
+      <blockquote>"In this world nothing can be said to be certain, except death, taxes, and error messages" - Some dead guy</blockquote>
+      <p>Foutboodschappen kom je overal tegen. Niet alleen op het web, maar ook in het echte leven. Op het web hebben ze echter niet alleen een grote impact op gebruikservaring, ze worden ook al te vaak over het hoofd gezien bij het bouwen van een app of website. Een verwarrende, nietszeggende of beschuldigende foutboodschap op het verkeerde moment kan voor enorme frustratie bij de gebruiker zorgen. Het is daarom erg belangrijk dat je dit soort zaken probeert te vermijden:</p>
+      <p>
+        <figure>
+          <img src="images/ux/error.png" alt="Foutboodschappen" class="center-block non-responsive" />
+        </figure>
+      </p>
+      <p>In Tink proberen we al heel wat veel voorkomende fouten in forms op voorhand op te vangen door oplossingen te voorzien die lagere foutenmarges hebben: autocomplete velden, date- en timepickers, inline validatie, etc. Toch zullen gebruikers hoe dan ook nog steeds foutboodschappen tegenkomen, zorg er dus voor dat ze zo gebruiksvriendelijk mogelijk zijn.</p>
+      <p>Een goed geschreven foutboodschap moet aan de volgende 3 parameters voldoen:</p>
+      <ol>
+        <li>
+          <h3 class="h4">Menselijk</h3>
+          <p>Zorg ervoor dat de foutboodschap niet lijkt te zijn geschreven door een robot. Bekijk een foutboodschap als een mini-conversatie met je gebruiker, en zorg er dus voor dat je mensentaal praat: de tekst moet helder en duidelijk zijn, de toon vriendelijk. Ga ervan uit dat je gebruikers niet technisch onderlegd zijn, en dus geen boodschap hebben aan vakjargon of error codes.</p>
+        </li>
+        <li>
+          <h3 class="h4">Behulpzaam</h3>
+          <p>Gebruikers lezen nooit de documentatie die je zo ijverig hebt geschreven bij een app (echt waar), tot ze een error tegenkomen of niet meer verder kunnen. Dan is er een plotse piek in hun aandacht en willen ze de error zo snel mogelijk wegwerken. Zorg er dus voor dat de foutboodschap de volgende 3 zaken duidelijk communiceert:</p>
+          <ul>
+            <li>Dat er iets fout is gegaan</li>
+            <li>Wat er is fout gegaan</li>
+            <li>Wat de oplossing is</li>
+          </ul>
+          <p>Er is niet altijd een eenduidige oplossing mogelijk voor het probleem, maar als dat wel het geval is loont het altijd om er melding van te maken, zoals hieronder:</p>
+          <p>
+            <figure>
+              <img src="images/ux/behulpzame-error.png" alt="Behulpzame foutboodschap" class="center-block non-responsive" />
+            </figure>
+          </p>
+          <p>Wij hebben er in Tink alvast voor gezorgd dat de foutboodschappen die je schrijft een duidelijke layout hebben gekregen, en dat ze goed zichtbaar zullen zien.</p>
+        </li>
+        <li>
+          <h3 class="h4">Nederig</h3>
+          <p>Een foutboodschap is eigenlijk tweerichtingsverkeer, ook al lijkt het op het eerste zicht misschien niet zo. Is het de schuld van de gebruiker dat er een foutboodschap verschijnt?  Of is er technisch iets mis gegaan? Maakt niet uit, eigenlijk, het belangrijkste is dat je erin slaagt om samen met de gebruiker tot een oplossing te komen. Geef daarom nooit de gebruiker rechtstreeks de schuld. Blijf overal neutraal en nederig, behalve als je zeker weet dat de foutboodschap verschijnt omwille van een technisch mankement. Bied in dat geval je verontschuldigingen aan, zoals Firefox hier doet:</p>
+          <p>
+            <figure>
+              <img src="images/ux/nederige-error.png" alt="Nederige foutboodschap" class="center-block non-responsive" />
+            </figure>
+          </p>
+        </li>
+      </ol>
+      <h3 class="h4">Enkele voorbeelden</h3>
+      <blockquote>“It’s not OK, and I don’t want to Cancel.” - User</blockquote>
+      <p>Hieronder enkele voorbeelden van specifieke foutboodschappen</p>
+      <table>
+        <thead>
+          <tr>
+            <th class="danger">Don't</th>
+            <th class="success">Do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Ongeldig e-mailadres.</th>
+            <th>Geef een geldig e-mailadres in.</th>
+          </tr>
+          <tr>
+            <th>Ongeldige gebruikersnaam.</th>
+            <th>Er bestaat al een gebruiker met deze gebruikersnaam. Geen nood, probeer iets anders.</th>
+          </tr>
+          <tr>
+            <th>Dit veld mag niet leeg zijn.</th>
+            <th>Geef een geldige <em>{FIELDNAME}</em> in.</th>
+          </tr>
+          <tr>
+            <th>Ongeldige straatnaam. (bij een autocomplete field dat niet is ingevuld)</th>
+            <th>Kies een straat uit de lijst met suggesties.</th>
+          </tr>
+          <tr>
+            <th><em>{CHECKBOX}</em> is een verplicht veld</th>
+            <th>Vink <em>{CHECKBOX}</em> aan om verder te gaan.</th>
+          </tr>
+          <tr>
+            <th>(vergezeld van een password strength indicator) Wachtwoord moet 6-14 karakters hebben.</th>
+            <th>Korte wachtwoorden zijn te makkelijk te raden. Probeer een complexer wachtwoord in te geven.</th>
+          </tr>
+          <tr>
+            <th>Wachtwoorden komen niet overeen.</th>
+            <th>Deze wachtwoorden komen niet overeen. Probeer opnieuw.</th>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+</div>

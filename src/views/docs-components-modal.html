@@ -1,0 +1,229 @@
+<div class="container" ng-controller="modalCtrl">
+  <h1>Modal</h1>
+  <hr>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Modal dialog</h1>
+    </header>
+    <div class="panel-body">
+      <h3>Example</h3>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+          <p>
+            <button data-ng-click="openModal()">How does the internet work?</button>
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8 form-group">
+          <hljs data-format="html">
+             <button data-ng-click="openModal()">How does the internet work?</button>
+          </hljs>
+        </div>
+      </div>
+
+      <h3>Usage</h3>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>For a somewhat more extended modal, you can use a separate HTML template for the content of the modal and an Angular controller to call the modal dialog.</p>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <hljs data-format="js">// Angular controller
+            angular.module('tinkApp')
+              .controller('modalCtrl', ['$scope', '$modal', function (scope, $modal) {
+
+                scope.openModal=function(){
+
+                  var modalInstance = $modal.open({
+                    templateUrl: 'views/modal-template.html',
+                    controller: 'ModalInstanceCtrl',
+                    resolve: {
+                      items: function () {
+                        return ['test Array'];
+                      }
+                    }
+                  });
+
+                  modalInstance.result.then(function (obj) {
+                    console.log(obj); // The controller is closed because of the developer
+                  }, function (obj) {
+                    console.log('Modal dismissed at: ' + new Date()); // The contoller is closed by the use of the $dismiss call
+                  });
+                }
+
+              }]);
+          </hljs>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <p>An example of the content inside <code>modal-template.html</code>:</p>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <hljs data-format="html">
+            <div data-ng-controller="ModalInstanceCtrl">
+              <h3>Modal title</h3>
+              <p>Modal text</p>
+              <button data-ng-click="ok()">Dismiss</button>
+              <button data-ng-click="cancel()">Close</button>
+            </div>
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>Optionally, your modal template can also have an Angular controller:</p>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <hljs data-format="js">// Angular controller
+            angular.module('tinkApp')
+              .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function ($scope, $modalInstance) {
+
+                $scope.ok = function() {
+                  $modalInstance.$close('ok is pressed'); // To close the controller with a success message
+                }
+
+                $scope.cancel = function(){
+                  $modalInstance.$dismiss('cancel is pressed'); // To close the controller with a dismiss message
+                }
+
+              }]);
+          </hljs>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Options</h3>
+          <div class="table-responsive">
+            <table class="table-dev">
+              <thead>
+                <tr>
+                  <th>Attr</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-template-url</td>
+                  <td><code>String</code></td>
+                  <td><code>''</code></td>
+                  <td>The template url you want to use for the modal</td>
+                </tr>
+                <tr>
+                  <td>data-controller</td>
+                  <td><code>String</code></td>
+                  <td><code>''</code></td>
+                  <td>The controller you want to inject in the modal</td>
+                </tr>
+                <tr>
+                  <td>data-resolve</td>
+                  <td><code>Object</code></td>
+                  <td><code>null</code></td>
+                  <td>An object with data you want to inject into the controller of the modal.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Modal without external template</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+          <p>
+            <button tink-modal data-tink-modal-success="lose" data-tink-modal-dismiss="ismissed" data-tink-modal-template="modalcontentid">Open modal</button>
+            <script type="text/ng-template" id="modalcontentid">
+              <h3>Modal title</h3>
+              <p>Modal text</p>
+              <button data-ng-click="$dismiss('close')">Dismiss</button>
+              <button data-ng-click="$close('close')">Close</button>
+            </script>
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8 form-group">
+          <hljs data-format="html">
+            <button tink-modal data-tink-modal-template="modalcontentid" data-tink-modal-success="close" data-tink-modal-dismiss="dismissed">Open modal</button>
+          </hljs>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+          <p>While it is better practice to use an external template for your modal dialog, in certain cases it's better to reference one that's already in the DOM. If this is the case, wrap your modal content within <code>&lt;script&gt;</code> tags and refer to this script template via its <code>id</code>.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8 form-group">
+          <hljs data-format="html">
+            <script type="text/ng-template" id="modalcontentid">
+              // Your HTML content here
+            </script>
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>An example of the modal content:</p>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <hljs data-format="html">
+            <h3>Modal title</h3>
+              <p>Modal text</p>
+              <button data-ng-click="$dismiss('close')">Dismiss</button>
+            <button data-ng-click="$close('close')">Close</button>
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Options</h3>
+          <div class="table-responsive">
+            <table class="table-dev">
+              <thead>
+                <tr>
+                  <th>Attr</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>tink-modal-template</td>
+                  <td><code>string</code></td>
+                  <td><code>''</code></td>
+                  <td>The ID of the script you're referencing</td>
+                </tr>
+                <tr>
+                  <td>tink-modal-success</td>
+                  <td><code>function</code></td>
+                  <td><code>null</code></td>
+                  <td>Callback function on success</td>
+                </tr>
+                <tr>
+                  <td>tink-modal-dismiss</td>
+                  <td><code>function</code></td>
+                  <td><code>null</code></td>
+                  <td>Callback function on dismiss</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+</div>
