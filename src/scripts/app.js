@@ -17,8 +17,8 @@
    'ngMessages',
    'ngSanitize',
    'ngTouch',
-   // 'hljs',
-   //'markdown',
+   'hljs',
+   'markdown',
    'tink.tinkApi',
    'tink.navigation'
    ])
@@ -67,12 +67,12 @@
 
 // temporarily not needed
 
-// }).config(function (hljsServiceProvider) {
-//   hljsServiceProvider.setOptions({
-//     tabReplace: ' ',
-//     useBR: false,
-//     languages:['html','js','bash','css']
-//   });
+}).config(function (hljsServiceProvider) {
+  hljsServiceProvider.setOptions({
+    tabReplace: ' ',
+    useBR: false,
+    languages:['html','js','bash','css']
+  });
 // }).run(function($rootScope) {
 //   var versionFileTinkProp = '1.2.6';
 //   $rootScope.themes = {
