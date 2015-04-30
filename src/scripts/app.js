@@ -14,8 +14,11 @@
    'ngCookies',
    'ngResource',
    'ngRoute',
+   'ngMessages',
    'ngSanitize',
    'ngTouch',
+   // 'hljs',
+   //'markdown',
    'tink.tinkApi',
    'tink.navigation'
    ])
@@ -23,7 +26,7 @@
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
-    // controller: 'MainCtrl'
+    controller: 'MainCtrl'
   })
   .when('/start', {
     templateUrl: 'views/start.html',
@@ -49,6 +52,7 @@
   })
   .when('/faq', {
     templateUrl: 'views/faq.html',
+    // controller: 'FaqCtrl'
   })
   .when('/shame', {
     templateUrl: 'views/shame.html',
@@ -58,9 +62,18 @@
     redirectTo: '/'
   });
 
-	// $locationProvider.html5Mode(true);
-	// $locationProvider.hashPrefix('!');
-});//.run(function($rootScope) {
+  // $locationProvider.html5Mode(true);
+  // $locationProvider.hashPrefix('!');
+
+// temporarily not needed
+
+// }).config(function (hljsServiceProvider) {
+//   hljsServiceProvider.setOptions({
+//     tabReplace: ' ',
+//     useBR: false,
+//     languages:['html','js','bash','css']
+//   });
+// }).run(function($rootScope) {
 //   var versionFileTinkProp = '1.2.6';
 //   $rootScope.themes = {
 //     digipolis:['tink.'+versionFileTinkProp+'.min.css','default.'+versionFileTinkProp+'.min.css','styleguide.'+versionFileTinkProp+'.min.css'],
@@ -74,4 +87,4 @@
 //     text: 'Tink',
 //     html: 'Tink'
 //   };
-// });
+});
