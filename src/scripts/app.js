@@ -29,7 +29,8 @@
    'tink.rangedatepicker',
    'tink.backtotop',
    'tink.upload',
-   'tink.timepicker'
+   'tink.timepicker',
+   'tink.checkbox'
 
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
