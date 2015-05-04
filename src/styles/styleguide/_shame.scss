@@ -1,0 +1,36 @@
+.bg-primary-light {
+  background: $brand-light;
+  color: $white;
+}
+
+.zero-clipboard {
+  position: relative;
+  display: none;
+  @include mq($screen-md) {
+    display: block;
+  }
+}
+
+.highlight {
+  padding: rem(9);
+  margin-bottom: rem(14);
+  border: 1px solid #e1e1e8;
+  border-radius: rem(4);
+
+  pre {
+    margin-bottom: 0;
+  }
+}
+
+// overview
+.light-set {
+  background: #ebeff2;
+}
+.dark-set {
+  background: #4C5B6B;
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  p, ul, ol {
+    color: lighten(invert($text-color), 10%);
+  }
+}
