@@ -22,7 +22,8 @@
    'tink.tinkApi',
    'tink.navigation',
    'tink.accordion',
-   'tink.popover'
+   'tink.popover',
+   'tink.modal'
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
   $routeProvider
