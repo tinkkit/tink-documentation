@@ -25,7 +25,10 @@
    'tink.popover',
    'tink.modal',
    'tink.nationalnumber',
-   'tink.datepicker'
+   'tink.datepicker',
+   'tink.rangedatepicker',
+   'tink.backtotop',
+   'tink.upload'
 
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
