@@ -23,7 +23,10 @@
    'tink.navigation',
    'tink.accordion',
    'tink.popover',
-   'tink.modal'
+   'tink.modal',
+   'tink.nationalnumber',
+   'tink.datepicker'
+
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
   $routeProvider
