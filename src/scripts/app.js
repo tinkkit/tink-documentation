@@ -30,7 +30,8 @@
    'tink.backtotop',
    'tink.upload',
    'tink.timepicker',
-   'tink.checkbox'
+   'tink.checkbox',
+   'tink.interactivetable'
 
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
