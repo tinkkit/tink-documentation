@@ -20,7 +20,9 @@
    'hljs',
    'markdown',
    'tink.tinkApi',
-   'tink.navigation'
+   'tink.navigation',
+   'tink.accordion',
+   'tink.popover'
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
   $routeProvider
@@ -64,27 +66,24 @@
 
   // $locationProvider.html5Mode(true);
   // $locationProvider.hashPrefix('!');
-
-// temporarily not needed
-
 }).config(function (hljsServiceProvider) {
   hljsServiceProvider.setOptions({
     tabReplace: ' ',
     useBR: false,
     languages:['html','js','bash','css']
   });
-// }).run(function($rootScope) {
-//   var versionFileTinkProp = '1.2.6';
-//   $rootScope.themes = {
-//     digipolis:['tink.'+versionFileTinkProp+'.min.css','default.'+versionFileTinkProp+'.min.css','styleguide.'+versionFileTinkProp+'.min.css'],
-//     stad:['tink-stad.'+versionFileTinkProp+'.min.css','default-stad.'+versionFileTinkProp+'.min.css','styleguide-stad.'+versionFileTinkProp+'.min.css'],
-//     ocmw:['tink-ocmw.'+versionFileTinkProp+'.min.css','default-ocmw.'+versionFileTinkProp+'.min.css','styleguide-ocmw.'+versionFileTinkProp+'.min.css'],
-//     politie:['tink-politie.'+versionFileTinkProp+'.min.css','default-politie.'+versionFileTinkProp+'.min.css','styleguide-politie.'+versionFileTinkProp+'.min.css']
-//   };
+}).run(function($rootScope) {
+  var versionFileTinkProp = '1.2.6';
+  $rootScope.themes = {
+    digipolis:['tink.'+versionFileTinkProp+'.min.css','default.'+versionFileTinkProp+'.min.css','styleguide.'+versionFileTinkProp+'.min.css'],
+    stad:['tink-stad.'+versionFileTinkProp+'.min.css','default-stad.'+versionFileTinkProp+'.min.css','styleguide-stad.'+versionFileTinkProp+'.min.css'],
+    ocmw:['tink-ocmw.'+versionFileTinkProp+'.min.css','default-ocmw.'+versionFileTinkProp+'.min.css','styleguide-ocmw.'+versionFileTinkProp+'.min.css'],
+    politie:['tink-politie.'+versionFileTinkProp+'.min.css','default-politie.'+versionFileTinkProp+'.min.css','styleguide-politie.'+versionFileTinkProp+'.min.css']
+  };
 
-//   $rootScope.theme = {
-//     active: 'digipolis',
-//     text: 'Tink',
-//     html: 'Tink'
-//   };
+  $rootScope.theme = {
+    active: 'digipolis',
+    text: 'Tink',
+    html: 'Tink'
+  };
 });
