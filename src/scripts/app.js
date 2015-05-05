@@ -32,7 +32,8 @@
    'tink.timepicker',
    'tink.checkbox',
    'tink.interactivetable',
-   'tink.identitycardnumber'
+   'tink.identitycardnumber',
+   'tink.sorttable'
 
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
