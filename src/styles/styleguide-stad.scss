@@ -1,0 +1,15 @@
+/**
+ * Stad styleguide
+ */
+@import "../../bower_components/tink-theme-stad/dist/stad/variables";
+@import "styleguide/styleguide";
+
+
+
+.jumbotron {
+  background-image: image-url('main/bg-stad.jpg');
+
+  .btn-lg {
+    color: $primary;
+  }
+}

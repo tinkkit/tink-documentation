@@ -229,15 +229,33 @@ module.exports = function (grunt) {
       }
     },
     copy: {
+      // dist: {
+      //   files: [
+      //     {
+      //       expand: true,
+      //       dot: true,
+      //       cwd: '<%= yeoman.app %>/scripts/',
+      //       dest: '<%= yeoman.dist %>/scripts/',
+      //       src: [
+      //         '{,*/}*'
+      //       ]
+      //     }
+      //   ]
+      // },
       dist: {
         files: [
           {
             expand: true,
             dot: true,
-            cwd: '<%= yeoman.app %>/scripts/',
-            dest: '<%= yeoman.dist %>/scripts/',
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
             src: [
-              '{,*/}*'
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              'views/{,*/}*.html',
+              'images/{,*/}*.{webp}',
+              'fonts/*'
             ]
           }
         ]
@@ -248,7 +266,7 @@ module.exports = function (grunt) {
             expand: true,
             dot: true,
             cwd: '.tmp/styles/',
-            dest: '<%= yeoman.dist %>/',
+            dest: '<%= yeoman.dist %>/styles',
             src: [
               '{,*/}*'
             ]
@@ -256,30 +274,30 @@ module.exports = function (grunt) {
         ]
       }
     },
-    concat: {
-      options: {
-        separator: ';'
-      },
-      dist: {
-        src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js'
-        ],
-        dest: '<%= yeoman.dist %>/<%= yeoman.module %>.js'
-      }
-    },
-    uglify: {
-      options: {
-        mangle: false,
-        banner: '/*! <%= yeoman.module %> v<%= yeoman.version %> */',
-        sourceMap: true,
-        screwIE8: true
-      },
-      dist: {
-        files: {
-          '<%= yeoman.dist %>/<%= yeoman.module %>.min.js': ['<%= yeoman.dist %>/<%= yeoman.module %>.js'],
-        }
-      }
-    },
+    // concat: {
+    //   options: {
+    //     separator: ';'
+    //   },
+    //   dist: {
+    //     src: [
+    //       '<%= yeoman.dist %>/scripts/{,*/}*.js'
+    //     ],
+    //     dest: '<%= yeoman.dist %>/<%= yeoman.module %>.js'
+    //   }
+    // },
+    // uglify: {
+    //   options: {
+    //     mangle: false,
+    //     banner: '/*! <%= yeoman.module %> v<%= yeoman.version %> */',
+    //     sourceMap: true,
+    //     screwIE8: true
+    //   },
+    //   dist: {
+    //     files: {
+    //       '<%= yeoman.dist %>/<%= yeoman.module %>.min.js': ['<%= yeoman.dist %>/<%= yeoman.module %>.js'],
+    //     }
+    //   }
+    // },
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
@@ -296,7 +314,7 @@ module.exports = function (grunt) {
     },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['.tmp/styles/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         dirs: ['<%= yeoman.dist %>/images'],
         basedir: ['<%= yeoman.dist %>/images'],
@@ -313,6 +331,7 @@ module.exports = function (grunt) {
       ],
       dist: [
         'sass',
+        'imagemin',
         'svgmin'
       ]
     },
@@ -335,6 +354,19 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images'
         }]
       }
+      // options: {
+      //   plugins: {
+      //     removeViewBox: false
+      //   }
+      // }
+      // dist: {
+      //   files: [{
+      //     expand: true,
+      //     cwd: '<%= yeoman.app %>/images',
+      //     src: '{,*/}*.svg',
+      //     dest: '<%= yeoman.dist %>/images'
+      //   }]
+      // }
     },
     cssmin: {
       dist: {
@@ -432,10 +464,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    // 'replace:css',
-    // 'replace:html',
-    // 'replace:md',
-    // 'replace:other',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -443,17 +471,16 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+      // 'cdnify',
     'cssmin',
-    'uglify:dist',
+    'uglify',
     'filerev',
-    // 'cssUrlEmbed',
     'usemin',
-    'replace:rev',
-    'replace:liveRev',
-    'replace:json'
-    // 'copy:styles',
-    // 'clean:server'
+      // 'replace',
+      // 'concurrent:dist',
+    // 'cssUrlEmbed',
+      // 'copy:styles',
+      // 'clean:server'
   ]);
 
   grunt.registerTask('default', [

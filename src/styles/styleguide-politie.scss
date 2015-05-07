@@ -1,0 +1,9 @@
+/**
+ * OCMW styleguide
+ */
+@import "../../bower_components/tink-theme-politie/dist/politie/variables";
+@import "styleguide/styleguide";
+
+.jumbotron {
+  background-image: image-url('main/bg-politie.jpg');
+}
