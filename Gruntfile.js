@@ -405,20 +405,93 @@ module.exports = function (grunt) {
       }
     },
     replace: {
-      dist: {
+      dist:{
+      },
+      md: {
         options: {
           patterns: [
             {
-              match: /v(\d+)\.(\d+)\.(.+)/g,
+              match: /v(\d+)\.(\d+)\.(\d+)/g,
               replacement: 'v<%= yeoman.version %>'
             }
           ]
         },
         files: [
-          {expand: true, flatten: true, src: ['README.md'], dest: ''}
+          {
+            expand: true, flatten: true, src: ['README.md'], dest: ''
+          }
+        ]
+      },
+      html: {
+        options: {
+          patterns: [
+            {
+              match: /\-\-\>(\d+).(\d+).(\d+)<\!\-\-\@\-\-\>/g,
+              replacement: '--><%= yeoman.version %><!--@-->'
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true, flatten: false, src: ['<%= yeoman.app %>/**/*.html'], dest: ''
+          }
+        ]
+      },
+      rev: {
+        options: {
+          patterns: [
+            {
+              match: /{{tink-version}}/g,
+              replacement: '<%= yeoman.version %>'
+            }
+          ]
+        },
+        files: [
+          {expand: true, flatten: false, src: ['<%= yeoman.dist %>/index.html','<%= yeoman.dist %>/scripts/*.js'], dest: ''}
+        ]
+      },
+      // json: {
+      //   options: {
+      //     patterns: [
+      //       {
+      //         match: /"version": "(\d+).(\d+).(\d+)"/g,
+      //         replacement: '"version": "<%= yeoman.version %>"'
+      //       }
+      //     ]
+      //   },
+      //   files: [
+      //     {expand: true, flatten: false, src: ['package.json','bower.json'], dest: ''}
+      //   ]
+      // },
+      liveRev: {
+        options: {
+          patterns: [
+            {
+              match: /var versionFileTinkProp = '.+';/g,
+              replacement: 'var versionFileTinkProp = \'<%= yeoman.version %>\';'
+            }
+          ]
+        },
+        files: [
+          {expand: true, flatten: false, src: ['<%= yeoman.app %>/scripts/*.js','<%= yeoman.dist %>/scripts/*.js'], dest: ''}
         ]
       }
     },
+    // replace: {
+    //   dist: {
+    //     options: {
+    //       patterns: [
+    //         {
+    //           match: /v(\d+)\.(\d+)\.(.+)/g,
+    //           replacement: 'v<%= yeoman.version %>'
+    //         }
+    //       ]
+    //     },
+    //     files: [
+    //       {expand: true, flatten: true, src: ['README.md'], dest: ''}
+    //     ]
+    //   }
+    // },
     cssUrlEmbed: {
       encodeWithBaseDir: {
         expand: true,
@@ -448,6 +521,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'replace:liveRev',
       'autoprefixer',
       'connect:livereload',
       'watch'
@@ -464,6 +538,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'replace:md',
+    'replace:html',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -476,10 +552,9 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-      // 'replace',
-      // 'concurrent:dist',
-    // 'cssUrlEmbed',
-      // 'copy:styles',
+    'replace:rev',
+    'replace:liveRev',
+      // 'cssUrlEmbed',
       // 'clean:server'
   ]);
 
