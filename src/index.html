@@ -6,11 +6,17 @@
     <meta name="description" content="">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
+    <!-- build:css(.) styles/tink.{{tink-version}}.min.css -->
+    <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
+    <!-- endbuild -->
+    <!-- build:css(.) styles/default.{{tink-version}}.min.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
-    <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
     <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.) styles/styleguide.{{tink-version}}.min.css -->
     <link rel="stylesheet" href="styles/styleguide.css">
+    <!-- endbuild -->
   </head>
   <body data-ng-swipe-right="openMenu()" data-ng-swipe-left="closeMenu()">
   <!--[if lt IE 9]>
@@ -26,7 +32,7 @@
   </div>
 
 
-
+  <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -41,51 +47,52 @@
   <script src="bower_components/js-beautify/js/lib/beautify.js"></script>
   <script src="bower_components/js-beautify/js/lib/beautify-css.js"></script>
   <script src="bower_components/js-beautify/js/lib/beautify-html.js"></script>
-  <script src="bower_components/lodash/lodash.js"></script>
   <script src="bower_components/tink-api-javascript/dist/tink-api-javascript.js"></script>
   <script src="bower_components/tink-api-angular/dist/tink-api-angular.js"></script>
-  <script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>
   <script src="bower_components/tink-accordion-angular/dist/tink-accordion-angular.js"></script>
-  <script src="bower_components/tink-popover-angular/dist/tink-popover-angular.js"></script>
-  <script src="bower_components/tink-modal-angular/dist/tink-modal-angular.js"></script>
+  <script src="bower_components/tink-back-to-top-angular/dist/tink-back-to-top-angular.js"></script>
+  <script src="bower_components/tink-checkbox-angular/dist/tink-checkbox-angular.js"></script>
+  <script src="bower_components/tink-helper-date-angular/dist/tink-helper-date-angular.js"></script>
   <script src="bower_components/tink-helper-format-angular/dist/tink-helper-format-angular.js"></script>
   <script src="bower_components/tink-helper-safe-apply-angular/dist/tink-helper-safe-apply-angular.js"></script>
-  <script src="bower_components/tink-national-number-angular/dist/tink-national-number-angular.js"></script>
-  <script src="bower_components/tink-helper-date-angular/dist/tink-helper-date-angular.js"></script>
   <script src="bower_components/tink-datepicker-angular/dist/tink-datepicker-angular.js"></script>
-  <script src="bower_components/tink-range-datepicker-angular/dist/tink-range-datepicker-angular.js"></script>
-  <script src="bower_components/tink-back-to-top-angular/dist/tink-back-to-top-angular.js"></script>
-  <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
   <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
-  <script src="bower_components/tink-upload-angular/dist/tink-upload-angular.js"></script>
-  <script src="bower_components/tink-timepicker-angular/dist/tink-timepicker-angular.js"></script>
-  <script src="bower_components/tink-checkbox-angular/dist/tink-checkbox-angular.js"></script>
   <script src="bower_components/Sortable/Sortable.js"></script>
-  <script src="bower_components/tink-sort-table-angular/dist/tink-sort-table-angular.js"></script>
+  <script src="bower_components/tink-popover-angular/dist/tink-popover-angular.js"></script>
   <script src="bower_components/tink-interactive-table-angular/dist/tink-interactive-table-angular.js"></script>
   <script src="bower_components/tink-identity-card-number-angular/dist/tink-identity-card-number-angular.js"></script>
+  <script src="bower_components/tink-modal-angular/dist/tink-modal-angular.js"></script>
+  <script src="bower_components/tink-national-number-angular/dist/tink-national-number-angular.js"></script>
+  <script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>
+  <script src="bower_components/tink-range-datepicker-angular/dist/tink-range-datepicker-angular.js"></script>
+  <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+  <script src="bower_components/tink-upload-angular/dist/tink-upload-angular.js"></script>
+  <script src="bower_components/tink-timepicker-angular/dist/tink-timepicker-angular.js"></script>
   <!-- endbower -->
+  <!-- endbuild -->
 
+  <!-- build:js({.tmp,src}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/start.js"></script>
-  <script src="scripts/controllers/docs.js"></script>
-  <script src="scripts/controllers/sidenav.js"></script>
-  <script src="scripts/controllers/formValidationPart1.js"></script>
   <script src="scripts/controllers/changelog.js"></script>
+  <script src="scripts/controllers/datepickerCtrl.js"></script>
+  <script src="scripts/controllers/docs.js"></script>
+  <script src="scripts/controllers/draganddropCtrl.js"></script>
+  <script src="scripts/controllers/formValidationPart1.js"></script>
+  <script src="scripts/controllers/identityNoCtrl.js"></script>
+  <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/modalCtrl.js"></script>
-  <script src="scripts/directives/selectcode.js"></script>
+  <script src="scripts/controllers/nationalNoCtrl.js"></script>
+  <script src="scripts/controllers/sidenav.js"></script>
+  <script src="scripts/controllers/start.js"></script>
+  <script src="scripts/controllers/tableCtrl.js"></script>
+  <script src="scripts/directives/dannyCheck.js"></script>
   <script src="scripts/directives/highlightactive.js"></script>
   <script src="scripts/directives/highlightCode.js"></script>
   <script src="scripts/directives/markdown.js"></script>
-  <script src="scripts/directives/dannyCheck.js"></script>
-  <script src="scripts/controllers/nationalNoCtrl.js"></script>
-  <script src="scripts/controllers/datepickerCtrl.js"></script>
-  <script src="scripts/controllers/draganddropCtrl.js"></script>
+  <script src="scripts/directives/selectcode.js"></script>
   <script src="scripts/services/UploadMock.js"></script>
-  <script src="scripts/controllers/tableCtrl.js"></script>
-  <script src="scripts/controllers/identityNoCtrl.js"></script>
-
+  <!-- endbuild -->
 
   </body>
 </html>

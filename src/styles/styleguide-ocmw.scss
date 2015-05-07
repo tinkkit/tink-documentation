@@ -1,0 +1,9 @@
+/**
+ * OCMW styleguide
+ */
+@import "../../bower_components/tink-theme-ocmw/dist/ocmw/variables";
+@import "styleguide/styleguide";
+
+.jumbotron {
+  background-image: image-url('main/bg-ocmw.jpg');
+}
