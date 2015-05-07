@@ -9,12 +9,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   // Check for a new version
-  var bump = grunt.option('bump') || '';
-  var currentversion = require('./package.json').version;
-  if (bump !== '') {
-    var semversion = require('semver');
-    currentversion = semversion.inc(currentversion, bump);
-  }
+  var currentversion = require('./bower_components/tink-core/bower.json').version;
 
   // Configurable paths for the application
   var appConfig = {
@@ -22,7 +17,7 @@ module.exports = function (grunt) {
     dist: 'dist',
     version: currentversion,
     module: require('./package.json').name,
-    domain: 'tink.skeleton'
+    domain: 'tink.documentation'
   };
 
   // Define the configuration for all the tasks
@@ -63,54 +58,35 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/index.html',
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/**/*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
-    ngtemplates:  {
-      app:        {
-        options: {
-          module: '<%= yeoman.domain %>',
-          standalone:false,
-          htmlmin: {
-            collapseBooleanAttributes: true,
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            removeComments: true, // Only if you don't use comment directives!
-            removeEmptyAttributes: true,
-            removeRedundantAttributes: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            conservativeCollapse: true,
-            preserveLineBreaks: true
-          }
-        },
-        cwd: 'src',
-        src: 'templates/**.html',
-        dest: '<%= yeoman.dist %>/scripts/templates.js'
-      }
-    },
-    bump: {
-      options: {
-        files: ['package.json', 'bower.json'],
-        updateConfigs: [],
-        commit: true,
-        commitMessage: 'Release v%VERSION%',
-        commitFiles: ['-a'],
-        createTag: true,
-        tagName: 'v%VERSION%',
-        tagMessage: 'v%VERSION%',
-        push: true,
-        pushTo: 'origin',
-        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
-        globalReplace: false,
-        prereleaseName: false,
-        regExp: false
-      }
-    },
+    // ngtemplates:  {
+    //   app:        {
+    //     options: {
+    //       module: '<%= yeoman.domain %>',
+    //       standalone:false,
+    //       htmlmin: {
+    //         collapseBooleanAttributes: true,
+    //         collapseWhitespace: true,
+    //         removeAttributeQuotes: true,
+    //         removeComments: true, // Only if you don't use comment directives!
+    //         removeEmptyAttributes: true,
+    //         removeRedundantAttributes: true,
+    //         removeScriptTypeAttributes: true,
+    //         removeStyleLinkTypeAttributes: true,
+    //         conservativeCollapse: true,
+    //         preserveLineBreaks: true
+    //       }
+    //     },
+    //     cwd: 'src',
+    //     src: 'templates/**.html',
+    //     dest: '<%= yeoman.dist %>/scripts/templates.js'
+    //   }
+    // },
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -189,7 +165,7 @@ module.exports = function (grunt) {
         files: [{
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/scripts'
+            // '<%= yeoman.dist %>/scripts'
           ]
         }]
       }
@@ -221,7 +197,7 @@ module.exports = function (grunt) {
       options: {
         imagePath:'../images',
         includePaths: [
-            'bower_components'
+          'bower_components'
         ]
       },
       dist: {
@@ -241,6 +217,15 @@ module.exports = function (grunt) {
           dest: '.tmp/styles',
           ext: '.css'
         }]
+      }
+    },
+    filerev: {
+      dist: {
+        src: [
+          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          // '<%= yeoman.dist %>/styles/{,*/}*.css',
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+        ]
       }
     },
     copy: {
@@ -295,6 +280,20 @@ module.exports = function (grunt) {
         }
       }
     },
+    useminPrepare: {
+      html: '<%= yeoman.app %>/index.html',
+      options: {
+        dest: '<%= yeoman.dist %>',
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs']
+            },
+            post: {}
+          }
+        }
+      }
+    },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['.tmp/styles/{,*/}*.css'],
@@ -317,26 +316,60 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/images',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/images'
+        }]
+      }
+    },
     svgmin: {
-      options: {
-        plugins: {
-          removeViewBox: false
-        }
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/images',
+          src: '{,*/}*.svg',
+          dest: '<%= yeoman.dist %>/images'
+        }]
       }
     },
     cssmin: {
-      options: {
-        banner: '/*! <%= yeoman.module %> v<%= yeoman.version %> */',
-        sourceMap: true
-      },
-      target: {
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/styles/tink-politie.<%= yeoman.version %>.min.css': ['bower_components/tink-theme-politie/dist/tink-politie.css'],
+          '<%= yeoman.dist %>/styles/default-politie.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
+          '<%= yeoman.dist %>/styles/styleguide-politie.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide-politie.css'],
+
+          '<%= yeoman.dist %>/styles/tink-ocmw.<%= yeoman.version %>.min.css': ['bower_components/tink-theme-ocmw/dist/tink-ocmw.css'],
+          '<%= yeoman.dist %>/styles/default-ocmw.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
+          '<%= yeoman.dist %>/styles/styleguide-ocmw.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide-ocmw.css'],
+
+          '<%= yeoman.dist %>/styles/tink-stad.<%= yeoman.version %>.min.css': ['bower_components/tink-theme-stad/dist/tink-stad.css'],
+          '<%= yeoman.dist %>/styles/default-stad.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
+          '<%= yeoman.dist %>/styles/styleguide-stad.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide-stad.css'],
+
+          '<%= yeoman.dist %>/styles/tink.<%= yeoman.version %>.min.css': ['bower_components/tink-core/dist/tink.css'],
+          '<%= yeoman.dist %>/styles/default.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
+          '<%= yeoman.dist %>/styles/styleguide.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide.css'],
+        }
+      }
+    },
+    ngAnnotate: {
+      dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: ['*.css', '!*.min.css'],
-          dest: '<%= yeoman.dist %>',
-          ext: '.min.css'
+          cwd: '.tmp/concat/scripts',
+          src: ['*.js', '!oldieshim.js'],
+          dest: '.tmp/concat/scripts'
         }]
+      }
+    },
+    cdnify: {
+      dist: {
+        html: ['<%= yeoman.dist %>/*.html']
       }
     },
     replace: {
@@ -398,19 +431,29 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean',
-    'ngtemplates',
-    'replace',
-    'copy:dist',
-    'concat',
-    'uglify:dist',
+    'clean:dist',
+    // 'replace:css',
+    // 'replace:html',
+    // 'replace:md',
+    // 'replace:other',
+    'wiredep',
+    'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'concat',
+    'ngAnnotate',
+    'copy:dist',
+    'cdnify',
+    'cssmin',
+    'uglify:dist',
+    'filerev',
     // 'cssUrlEmbed',
     'usemin',
-    'copy:styles',
-    'cssmin',
-    'clean:server'
+    'replace:rev',
+    'replace:liveRev',
+    'replace:json'
+    // 'copy:styles',
+    // 'clean:server'
   ]);
 
   grunt.registerTask('default', [
