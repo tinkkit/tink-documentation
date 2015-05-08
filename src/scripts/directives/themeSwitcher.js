@@ -22,18 +22,34 @@ angular.module('tinkApp')
             $cookies.theme = theme;
             var file1;
             var file2;
+            var newUrl1;
+            var newUrl2;
 
             if(links && $(links[0]).attr('href').split('bower').length > 1){
               file1 = themes[theme][0].split('.')[0]+'.css';
               file2 = themes[theme][2].split('.')[0]+'.css';
+              var stheme = themes[theme][0].split('.')[0].replace('tink-','');
+
+              var urlParts = $(links[0]).attr('href').split('/');
+              switch(stheme) {
+                case 'tink':
+                  newUrl1 = urlParts[0]+'/'+'tink-core/'+urlParts[2]+'/'+file1;
+                  break;
+                default:
+                  newUrl1 = urlParts[0]+'/'+'tink-theme-'+stheme+'/'+urlParts[2]+'/'+file1;
+              }
+
             }else{
               file1 = themes[theme][0];
+              newUrl1 = $(links[2]).attr('href').split('styles/')[0]+'styles/'+file1;
               file2 = themes[theme][2];
             }
-              var newUrl1 = $(links[0]).attr('href').split('styles/')[0]+'styles/'+file1;
-              var newUrl2 = $(links[2]).attr('href').split('styles/')[0]+'styles/'+file2;
-              changeUrl($(links[0]),newUrl1);
-              changeUrl($(links[2]),newUrl2);
+
+            // Styleguide
+            newUrl2 = $(links[2]).attr('href').split('styles/')[0]+'styles/'+file2;
+
+            changeUrl($(links[0]),newUrl1);
+            changeUrl($(links[2]),newUrl2);
           }
 
           // Update $rootScope

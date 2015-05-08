@@ -125,21 +125,18 @@ angular.module('hljs', [])
       staticHTML = staticHTML.replace(/&gt;/g, '>');
       staticHTML = staticHTML.replace(/&lt;/g, '<');
       if(tAttrs.format === 'html'){
-        /*jshint camelcase: false */
-        staticHTML = window.html_beautify(staticHTML, {
+        staticHTML = window.html_beautify(staticHTML, { // jshint ignore:line
           'indent_size': 2,
           'indent_char': '\t'
         },true);
 
       }else if(tAttrs.format === 'js'){
-        /*jshint camelcase: false */
-        staticHTML = window.js_beautify(staticHTML, {
+        staticHTML = window.js_beautify(staticHTML, { // jshint ignore:line
           'indent_size': 2,
           'indent_char': '\t'
         });
       }else if(tAttrs.format === 'css'){
-        /*jshint camelcase: false */
-        staticHTML = window.js_beautify(staticHTML, {
+        staticHTML = window.js_beautify(staticHTML, { // jshint ignore:line
           'indent_size': 2,
           'indent_char': '\t'
         });

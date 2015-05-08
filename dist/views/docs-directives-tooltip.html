@@ -1,0 +1,88 @@
+  <div class="container">
+    <h1>Popover Component</h1>
+    <hr>
+    <section class="panel">
+      <header class="panel-heading">
+        <h1 class="panel-title">single datepicker</h1>
+      </header>
+      <div class="panel-body">
+        <h3>Examples</h3>
+        <div class="row">
+          <div class="col-xs-12 col-md-3">
+           A tooltip <a href="#" tooltip-placement="left" tink-tooltip="On the Left!">left</a> or a tooltip on the
+           <a href="#" tooltip-placement="right" tink-tooltip="On the Right!">right</a> and a tooltip at the
+           <a href="#" tooltip-placement="bottom" tink-tooltip="On the Bottom!">bottom</a>
+
+           <form role="form">
+            <div class="form-group">
+              <label>Or use custom triggers, like focus: </label>
+              <input type="text" value="Click me!" tink-tooltip="See? Now click away..."  tooltip-trigger="focus" tooltip-placement="right" class="form-control" />
+            </div>
+          </form>
+          <br/>
+        </div>
+
+
+        <div class="col-xs-12 col-md-9">
+          <textarea data-select-code="" rows="12" wrap="off"  class="selectcode">
+
+           A tooltip <a href="#" tooltip-placement="left" tink-tooltip="On the Left!">left</a> or a tooltip on the
+           <a href="#" tooltip-placement="right" tink-tooltip="On the Right!">right</a> and a tooltip at the
+           <a href="#" tooltip-placement="bottom" tink-tooltip="On the Bottom!">bottom</a>
+
+           <form role="form">
+            <div class="form-group">
+              <label>Or use custom triggers, like focus: </label>
+              <input type="text" value="Click me!" tink-tooltip="See? Now click away..."  tooltip-trigger="focus" tooltip-placement="right" class="form-control" />
+            </div>
+          </form>
+
+
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h3>Usage</h3>
+        <p>
+          To add a tooltip to a link element just add the "tink-tooltip" attribute to the element.
+          <textarea data-select-code="" rows="1" wrap="off"  class="selectcode">
+            <a tink-tooltip="See? Now click away..."> a link</a>
+          </textarea>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h3>Options</h3>
+        <div class="table-responsive">
+          <table class="table-dev">
+            <thead>
+              <tr>
+                <th>Attr</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>data-tooltip-placement</td>
+                <td><code>string</code></td>
+                <td><code>top</code></td>
+                <td>Where to place it, <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>.</td>
+              </tr>
+              <tr>
+                <td>data-tooltip-trigger</td>
+                <td><code>string</code></td>
+                <td><code>focus</code></td>
+                <td>What should trigger the show of the popover? <code>click</code>, <code>mouseenter</code>, <code>focus</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
