@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Changelog</h1>
+  <hr>
+  <div class="ui-timline-container">
+    <ul class="changelog list-unstyled">
+      <li class="changelog-item" data-ng-repeat="changelogItem in changelog">
+        <h2 class="h3">{{changelogItem.version}}<small data-ng-if="changelogItem.description"> {{changelogItem.description}}</small></h2>
+        <time class="badge">{{changelogItem.date}}</time>
+        <ul class="list-unstyled" data-ng-if="changelogItem.items">
+          <li data-ng-repeat="changelogItems in changelogItem.items">
+            <span class="badge {{changelogItems.type}}">{{changelogItems.type}}<span class="sr-only">: </span></span>
+            {{changelogItems.content}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="ui-timline-container">
+    <section class="ui-timeline" data-ng-repeat="timelineItem in timeline">
+        <article class="tl-item">
+          <div class="tl-body">
+            <div class="tl-entry">
+              <div class="tl-caption">
+                <span class="btn btn-primary btn-block">{{ timelineItem.type }}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item" data-ng-repeat="timelineItemLogs in timelineItem.logs" data-ng-class="{'alt' : (($parent.$index + $index) % 2 === 0) }">
+          <div class="tl-body">
+            <div class="tl-entry">
+              <div class="tl-time">{{ timelineItemLogs.date }}</div>
+              <div class="tl-icon round-icon sm bg-primary-light"><i class="fa" data-ng-class="{'fa-fast-forward' : timelineItem.type === 'next', 'fa-rotate-right fa-spin' : timelineItem.type === 'doing', 'fa-check' : timelineItem.type === 'Road to 1.0.0'}"></i></div>
+              <div class="tl-content">
+                <h4 class="tl-tile text-primary">{{ timelineItemLogs.title }}</h4>
+                <ul class="list-unstyled">
+                  <li data-ng-repeat="timelineItemLogItem in timelineItemLogs.items">{{ timelineItemLogItem }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+    </section>
+  </div>
+
+</div>

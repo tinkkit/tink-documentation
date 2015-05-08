@@ -1,0 +1,31 @@
+<div id="shame-content" data-ng-switch="subview" data-ng-controller="SidenavCtrl">
+
+  <!-- <aside data-ng-include=" 'views/sidenav.html' " id="shame-nav-container"></aside> -->
+
+  <div data-ng-switch-when="">
+    <div class="container">
+      <h1>Documentation</h1>
+      <hr>
+      <h2>Overview</h2>
+      <h2 class="h3"><a href="#/docs/grid">Grid</a></h2>
+      <h2 class="h3"><a href="#/docs/ui">UI Kit</a></h2>
+      <ul class="h4">
+        <li><a href="#/docs/ui/typography">Typography</a></li>
+        <li><a href="#/docs/ui/buttons">Buttons</a></li>
+        <li><a href="#/docs/ui/icons">Icons</a></li>
+        <li><a href="#/docs/ui/color">Color</a></li>
+        <li><a href="#/docs/ui/media">Media</a></li>
+      </ul>
+      <h2 class="h3"><a href="#/docs/tables">Tables</a></h2>
+      <h2 class="h3"><a href="#/docs/forms/elements">Forms</a></h2>
+      <ul class="h4">
+        <li><a href="#/docs/forms/elements">Elements</a></li>
+        <li><a href="#/docs/forms/validation">Validation</a></li>
+      </ul>
+      <h2 class="h3"><a href="#/docs/page-salga">SALGA Page</a></h2>
+    </div>
+  </div>
+  <div data-ng-switch-default>
+    <div data-ng-include="subview"></div>
+  </div>
+</div>

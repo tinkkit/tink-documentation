@@ -1,0 +1,236 @@
+<div class="container">
+  <h1>Media</h1>
+  <hr>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Image Styling</h1>
+    </header>
+    <div class="panel-body">
+
+      <!-- Default -->
+
+      <h3 class="shame-h2">Responsive images</h3>
+
+      <p>By default all images are set responsive.<br/>
+      If u don't want your image to be responsive, add the class <code>non-responsive</code> or give the image the desired width and height.</p>
+
+      <div class="callout">
+        <p>If u don't want your <b>SVG</b> image to be responsive, add the class <code>non-responsive</code> to the image <b>and</b> be sure to give it a width and height in the html code or in the source code of the image.</p>
+      </div>
+
+      <div class="row">
+        <p class="col-xs-12">
+          <hljs data-format="html">
+            //
+              <img alt="Tink logo" src="images/tink/tinkle.png" class="non-responsive" /> or
+            <img alt="Tink logo" src="images/tink/tinkle.png" width="120" height="120" />
+          </hljs>
+        </p>
+      </div>
+
+      <h3 class="shame-h2">Image styles</h3>
+
+      <div class="row">
+        <p class="col-xs-4 col-sm-3 col-md-2">
+          <img alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+        </p>
+        <div class="col-xs-12 col-sm-9 col-md-10">
+          <hljs data-format="html">
+            <img alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+          </hljs>
+        </div>
+      </div>
+
+
+      <!-- Styling -->
+
+      <div class="row">
+        <p class="col-xs-4 col-sm-3 col-md-2">
+          <img class="img-rounded" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+        </p>
+        <div class="col-xs-12 col-sm-9 col-md-10">
+          <hljs data-format="html">
+            <img class="img-rounded" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="col-xs-4 col-sm-3 col-md-2">
+          <img class="img-circle" alt="Circular Image" src="images/helpers/image-placeholder.bab924cf.svg" />
+        </p>
+        <div class="col-xs-12 col-sm-9 col-md-10">
+          <hljs data-format="html">
+            <img class="img-circle" alt="Circular Image" src="images/helpers/image-placeholder.bab924cf.svg" />
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="col-xs-4 col-sm-3 col-md-2">
+          <img class="img-thumbnail" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+        </p>
+        <div class="col-xs-12 col-sm-9 col-md-10">
+          <hljs data-format="html">
+            <img class="img-thumbnail" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" />
+          </hljs>
+        </div>
+      </div>
+
+
+      <!-- Helpers -->
+
+      <h3 class="shame-h2">Image style helpers</h3>
+
+      <p>Set an image left, right or centered in its parent container.</p>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <img class="pull-left non-responsive" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100">
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+<img class="pull-left non-responsive" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100"></hljdiv>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <img class="center-block non-responsive" alt="Circular Image" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100">
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+<img class="center-block non-responsive" alt="Circular Image" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100"></hljdiv>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <img class="pull-right non-responsive" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100">
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+<img class="pull-right non-responsive" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="100" height="100"></hljdiv>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+
+  <!-- Media object -->
+
+  <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Media Object</h1>
+    </header>
+    <div class="panel-body">
+
+      <p class="lead">Abstract object styles for building various types of components (like blog comments, Tweets, etc) that feature a left- or right-aligned image alongside textual content.</p>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Media heading</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="media">
+              <div class="pull-left">
+                <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+              </div>
+            </div>
+          </hljs>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Media heading</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+              <div class="media">
+                <div class="pull-left">
+                  <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Nested media heading</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="media">
+              <div class="pull-left">
+                <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+                <div class="media">
+                  <div class="pull-left">
+                    <img class="media-object" alt="Placeholder" src="images/helpers/image-placeholder.bab924cf.svg" width="64" height="64">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Nested media heading</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit diam ut auctor pellentesque. Cras quis interdum neque.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </hljs>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Responsive video -->
+  <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Responsive wrapper</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p class="lead">A responsive wrapper for video or other content so it behaves fluid and responsive towards various viewport sizes. Resize your browser to see it in action.</p>
+          <div class="responsive-wrapper">
+            <iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/0uaquGZKx_0" width="853" height="480"></iframe>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <!-- Highlight JS doesn't work with <iframe>. the code is shown, but the other iframe dissapears. -->
+          <hljs data-format="html">
+            <div class="responsive-wrapper">
+              &lt;iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/mHyRCeKxhss" width="853" height="480"&gt;&lt;/iframe&gt;
+            </div>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

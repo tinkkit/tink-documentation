@@ -1,0 +1,85 @@
+<div class="container" data-ng-controller="formValidationPart1Ctrl">
+  <h1>Forms</h1>
+  <hr>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Forms als geheel</h1>
+    </header>
+    <div class="panel-body">
+      <p>Laten we een kat een kat noemen: forms zijn een vreselijke pest. Ze staan tussen ons en de dingen die we willen. Op het web zijn ze echter nog steeds één van de meest gebruikte manieren om concrete informatie van een gebruiker te capteren, en spijtig genoeg meteen ook één van de grootste frustraties van de surfende medemens. Een noodzakelijk kwaad, dus. Reden te meer om er alles aan te doen om de frustratie bij een gebruiker te beperken, en onze forms zo simpel, helder en duidelijk mogelijk te maken.</p>
+
+      <h2 class="h3">Layout</h2>
+      <p class="callout"><strong>TL;DR</strong> Een verticale layout vergemakkelijkt het invullen van web forms.</p>
+      <p>Gebruiksvriendelijkheid is allesbehalve een exacte wetenschap, en vaak vooral afhankelijk van de context: een e-commerce sign up form heeft een andere functie dan een aankoop form in een complexe business applicatie. Er zijn echter een aantal best practices die algemeen gelden.</p>
+      <p>Flow is één van de belangrijkste zaken om mee rekening te houden bij het ontwerpen van formulieren: niet alleen de visuele flow, maar ook de flow van de taak. Een formulier is een taak voor de gebruiker, eentje waar hij zo vlot en frictieloos mogelijk doorheen wil. Zo is een verticaal georiënteerde layout gebruiksvriendelijker dan een meer horizontale, omdat er minder contactpunten nodig zijn om elk veld op een correcte manier in te vullen.</p>
+      <p>
+        <figure>
+          <img src="images/ux/horizontale-layout.33486ff9.png" alt="Horizontale layout" class="non-responsive" />
+          <figcaption>Horizontale layout</figcaption>
+        </figure>
+      </p>
+      <p>
+        <figure>
+          <img src="images/ux/verticale-layout.878d118b.png" alt="Verticale layout" class="non-responsive" />
+          <figcaption>Verticale layout</figcaption>
+        </figure>
+      </p>
+      <p>Door de combinatie van labels die links boven het input field gealigneerd staan en velden die onderling links gealigneerd staan, is het volledige formulier makkelijker visueel te scannen en dus ook makkelijker ingevuld. De “verzenden” knop die onderaan ook links gealigneerd staat, zorgt voor een visueel eindpunt.</p>
+      <p><a href="http://www.slideshare.net/jwegesin/forms-suck/26" title="Forms Suck" rel="external" target="_blank">Meer weten?</a></p>
+
+      <h2 class="h3">Kolommen</h2>
+      <p class="callout"><strong>TL;DR</strong> Gebruik 1 kolom voor je web form, maar er zijn uitzonderingen.</p>
+      <p>Omwille van de argumentatie hierboven is het interessant om de velden van een gemiddeld form in één kolom onder elkaar te zetten. Zo nemen ze meer verticale ruimte in en wordt de kans op scrollen natuurlijk groter, maar scrollen is voor vele gebruikers allang <em>second nature</em> geworden en het web is zich de laatste jaren meer en meer verticaal gaan oriënteren.</p>
+      <p>Er zijn echter situaties waarin het wel degelijk opportuun is om meer dan één kolom te gebruiken. Als er verschillende velden zijn voor data die inhoudelijk sterk samenhangt, is het gebruiksvriendelijker om deze naast elkaar te plaatsen.</p>
+      <p>
+        <figure>
+          <img src="images/ux/kolommen.b31a2e2b.png" alt="Kolommen" class="non-responsive" />
+          <figcaption>In dit voorbeeld is de data zodanig verwant dat het zelfs niet nodig is om 2 labels te plaatsen: de vermelding “naam” geldt voor beide velden, en de placeholders in de inputs verduidelijken welke data in welke input thuishoort.</figcaption>
+        </figure>
+      </p>
+
+      <h2 class="h3">Inhoudelijk opsplitsen</h2>
+      <p class="callout"><strong>TL;DR</strong> Groepeer velden die gelijkaardige data vragen voor groter visueel onderscheid.</p>
+      <p>Het gebruikte voorbeeld hierboven kan nog verder geoptimaliseerd worden. Als we de velden inhoudelijk groeperen en visueel opsplitsen door gebruik te maken van tussentitels wordt het formulier nog gebruiksvriendelijker. Hierbij geldt het principe van <a href="http://www.usability.gov/what-and-why/glossary/gestalt-principles.html" title="Gestalt Principles | Usability.gov" rel="external" target="_blank">Gestalt</a>, een begrip uit de psychologie dat dicteert dat mensen grotere aantallen gelijkaardige voorwerpen zien als groepen. Het opsplitsen van deze groepen kan gebeuren op basis van kleur, vorm, nabijheid of andere visuele factoren.</p>
+      <p>
+        <figure>
+          <img src="images/ux/gestalt.8511c05c.png" alt="Gestalt" class="non-responsive" />
+          <figcaption>In dit voorbeeld zie je geen 20 blauwe bollen, je ziet 2 groepen blauwe bollen. Pas in tweede instantie zal je de individuele bollen waarnemen of tellen.</figcaption>
+        </figure>
+      </p>
+      <p>Op basis hiervan kan het voorbeeldformulier nog beter. We kunnen de aanwezige velden opsplitsen in 2 groepen: persoonsgegevens en profielgegevens.</p>
+      <p>
+        <figure>
+          <img src="images/ux/gestalt-form.53cd2355.png" alt="Formulier geoptimaliseerd volgens het principe van Gestalt" class="non-responsive" />
+        </figure>
+      </p>
+      <p><a href="http://www.nngroup.com/articles/form-design-white-space/" title="Group Form Elements Effectively Using White Space" rel="external" target="_blank">Meer weten?</a></p>
+
+      <h2 class="h3">Een paar bijkomende elementen</h2>
+      <p>Wanneer we een aantal velden groeperen tot een web form zijn er een aantal bijkomende atomen nodig om de template compleet en functioneel te maken.</p>
+      <ol>
+        <li>
+          <h3 class="h4">Verzenden en annuleren</h3>
+          <p>Deze buttons staan links onderaan gealigneerd voor betere leesbaarheid. Duidelijk visueel onderscheid tussen de grote blauwe knop en de tekstlink om de primaire actie ook zonder woorden of kleuren nog te kunnen identificeren van de secundaire.</p>
+        </li>
+        <li>
+          <h3 class="h4">Aanduiding verplichte velden</h3>
+          <p>Er moet een onderscheid gemaakt worden tussen velden die vrijblijvend kunnen worden ingevuld en velden die verplicht zijn - deze laatste vormen namelijk een blokkerende factor wanneer een gebruiker op verzenden klikt, zonder ze eerst correct te hebben ingevuld. Het rode sterretje (<span class="text-danger">*</span>) is een element dat ondertussen al zo lang bestaat en zo universeel wordt toegepast dat het een conventie is geworden, zolang het vergezeld wordt van de vermelding “velden gemarkeerd met (<span class="text-danger">*</span>) zijn verplicht”.</p>
+          <p>Als alle velden in een formulier verplicht zijn, hoef je niet bij elk veld een een sterretje te plaatsen en volstaat het om dit bovenaan het formulier te vermelden.</p>
+        </li>
+        <li>
+          <h3 class="h4">Meerdere errors</h3>
+          <p>Wanneer er bij een lang formulier meerdere errors tegelijk worden getriggerd, moet er niet alleen bij de velden in kwestie feedback over de mislukte validatie verschijnen (rode rand, icoon, foutboodschap), maar ook bovenaan.</p>
+          <p>
+            <figure>
+              <img src="images/ux/meerdere-errors.a5d3e269.png" alt="Meerdere errors" class="non-responsive" />
+            </figure>
+          </p>
+          <p>Dit blok moet alle voorkomende errors oplijsten, vertellen wat er mis is, en anchor links bevatten naar elke error, voor het geval ze ver uit elkaar staan.</p>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+</div>
