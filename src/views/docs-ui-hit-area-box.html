@@ -1,0 +1,104 @@
+<div class="container">
+
+  <h1>Hit area box</h1>
+  <hr>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <span class="panel-title">Hit area checkbox</span>
+    </header>
+    <div class="panel-body">
+      <p>
+      The main difference between a Hit area checkbox and a basic one is the styling and the fact that it's clickable on its full width. <br/>
+      Since it should be used in a list context, the <code>hit-area-box</code> class can only be applied on an <code>ul</code>.
+      </p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 form-group">
+            <ul class="hit-area-box">
+              <li>
+                <input type="checkbox" id="checkbox1" name="checkbox11" value="" checked>
+                <label for="checkbox1">Option one</label>
+              </li>
+              <li>
+                <input type="checkbox" id="checkbox2" name="checkbox12" value="">
+                <label for="checkbox2">Option two is a very long option, so we can see its behaviour when too much text is used for the label.</label>
+              </li>
+              <li>
+                <input type="checkbox" id="checkbox3" name="checkbox13" value="" disabled>
+                <label for="checkbox3">Option three is disabled</label>
+              </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="form-group">
+                <ul class="hit-area-box">
+                  <li>
+                    <input type="checkbox" id="checkbox1" name="checkbox1" value="" checked>
+                    <label for="checkbox1">Option one</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="checkbox2" name="checkbox2" value="">
+                    <label for="checkbox2">Option two is a very long option, so we can see its behaviour when too much text is used for the label.</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="checkbox3" name="checkbox3" value="" disabled>
+                    <label for="checkbox3">Option three is disabled</label>
+                  </li>
+                </ul>
+            </div>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <span class="panel-title">Hit area radio button</span>
+    </header>
+    <div class="panel-body">
+      <p>
+      Just like in the checkbox version, the Hit area radio button needs to be used on an <code>ul</code>.
+      </p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 form-group">
+            <ul class="hit-area-box">
+              <li>
+                <input type="radio" id="radio1" name="radio11" value="" checked>
+                <label for="radio1">Option one</label>
+              </li>
+              <li>
+                <input type="radio" id="radio2" name="radio11" value="">
+                <label for="radio2">Option two is a very long option, so we can see its behaviour when too much text is used for the label.</label>
+              </li>
+              <li>
+                <input type="radio" id="radio3" name="radio11" value="" disabled>
+                <label for="radio3">Option three is disabled</label>
+              </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <hljs data-format="html">
+            <div class="form-group">
+                <ul class="hit-area-box">
+                  <li>
+                    <input type="radio" id="radio1" name="radio1" value="" checked>
+                    <label for="radio1">Option one</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="radio1" name="radio1" value="">
+                    <label for="radio2">Option two is a very long option, so we can see its behaviour when too much text is used for the label.</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="radio3" name="radio1" value="" disabled>
+                    <label for="radio3">Option three is disabled</label>
+                  </li>
+                </ul>
+            </div>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
