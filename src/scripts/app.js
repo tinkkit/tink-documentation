@@ -71,6 +71,9 @@
     templateUrl: 'views/shame.html',
     controller: 'ShameCtrl'
   })
+  .when('/docs/themes', {
+    redirectTo: '/docs/themes/stad',
+  })
   .otherwise({
     redirectTo: '/'
   });
