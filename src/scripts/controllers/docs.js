@@ -53,27 +53,27 @@
   };
 
   // Indeterminate checkbox data
-  $scope.selectedIds =[];
+  $scope.selectedIds =[4];
   $scope.data= [
     {
       id: 1,
       name: 'België',
-      selected: false,
-      childs: [
+      children: [
         {
           id: 2,
-          name: 'Antwerpen',
-          selected: false
+          name: 'Antwerpen'
         },
         {
           id: 3,
           name: 'Vlaams-brabant',
-          selected: true,
-          childs: [
+          children: [
             {
               id: 4,
-              name: 'Leuven',
-              selected: true
+              name: 'Leuven'
+            },
+            {
+              id: 5,
+              name: 'Tienen'
             }
           ]
         }
