@@ -44,18 +44,20 @@
   }
 }
 
+.btn-transparent {
+  background-color: transparent;
+  color: $white;
+  font-weight: normal;
+
+  &:hover {
+    background-color: $nav-top-link-bg-hover-color;
+    color: $white;
+  }
+}
+
 .theme-switch {
   display: table-row;
-  // display: inline-table;
-  // font-size: rem($font-size-small);
   position: relative;
-  // font-size: 4px;
-
-  .link {
-    font-size: rem($font-size-small);
-    line-height: 1 !important;
-    margin-bottom: 0;
-  }
 
   select {
     height: 50%;
@@ -63,21 +65,22 @@
     left: rem($nav-top-padding / 2);
     opacity: .01;
     position: absolute;
-    right: rem($nav-top-padding / 2);
+    right: 0;
+    // right: rem($nav-top-padding / 2);
     top: 25%;
     width: auto;
 
     &:hover {
       cursor: pointer;
 
-      + a.link {
+      + .btn-transparent {
         background-color: $nav-top-link-bg-hover-color;
         color: $nav-top-link-hover-color;
       }
     }
 
     &:focus {
-      + a.link {
+      + .btn-transparent {
         background-color: $nav-top-link-bg-hover-color;
         color: $nav-top-link-hover-color;
       }
