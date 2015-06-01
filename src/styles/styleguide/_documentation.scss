@@ -17,7 +17,18 @@
  * Variables
  */
 
-// $tink-green: #47b19d;
+$tink-yellow: #fff176;
+$tink-orange: #ffb74d;
+$tink-red: #ff8a65;
+$tink-blue: #81d4fa;
+$tink-cyan: #80deea;
+$tink-teal: #80cbc4;
+$tink-lime: #d4e157;
+$tink-grass: #c5e1a5;
+$tink-green: #a5d6a7;
+$tink-purple: #ce93d8;
+$tink-pink: #f8bbd0;
+$tink-brown: #a1887f;
 
 
 
@@ -465,4 +476,48 @@ p.sg-swatch-m {
       color: $gray-light !important;
     }
   }
+}
+
+
+
+/**
+ * MD docs
+ */
+.md {
+  padding: rem(24 0);
+
+  .container {
+    padding: rem(0 32 12);
+  }
+
+  h1 {
+    font-size: rem(32);
+    // font-weight: 600;
+  }
+
+  h2 {
+    font-size: rem(24);
+    // font-weight: 600;
+  }
+
+  h3 {
+    font-size: rem(16);
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: rem(15);
+    font-weight: 600;
+  }
+}
+
+.af {
+  overflow: auto;
+}
+
+.nav-md {
+  background: #ebebeb;
+  margin-top: 0 !important;
+  padding-left: rem(24);
+  padding-right: rem(24);
 }

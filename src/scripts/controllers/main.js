@@ -13,7 +13,7 @@
 
   // Show or hide sidenav
   $scope.$on('$locationChangeStart', function() {
-    if($location.$$path === '/') {
+    if($location.path() === '/') {
       // Close the sidenav
       if($scope.sidenav.visible === true) {
         tinkApi.sideNavToggle.closeById('sideNav1');

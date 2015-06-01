@@ -8,14 +8,20 @@
  * Controller of the tinkApp
  */
  angular.module('tinkApp')
- .controller('DocsCtrl', function ($scope, $routeParams) {
+ .controller('DocsCtrl', function ($scope, $location, $routeParams, $document, stickyService) {
 
   // --- Define Controller Variables. ----------------- //
   var subpage = '';
   var subsubpage = '';
+  var subsubsubpage = '';
+  var activeURLs = ['directives', 'themes'];
 
   // --- Define Scope Variables. ---------------------- //
   $scope.subview = '';
+  $scope.showTabMenu = false;
+  $scope.tabview = '';
+  $scope.location = '#'+$location.path();
+  // console.log($scope.location);
 
   // --- Bind To Scope Events. ------------------------ //
 
@@ -29,12 +35,34 @@
       // Check for subsubpage
       if ($routeParams.subsubpage !== undefined) {
         subsubpage = $routeParams.subsubpage;
+
+        // Show the tab bar if the subpage is in the active URLs list
+        if(activeURLs.indexOf(subpage) !== -1) {
+          $scope.showTabMenu = true;
+        }
+
+        // Check if there's another tabview that needs display
+        if($location.hash() !== '') {
+          subsubsubpage = $location.hash();
+          $scope.tabview = subsubsubpage;
+
+        } // else {
+        //   $scope.tabview = 'readme';
+        // }
         $scope.subview = 'views/docs-' + subpage + '-' + subsubpage + '.html';
+
       } else {
         $scope.subview = 'views/docs-' + subpage + '.html';
       }
     }
   }
+
+  // VERY dirty fix!
+  $document.ready(function(){
+    setTimeout(function() {
+      stickyService.update();
+    }, 300);
+  });
 
   // --- Define Scope Methods. ------------------------ //
 

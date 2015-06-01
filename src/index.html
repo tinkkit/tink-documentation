@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js has-nav-left has-alternate-background {{theme.active}}" data-ng-class="{'front-page': !sidenav.visible}" data-ng-app="tinkApp" data-ng-controller="MainCtrl">
+<html class="no-js has-nav-left {{theme.active}}" data-ng-class="{'front-page': !sidenav.visible}" data-ng-app="tinkApp" data-ng-controller="MainCtrl">
  <head>
     <meta charset="utf-8">
     <title>Tink documentation</title>
@@ -27,8 +27,8 @@
 
   <div data-tink-nav-aside data-auto-select="true" data-toggle-id="sideNav1" data-ng-include=" 'views/sidenav.html' " class="nav-left nav-aside"></div>
 
-  <div>
-    <div class="main" role="main" data-ng-view="" data-autoscroll="true"></div>
+  <div style="position:relative">
+    <div class="main" role="main" data-ng-view="" data-autoscroll="true" style="position:absolute;top:0;width: 100%;"></div>
   </div>
 
 
@@ -70,6 +70,10 @@
   <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
   <script src="bower_components/tink-upload-angular/dist/tink-upload-angular.js"></script>
   <script src="bower_components/tink-timepicker-angular/dist/tink-timepicker-angular.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="bower_components/angular-md/dist/angular-md.js"></script>
+  <script src="bower_components/tink-stick-to-top-angular/dist/tink-stick-to-top-angular.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

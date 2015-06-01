@@ -7,3 +7,22 @@
 .jumbotron {
   background-image: image-url('main/bg-politie.jpg');
 }
+
+.md {
+
+  h1 {
+    color: $tink-purple;
+  }
+
+  h2 {
+    color: $tink-pink;
+  }
+
+  h3 {
+    color: $gray;
+  }
+
+  h4 {
+    color: $gray-dark;
+  }
+}
