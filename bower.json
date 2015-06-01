@@ -36,7 +36,7 @@
     "tink-range-datepicker-angular": "latest",
     "tink-upload-angular": "latest",
     "tink-timepicker-angular": "latest",
-    "tink-api-javascript": "file:///Users/trianglejuice/Sites/Work/DUX/Tink/tink-api-javascript/.git#test",
+    "tink-api-javascript": "latest",
     "angular-md": "~1.0.0",
     "tink-stick-to-top-angular": "~1.0.0"
   },
