@@ -208,12 +208,22 @@ $tink-brown: #a1887f;
  * --------------------------------
  */
 
-h1.d {
-  margin-top: rem(32);
-}
+md {
+  h1:first-child {
+    display: none;
+  }
 
-h2.d {
-  margin-top: rem(24);
+  &.md {
+    h1:first-child {
+      + p {
+        background: $brand;
+        border-radius: $border-radius-base;
+        color: $white;
+        display: inline-block;
+        padding: rem(2 6);
+      }
+    }
+  }
 }
 
 .panel-docs {
@@ -225,6 +235,26 @@ h2.d {
 
   @include mq($screen-md) {
     margin: rem(32);
+  }
+
+  h1:not(.ignore) {
+    font-size: rem(32);
+    margin-top: rem(32);
+  }
+
+  h2:not(.ignore) {
+    font-size: rem(24);
+    margin-top: rem(24);
+  }
+
+  h3:not(.ignore) {
+    font-size: rem(16);
+    font-weight: 600;
+  }
+
+  h4:not(.ignore) {
+    font-size: rem(15);
+    font-weight: 600;
   }
 }
 
@@ -444,37 +474,8 @@ p.sg-swatch-m {
  * MD docs
  */
 
-// .d {
-//   padding: rem(24 0);
-// }
-
-//   .container {
-//     padding: rem(0 32 12);
-//   }
-// }
-
 .tab-view {
   padding: rem(24 0 0);
-}
-
-.panel-docs {
-  h1:not(.ignore) {
-    font-size: rem(32);
-  }
-
-  h2:not(.ignore) {
-    font-size: rem(24);
-  }
-
-  h3:not(.ignore) {
-    font-size: rem(16);
-    font-weight: 600;
-  }
-
-  h4:not(.ignore) {
-    font-size: rem(15);
-    font-weight: 600;
-  }
 }
 
 .nav-docs {
