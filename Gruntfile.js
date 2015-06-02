@@ -11,13 +11,29 @@ module.exports = function (grunt) {
   // Check for a new version
   var currentversion = require('./bower_components/tink-core/bower.json').version;
 
+
+
+  var prodComponents = Object.keys(grunt.file.readJSON('./bower.json').dependencies).filter(
+      function(prodComponent) {
+        if(prodComponent.substr(0, 5) === 'tink-'){
+          return true;
+        }
+        return false;
+      }
+    ).map(
+      function(prodComponent) {
+          return prodComponent + "/*.md";
+      }
+  );
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'src',
     dist: 'dist',
     version: currentversion,
     module: require('./package.json').name,
-    domain: 'tink.documentation'
+    domain: 'tink.documentation',
+    tinkReadme:prodComponents
   };
 
   // Define the configuration for all the tasks
@@ -242,6 +258,14 @@ module.exports = function (grunt) {
       //     }
       //   ]
       // },
+       dependenciesMd:{
+        files: [{
+            expand: true,
+            cwd: 'bower_components',
+            src: '<%= yeoman.tinkReadme %>',
+            dest: '<%= yeoman.app %>/markdown'
+        }]
+      },
       dist: {
         files: [
           {
@@ -254,6 +278,7 @@ module.exports = function (grunt) {
               '.htaccess',
               '*.html',
               'views/{,*/}*.html',
+            'markdown/{,*/}*.md',
               'images/{,*/}*.{webp}',
               'fonts/*'
             ]
@@ -519,6 +544,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'copy:dependenciesMd',
       'wiredep',
       'concurrent:server',
       'replace:liveRev',
@@ -538,6 +564,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'copy:dependenciesMd',
     'replace:md',
     'replace:html',
     'wiredep',
