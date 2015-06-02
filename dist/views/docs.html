@@ -1,8 +1,8 @@
-<div id="shame-content" data-ng-switch="subview" data-ng-controller="SidenavCtrl">
+<div data-ng-switch="subview" data-ng-class="{md: showTabMenu}">
 
   <!-- <aside data-ng-include=" 'views/sidenav.html' " id="shame-nav-container"></aside> -->
 
-  <div data-ng-switch-when="">
+<!--   <div data-ng-switch-when="">
     <div class="container">
       <h1>Documentation</h1>
       <hr>
@@ -24,8 +24,16 @@
       </ul>
       <h2 class="h3"><a href="#/docs/page-salga">SALGA Page</a></h2>
     </div>
-  </div>
+  </div> -->
   <div data-ng-switch-default>
+    <div data-tink-sticky data-ng-if="showTabMenu">
+      <ul class="nav-tabs nav-lg nav-md">
+        <li role="presentation" data-ng-class="{active: tabview===''}"><a data-ng-href="{{location}}">Read me</a></li>
+        <li role="presentation" data-ng-class="{active: tabview==='example'}"><a data-ng-href="{{location}}#example">Example</a></li>
+        <li role="presentation" data-ng-class="{active: tabview==='changelog'}"><a data-ng-href="{{location}}#changelog">Changelog</a></li>
+      </ul>
+    </div>
+
     <div data-ng-include="subview"></div>
   </div>
 </div>

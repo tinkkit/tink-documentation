@@ -11,9 +11,14 @@
 </ul>
 
 <section class="nav-top-section">
+  <ul class="nav-top-section-left" data-ng-if="!sidenav.visible">
+    <li>
+      <a class="btn btn-xs btn-transparent" href="#/start" role="button">Lees de documentatie</a>
+    </li>
+  </ul>
   <ul class="nav-top-section-right">
     <li>
-      <a class="btn btn-xs btn-primary" href="mailto:tink@digipolis.be" role="button">Geef feedback</a>
+      <a class="btn-xs btn-primary" href="mailto:tink@digipolis.be" role="button">Geef feedback</a>
     </li>
     <li class="theme-switch">
       <select data-theme-switcher>
@@ -22,8 +27,7 @@
         <option value="ocmw">OCMW</option>
         <option value="politie">Politie</option>
       </select>
-      <!-- <a class="btn btn-xs" href="mailto:tink@digipolis.be" role="button">Geef feedback</a> -->
-      <a class="link" href="" role="listbox" aria-hidden="true" tabindex="-1">Wijzig stijl…</a>
+      <a class="btn btn-xs btn-transparent" href="" role="listbox" aria-hidden="true" tabindex="-1">Wijzig stijl…</a>
     </li>
   </ul>
 </section>

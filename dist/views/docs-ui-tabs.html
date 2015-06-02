@@ -1,8 +1,66 @@
 <div class="container">
-  <h1>Tables</h1>
+  <h1>Tabs</h1>
   <hr>
 
   <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Normal tabs</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 margin-bottom">
+          <ul class="nav-tabs">
+            <li role="presentation" class="active"><a href="">Tabs</a></li>
+            <li role="presentation"><a href="">Are</a></li>
+            <li role="presentation"><a href="">Cool</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12">
+          <hljs data-format="html">
+            <ul class="nav-tabs">
+              <li role="presentation" class="active"><a href="">Tabs</a></li>
+              <li role="presentation"><a href="">Are</a></li>
+              <li role="presentation"><a href="">Cool</a></li>
+            </ul>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <h1 class="panel-title">Large tabs</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 margin-bottom">
+          <ul class="nav-tabs nav-lg">
+            <li role="presentation"><a href="">Large</a></li>
+            <li role="presentation" class="active"><a href="">Tabs</a></li>
+            <li role="presentation"><a href="">Are</a></li>
+            <li role="presentation"><a href="">Cool</a></li>
+            <li role="presentation"><a href="">Too</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12">
+          <hljs data-format="html">
+            <ul class="nav-tabs nav-lg">
+            <li role="presentation"><a href="">Large</a></li>
+              <li role="presentation" class="active"><a href="">Tabs</a></li>
+              <li role="presentation"><a href="">Are</a></li>
+              <li role="presentation"><a href="">Cool</a></li>
+            <li role="presentation"><a href="">Too</a></li>
+            </ul>
+          </hljs>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <section class="panel">
     <header class="panel-heading">
       <h1 class="panel-title">Basic table</h1>
     </header>
@@ -441,112 +499,6 @@
           </hljs>
         </div>
       </div>
-      <hr>
-      <p>Sometimes there's just so much information to display that your table needs to be responsive on any resolution. If that's the case, you can use <code>.table-force-responsive</code>.</p>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="table-force-responsive">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Street + Nr</th>
-                  <th>Postal Code + City</th>
-                  <th>Country</th>
-                  <th>Bio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Jasper</td>
-                  <td>Van Proeyen</td>
-                  <td>@trianglejuice</td>
-                  <td>Kolonel Silvertoplaan 1</td>
-                  <td>2018 Antwerpen</td>
-                  <td>Belgium</td>
-                  <td>Dad and hubby, (web) designer, musician (piano & drums), Apple addict, snowboarder, [ the list goes on ] …</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Tom</td>
-                  <td>Wuyts</td>
-                  <td>@pxlpanic</td>
-                  <td>Kolonel Silvertoplaan 1</td>
-                  <td>2018 Antwerpen</td>
-                  <td>Belgium</td>
-                  <td>music geek, tinkerer, grumpy bear. user experience designer @ digipolis antwerp</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Kevin</td>
-                  <td>De Mulder</td>
-                  <td>@clopin</td>
-                  <td>Kolonel Silvertoplaan 1</td>
-                  <td>2018 Antwerpen</td>
-                  <td>Belgium</td>
-                  <td>UX team lead & In-house Entrepreneur for the City of Antwerp @dgplsantwerpen</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <hljs data-format="html">
-            <div class="table-force-responsive">
-              <table>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th>Street + Nr</th>
-                    <th>Postal Code + City</th>
-                    <th>Country</th>
-                    <th>Bio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Jasper</td>
-                    <td>Van Proeyen</td>
-                    <td>@trianglejuice</td>
-                    <td>Kolonel Silvertoplaan 1</td>
-                    <td>2018 Antwerpen</td>
-                    <td>Belgium</td>
-                    <td>Dad and hubby, (web) designer, musician (piano & drums), Apple addict, snowboarder, [ the list goes on ] …</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Tom</td>
-                    <td>Wuyts</td>
-                    <td>@pxlpanic</td>
-                    <td>Kolonel Silvertoplaan 1</td>
-                    <td>2018 Antwerpen</td>
-                    <td>Belgium</td>
-                    <td>music geek, tinkerer, grumpy bear. user experience designer @ digipolis antwerp</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Kevin</td>
-                    <td>De Mulder</td>
-                    <td>@clopin</td>
-                    <td>Kolonel Silvertoplaan 1</td>
-                    <td>2018 Antwerpen</td>
-                    <td>Belgium</td>
-                    <td>UX team lead & In-house Entrepreneur for the City of Antwerp @dgplsantwerpen</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </hljs>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -742,5 +694,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

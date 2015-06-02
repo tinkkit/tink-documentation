@@ -99,20 +99,6 @@ $tink-brown: #a1887f;
   }
 }
 
-.toggle {
-  transition: opacity $animation-speed linear;
-
-  &.ng-enter,
-  &.ng-leave.ng-leave-active {
-    opacity: 0;
-  }
-
-  &.ng-leave,
-  &.ng-enter.ng-enter-active {
-    opacity: 1;
-  }
-}
-
 
 
 
@@ -222,54 +208,28 @@ $tink-brown: #a1887f;
  * --------------------------------
  */
 
-.reset-padding {
-  .nav-left {
-    @include mq($screen-sm) {
-      transform: translate(rem(-$nav-aside-width), 0);
-    }
+.panel-docs {
+  margin: rem(16 0 0);
+
+  @include mq($screen-sm) {
+    margin: rem(24);
+  }
+
+  @include mq($screen-md) {
+    margin: rem(32);
+  }
+
+  > h1 {
+    margin-top: rem(32);
+  }
+
+  > h2 {
+    margin-top: rem(24);
   }
 }
 
 .panel-body-highlight {
   background: $gray-lighter;
-}
-
-.row-or {
-  $row-or-color: darken($gray-lighter, 8%);
-
-  @include mq($screen-md, "max") {
-    &>div {
-      &:first-child {
-        padding-bottom: .5 * $grid-gutter-width;
-      }
-    }
-  }
-
-  @include mq($screen-md) {
-    position: relative;
-
-    &:before {
-      background: $row-or-color;
-      bottom: 0;
-      content: '';
-      display: block;
-      height: 100%;
-      left: 50%;
-      position: absolute;
-      top: 0;
-      width: 1px;
-      z-index: layer('pseudo');
-    }
-
-    &>div {
-      &:first-child {
-        padding-right: 1.25 * $grid-gutter-width;
-      }
-      &:last-child {
-        padding-left: 1.25 * $grid-gutter-width;
-      }
-    }
-  }
 }
 
 .step-4-done {
