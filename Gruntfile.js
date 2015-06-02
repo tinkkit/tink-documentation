@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 
 
 
-  var prodComponents = Object.keys(grunt.file.readJSON('./bower.json').dependencies).filter(
+  var prodComponents = Object.keys(grunt.file.readJSON('./bower.json').dependencies).concat(Object.keys(grunt.file.readJSON('./bower.json').devDependencies)).filter(
       function(prodComponent) {
         if(prodComponent.substr(0, 5) === 'tink-'){
           return true;
