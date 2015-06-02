@@ -60,10 +60,6 @@
     templateUrl: 'views/docs.html',
     controller: 'DocsCtrl'
   })
-  // .when('/docs/:subpage/:subsubpage/:subsubsubpage', {
-  //   templateUrl: 'views/docs.html',
-  //   controller: 'DocsCtrl'
-  // })
   .when('/changelog', {
     templateUrl: 'views/changelog.html',
     controller: 'ChangelogCtrl'
@@ -80,10 +76,13 @@
     redirectTo: '/docs/themes/stad',
   })
   .otherwise({
-    // redirectTo: '/'
+    redirectTo: '/'
   });
 
-  // $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
   // $locationProvider.hashPrefix('!');
 }).config(function (hljsServiceProvider) {
   hljsServiceProvider.setOptions({

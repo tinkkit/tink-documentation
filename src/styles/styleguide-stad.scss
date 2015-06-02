@@ -4,8 +4,6 @@
 @import "../../bower_components/tink-theme-stad/dist/stad/variables";
 @import "styleguide/styleguide";
 
-
-
 .jumbotron {
   background-image: image-url('main/bg-stad.jpg');
 
@@ -14,20 +12,18 @@
   }
 }
 
-// .md {
-  h1 {
-    color: $tink-teal;
-  }
+h1.d {
+  color: $tink-teal;
+}
 
-  h2 {
-    color: $tink-lime;
-  }
+h2.d {
+  color: $tink-lime;
+}
 
-  h3 {
-    color: $gray;
-  }
+h3.d {
+  color: $gray;
+}
 
-  h4 {
-    color: $gray-dark;
-  }
-// }
+h4.d {
+  color: $gray-dark;
+}

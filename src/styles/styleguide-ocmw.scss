@@ -8,21 +8,18 @@
   background-image: image-url('main/bg-ocmw.jpg');
 }
 
-// .md {
+h1.d {
+  color: $tink-blue;
+}
 
-  h1 {
-    color: $tink-blue;
-  }
+h2.d {
+  color: $tink-grass;
+}
 
-  h2 {
-    color: $tink-grass;
-  }
+h3.d {
+  color: $gray;
+}
 
-  h3 {
-    color: $gray;
-  }
-
-  h4 {
-    color: $gray-dark;
-  }
-// }
+h4.d {
+  color: $gray-dark;
+}
