@@ -1,114 +1,92 @@
 <div class="container">
 
-  <h1>Getting Started</h1>
-  <hr>
+  <section class="panel-docs">
+    <h1>Getting started</h1>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Download latest version</h1>
-    </header>
-    <div class="panel-body">
-      <div class="row row-or">
-        <div class="col-md-6">
-          <h2 class="h4">Option 1: Bower (recommended)</h2>
-          <p>Navigate to your project via the command line and run the following command:</p>
-          <hljs data-format="bash">bower install tink --save</hljs>
-          <p class="callout">Note that this command requires you to have <a href="http://bower.io" title="Bower" rel="external" target="_blank">Bower</a> installed.</p>
-        </div>
-        <div class="col-md-6">
-          <h2 class="h4">Option 2: Manual download</h2>
-          <p>Press the button to download all the necessary files.</p>
-          <p>
-            <a href="/releases/tink-1.2.5.zip" class="btn btn-primary" role="button"><i class="fa fa-fw fa-download"></i> Download Tink <small>(v<!--@@-->1.2.3<!--@-->)</small></a>
-          </p>
-          <p class="callout">Note that the manual option requires more setup (see below).</p>
-        </div>
-      </div>
-    </div>
+    <h2>Core styling</h2>
+    <p>To install the basic version of Tink (styling only), navigate to your project via the command line and run the following command:</p>
+    <hljs data-format="bash">bower install tink --save</hljs>
+    <p class="callout">Note that this command requires you to have <a href="http://bower.io" title="Bower" rel="external" target="_blank">Bower</a> installed.</p>
+    <p>A complete overview of the styling elements can be found in the <a href="#/docs/ui">styling kit</a> section.</p>
+
+    <h2>Components</h2>
+    <p>For now all Tink components rely on AngularJS and are built as separate directives. Every component can be installed separately via Bower.</p>
+    <p class="callout">Make sure to carefully read the instructions, because the installation process differs depending which component you're installing.</p>
+    <p>A complete list of all the directives can be found in the <a href="#/docs/directives">directives</a> section.</p>
+
+    <h2>Themes</h2>
+    <p>If you prefer to use one of our themes instead of the default Tink styling, you can just replace the core with one of our themes.</p>
+    <p>Check out the <a href="#/docs/themes">themes</a> section or use the theme switcher in the top right corner to see the themes in action.</p>
   </section>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Installation guide</h1>
-    </header>
+  <!-- <section class="panel-docs">
+    <h1>Starter template</h1>
 
-    <div class="panel-body panel-body-highlight">
-      <div class="row">
-        <div class="col-md-6">
-          <h2 class="h4">tl;dr</h2>
-          <p>In your main HTML file:</p>
-          <ul>
-            <li>include the Tink stylesheet;</li>
-            <li>include jQuery;</li>
-            <li>include the AngularJS library and its dependencies;</li>
-            <li>include the Tink API and Tink directives.</li>
+    <p>If you're looking for a basic template to start with, take a look at the following code:</p>
+
+
+    <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">
+      &lt;!doctype html&gt;
+      &lt;html class="no-js has-nav-left" data-ng-app="tinkApp"&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Tink&lt;/title&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0"&gt;
+        &lt;link rel="stylesheet" href="bower_components/tink-core/dist/tink.min.css" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        <nav data-tink-top-nav class="nav-top">
+          <ul class="nav-top-branding">
+            <li class="logo">
+              <a href="#/" title=""><span>Your project</span></a>
+            </li>
+            <li class="toggle" data-tink-sidenav-collapse="sideNavLeft">
+              <a href="" title="Open menu"><i class="fa fa-bars"><span class="sr-only">Open menu</span></i></a>
+            </li>
+            <li class="app">
+              <h1><a href="#/" title="">Your project</a></h1>
+            </li>
           </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="h4">Step 1: Tink styling</h2>
-          <p>Include the following line in the <code>&lt;head&gt;</code> section of your main HTML file:</p>
-          <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">&lt;link rel="stylesheet" href="bower_components/tink/framework/styles/tink.min.css"&gt;</hljs>
-          <hljs data-format="html" data-ng-if="theme.active === 'stad'">&lt;link rel="stylesheet" href="bower_components/tink/framework/styles/tink-stad.min.css"&gt;</hljs>
-          <hljs data-format="html" data-ng-if="theme.active === 'ocmw'">&lt;link rel="stylesheet" href="bower_components/tink/framework/styles/tink-ocmw.min.css"&gt;</hljs>
-          <hljs data-format="html" data-ng-if="theme.active === 'politie'">&lt;link rel="stylesheet" href="bower_components/tink/framework/styles/tink-politie.min.css"&gt;</hljs>
-          <p class="callout">Note that the filepath may differ for your project. Adjust this if needed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="h4">Step 2: JavaScript</h2>
-          <p>In order to use the interactive part of Tink you also need to have jQuery and AngularJS installed.</p>
-          <ul>
-            <li>If you used Bower to install Tink, these dependencies are automatically installed with it. Skip to step 3.</li>
-            <li>Keep reading if you installed Tink manually…</li>
+        </nav>
+        <aside data-tink-nav-aside data-tink-accordion="true" data-tink-toggle-id="sideNavLeft" class="nav-aside nav-left">
+          <ul class="nav-aside-list" role="sidenav">
+            <li>
+              <a href="#/link1" title="">Link 1</a>
+            </li>
+            <li>
+              <a href="#/link2" title="">Link 2 with subitems</a>
+              <ul>
+                <li><a href="#/link2/subitem1" title="">Subitem 1</a></li>
+                <li><a href="#/link2/subitem2" title="">Subitem 2</a></li>
+                <li><a href="#/link2/subitem3" title="">Subitem 3</a></li>
+              </ul>
+            </li>
           </ul>
-          <p>First <a href="http://jquery.com/download/" title="Download jQuery | jQuery" rel="external" target="_blank">download jQuery v2.1.x</a> and add it to your project folder.</p>
-          <p>Then <a href="https://angularjs.org" title="AngularJS — Superheroic JavaScript MVW Framework" rel="external" target="_blank">download AngularJS v1.2.x</a>. Also add it to your project folder.</p>
+        </aside>
+        <div>
+          <div class="main" role="main" data-ng-view="" data-autoscroll="true"></div>
         </div>
-      </div>
-    </div>
+        &lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular/angular.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-resource/angular-resource.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-cookies/angular-cookies.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-sanitize/angular-sanitize.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-animate/angular-animate.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-touch/angular-touch.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/angular-route/angular-route.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/tink/framework/scripts/api.min.js"&gt;&lt;/script&gt;
+        &lt;script src="bower_components/tink/framework/scripts/tink-directives.min.js"&gt;&lt;/script&gt;
+        &lt;script&gt;angular.module('tinkApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'tink']);&lt;/script&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </hljs>
 
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="h4">Step 3: Installing the script files</h2>
-          <p>Include the following lines in your HTML, preferably just above <code>&lt;/body&gt;</code>:</p>
-          <hljs data-format="html">
-            &lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular/angular.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-resource/angular-resource.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-cookies/angular-cookies.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-sanitize/angular-sanitize.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-animate/angular-animate.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-touch/angular-touch.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/angular-route/angular-route.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/tink/framework/scripts/api.min.js"&gt;&lt;/script&gt;
-            &lt;script src="bower_components/tink/framework/scripts/tink-directives.min.js"&gt;&lt;/script&gt;</hljs>
-          <p class="callout">Note that some filepaths may differ for your project. Adjust these if needed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="h4">Step 4: Done</h2>
-          <p>
-            <i class="fa fa-birthday-cake fa-3x step-4-done"></i>
-            Hey, we're glad you made it!
-            <br />Now go and make the next big thing!</p>
-        </div>
-      </div>
-    </div>
+    <p class="callout">Note that some filepaths may differ for your project. Adjust these if needed.</p>
+    <p>Of course you are also going to need routing and other things for your application. This is beyond the scope of the Tink documentation, but can be found <a href="http://bit.ly/1DPPs9k" title="Search for AngularJS tutorials" rel="external" target="_blank">elsewhere</a>.</p>
   </section>
+
+
+
 
   <section class="panel">
     <header class="panel-heading">
@@ -118,7 +96,7 @@
       <div class="row">
         <div class="col-xs12">
           <p>If you're looking for a basic template to start with, take a look at the following code:</p>
-          <!-- Begin code example Tink (default) -->
+
           <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">
             &lt;!doctype html&gt;
             &lt;html class="no-js has-nav-left" data-ng-app="tinkApp"&gt;
@@ -174,7 +152,9 @@
             &lt;/body&gt;
             &lt;/html&gt;
           </hljs>
-<!-- Begin code example Tink (Stad Antwerpen) -->
+
+
+
           <hljs data-format="html" data-ng-if="theme.active === 'stad'">
             &lt;!doctype html&gt;
             &lt;html class="no-js has-nav-left" data-ng-app="tinkApp"&gt;
@@ -230,7 +210,9 @@
             &lt;/body&gt;
             &lt;/html&gt;
           </hljs>
-<!-- Begin code example Tink (OCMW) -->
+
+
+
           <hljs data-format="html" data-ng-if="theme.active === 'ocmw'">
             &lt;!doctype html&gt;
             &lt;html class="no-js has-nav-left" data-ng-app="tinkApp"&gt;
@@ -286,7 +268,9 @@
             &lt;/body&gt;
             &lt;/html&gt;
           </hljs>
-<!-- Begin code example Tink (Politie) -->
+
+
+
           <hljs data-format="html" data-ng-if="theme.active === 'politie'">
             &lt;!doctype html&gt;
             &lt;html class="no-js has-nav-left" data-ng-app="tinkApp"&gt;
@@ -349,3 +333,4 @@
     </div>
   </section>
 </div>
+ -->

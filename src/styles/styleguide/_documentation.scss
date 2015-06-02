@@ -443,37 +443,43 @@ p.sg-swatch-m {
 /**
  * MD docs
  */
-.md {
-  padding: rem(24 0);
 
-  .container {
-    padding: rem(0 32 12);
-  }
+// .d {
+//   padding: rem(24 0);
+// }
+
+//   .container {
+//     padding: rem(0 32 12);
+//   }
+// }
+
+.tab-view {
+  padding: rem(24 0 0);
 }
 
-
-  h1 {
+.panel-docs {
+  h1:not(.ignore) {
     font-size: rem(32);
   }
 
-  h2 {
+  h2:not(.ignore) {
     font-size: rem(24);
   }
 
-  h3 {
+  h3:not(.ignore) {
     font-size: rem(16);
     font-weight: 600;
   }
 
-  h4 {
+  h4:not(.ignore) {
     font-size: rem(15);
     font-weight: 600;
   }
-// }
+}
 
-.nav-md {
+.nav-docs {
   background: #ebebeb;
-  margin-top: 0 !important;
-  padding-left: rem(24);
-  padding-right: rem(24);
+  margin: 0 !important;
+  padding-left: rem(30);
+  padding-right: rem(30);
 }

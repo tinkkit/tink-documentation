@@ -12,18 +12,20 @@
   }
 }
 
-h1.d {
-  color: $tink-teal;
-}
+.panel-docs {
+  h1:not(.ignore) {
+    color: $tink-teal;
+  }
 
-h2.d {
-  color: $tink-lime;
-}
+  h2:not(.ignore) {
+    color: $tink-lime;
+  }
 
-h3.d {
-  color: $gray;
-}
+  h3:not(.ignore) {
+    color: $gray;
+  }
 
-h4.d {
-  color: $gray-dark;
+  h4:not(.ignore) {
+    color: $gray-dark;
+  }
 }

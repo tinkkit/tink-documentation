@@ -11,9 +11,9 @@ module.exports = function (grunt) {
   // Check for a new version
   var currentversion = require('./bower_components/tink-core/bower.json').version;
 
+  var bowerFile = grunt.file.readJSON('./bower.json');
 
-
-  var prodComponents = Object.keys(grunt.file.readJSON('./bower.json').dependencies).concat(Object.keys(grunt.file.readJSON('./bower.json').devDependencies)).filter(
+  var prodComponents = Object.keys(bowerFile.dependencies).concat(Object.keys(bowerFile.devDependencies)).filter(
       function(prodComponent) {
         if(prodComponent.substr(0, 5) === 'tink-'){
           return true;

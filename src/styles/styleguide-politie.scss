@@ -8,18 +8,20 @@
   background-image: image-url('main/bg-politie.jpg');
 }
 
-h1.d {
-  color: $tink-purple;
-}
+.panel-docs {
+  h1:not(.ignore) {
+    color: $tink-purple;
+  }
 
-h2.d {
-  color: $tink-pink;
-}
+  h2:not(.ignore) {
+    color: $tink-pink;
+  }
 
-h3.d {
-  color: $gray;
-}
+  h3:not(.ignore) {
+    color: $gray;
+  }
 
-h4.d {
-  color: $gray-dark;
+  h4:not(.ignore) {
+    color: $gray-dark;
+  }
 }

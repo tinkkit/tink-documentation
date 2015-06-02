@@ -1,16 +1,19 @@
 <div class="container" data-ng-switch="tabview">
 
-  <div data-ng-switch-when="changelog">
-  <md data-ng-include="'/bower_components/tink-theme-stad/CHANGELOG.md'"></md>
-  </div>
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-ng-include="'../markdown/tink-theme-stad/CHANGELOG.md'"></md>
+  </section>
 
-  <div data-ng-switch-when="example">
+  <section class="panel-docs" data-ng-switch-when="example">
   <h1>Example</h1>
   <p>Use the theme switcher in the top right to activate this theme.</p>
+  </section>
+
+  <div data-ng-switch-when="example">
   </div>
 
-  <div data-ng-switch-default>
-  <md data-ng-include="'/bower_components/tink-theme-stad/README.md'"></md>
-  </div>
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-ng-include="'../markdown/tink-theme-stad/README.md'"></md>
+  </section>
 
 </div>
