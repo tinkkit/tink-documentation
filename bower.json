@@ -37,7 +37,7 @@
     "tink-upload-angular": "latest",
     "tink-timepicker-angular": "latest",
     "tink-api-javascript": "latest",
-    "tink-md-angular": "~1.0.0",
+    "tink-md-angular": "latest",
     "tink-stick-to-top-angular": "latest"
   },
   "devDependencies": {

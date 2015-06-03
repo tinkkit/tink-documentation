@@ -1,7 +1,16 @@
-<div class="container" ng-controller="datepickerCtrl">
-  <h1>Datepicker</h1>
-  <hr>
-  <section class="panel">
+<div class="container" data-ng-switch="tabview" data-ng-controller="datepickerCtrl">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-theme-stad/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+  <h1>Example</h1>
+  <p>Use the theme switcher in the top right to activate this theme.</p>
+  </section>
+
+  <div data-ng-switch-when="example">
+      <section class="panel">
      <header class="panel-heading">
       <h1 class="panel-title">Single datepicker</h1>
     </header>
@@ -147,4 +156,10 @@
           </div>
         </div>
   </section>
+  </div>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-theme-stad/README.md" class="md"></md>
+  </section>
+
 </div>
