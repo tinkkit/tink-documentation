@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     version: currentversion,
     module: require('./package.json').name,
     domain: 'tink.documentation',
-    tinkReadme:prodComponents
+    tinkReadme: prodComponents
   };
 
   // Define the configuration for all the tasks
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
     watch: {
       bower: {
         files: ['bower.json'],
-        tasks: ['wiredep']
+        tasks: ['wiredep', 'copy:dependenciesMd']
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
