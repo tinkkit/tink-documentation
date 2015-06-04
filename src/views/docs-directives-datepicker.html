@@ -1,10 +1,10 @@
-<div class="container" data-ng-switch="tabview" data-ng-controller="datepickerCtrl">
+<div class="container" data-ng-switch="tabview">
 
   <section class="panel-docs" data-ng-switch-when="changelog">
   <md data-url="../markdown/tink-datepicker-angular/CHANGELOG.md"></md>
   </section>
 
-  <section class="panel-docs" data-ng-switch-when="example">
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="datepickerCtrl">
     <h3>Basic examples</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">

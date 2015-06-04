@@ -1,79 +1,81 @@
-<div class="container" data-ng-controller="identityNoCtrl">
+<div class="container" data-ng-switch="tabview">
 
-  <h1>ID card number</h1>
-  <hr>
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-theme-stad/CHANGELOG.md"></md>
+  </section>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <span class="panel-title">ID card number</span>
-    </header>
-    <div class="panel-body">
-      <h3>Example</h3>
-      <p>This input text field is preformatted for the Belgian national identity card number.</p>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 form-group">
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="identityNoCtrl">
+
+    <p>This input text field is preformatted for the Belgian national identity card number.</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 form-group">
+        <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
+      </div>
+      <div class="col-xs-12 col-sm-6 form-group">
+        <hljs data-format="html">
           <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
-        </div>
-        <div class="col-xs-12 col-sm-6 form-group">
-          <hljs data-format="html">
-            <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
-          </hljs>
+        </hljs>
       </div>
     </div>
-      <h3>Validation</h3>
-      <p>Validate the ID card number using the modulus 97 calculation.</p>
+    <h3>Validation</h3>
+    <p>Validate the ID card number using the modulus 97 calculation.</p>
 
-      <form name="identityNoForm" novalidate>
-        <div class="row form-group" data-ng-class="{'has-error':(identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$invalid,'has-success': (identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$valid}">
-          <div class="col-xs-12">
-            <label for="tink-username-example">Identity card number</label>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <div class="validation">
-              <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <div class="messages" data-ng-messages="identityNoForm.identityNoField.$error" data-ng-if="(identityNoForm.identityNoField.$dirty || identityNoForm.submitted)" >
-              <div class="text-danger" data-ng-message="required">Fill in your identity card number.</div>
-              <div class="text-danger" data-ng-message="format">Fill in a valid identity card number.</div>
-            </div>
+    <form name="identityNoForm" novalidate>
+      <div class="row form-group" data-ng-class="{'has-error':(identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$invalid,'has-success': (identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$valid}">
+        <div class="col-xs-12">
+          <label for="tink-username-example">Identity card number</label>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="validation">
+            <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
           </div>
         </div>
-        <div class="row form-group">
-          <div class="col-xs-12">
-            <button data-ng-click="validateIdentityNo()" type="button" class="btn-primary">Validate</button>
+        <div class="col-xs-12 col-sm-6">
+          <div class="messages" data-ng-messages="identityNoForm.identityNoField.$error" data-ng-if="(identityNoForm.identityNoField.$dirty || identityNoForm.submitted)" >
+            <div class="text-danger" data-ng-message="required">Fill in your identity card number.</div>
+            <div class="text-danger" data-ng-message="format">Fill in a valid identity card number.</div>
           </div>
         </div>
-      </form>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-12">
+          <button data-ng-click="validateIdentityNo()" type="button" class="btn-primary">Validate</button>
+        </div>
+      </div>
+    </form>
 
-      <hljs data-format="html">
-        <div class="container" data-ng-controller="identityNoCtrl">
-          <form name="identityNoForm" novalidate>
-            <div class="row form-group" data-ng-class="{'has-error':(identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$invalid,'has-success': (identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$valid}">
-              <div class="col-xs-12">
-                <label for="tink-username-example">Identity card number</label>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="validation">
-                  <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="messages" data-ng-messages="identityNoForm.identityNoField.$error" data-ng-if="(identityNoForm.identityNoField.$dirty || identityNoForm.submitted)" >
-                  <div class="text-danger" data-ng-message="required">Fill in your identity card number.</div>
-                  <div class="text-danger" data-ng-message="format">Fill in a valid identity card number.</div>
-                </div>
+    <hljs data-format="html">
+      <div class="container" data-ng-controller="identityNoCtrl">
+        <form name="identityNoForm" novalidate>
+          <div class="row form-group" data-ng-class="{'has-error':(identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$invalid,'has-success': (identityNoForm.identityNoField.$dirty || identityNoForm.submitted) && identityNoForm.identityNoField.$valid}">
+            <div class="col-xs-12">
+              <label for="tink-username-example">Identity card number</label>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="validation">
+                <tink-identity-number required="required" name="identityNoField" data-ng-model="identityNoModel"></tink-identity-number>
               </div>
             </div>
-            <div class="row form-group">
-              <div class="col-xs-12">
-                <button data-ng-click="validateIdentityNo()" type="button" class="btn-primary">Validate</button>
+            <div class="col-xs-12 col-sm-6">
+              <div class="messages" data-ng-messages="identityNoForm.identityNoField.$error" data-ng-if="(identityNoForm.identityNoField.$dirty || identityNoForm.submitted)" >
+                <div class="text-danger" data-ng-message="required">Fill in your identity card number.</div>
+                <div class="text-danger" data-ng-message="format">Fill in a valid identity card number.</div>
               </div>
             </div>
-          </form>
-        </div>
-      </hljs>
-    </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-xs-12">
+              <button data-ng-click="validateIdentityNo()" type="button" class="btn-primary">Validate</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </hljs>
+
   </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-theme-stad/README.md" class="md"></md>
+  </section>
+
 </div>
