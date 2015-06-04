@@ -1,4 +1,4 @@
-<div class="container" ng-controller="dragandropCtrl">
+<div class="container" data-ng-controller="dragandropCtrl">
   <h1>Upload</h1>
   <hr>
 
@@ -40,7 +40,7 @@
         </div>
         <div class="col-md-6">
           <hljs data-format="js">// The provider
-            .provider('tinkUploadService',[function () {
+            .provider('tinkUploadService',[function (tinkUploadService) {
               return {
                 $get: function () {
                   return {

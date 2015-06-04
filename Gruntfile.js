@@ -22,7 +22,7 @@ module.exports = function (grunt) {
       }
     ).map(
       function(prodComponent) {
-          return prodComponent + "/*.md";
+          return prodComponent + '/*.md';
       }
   );
 
