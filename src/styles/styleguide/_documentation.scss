@@ -111,6 +111,10 @@ $tink-brown: #a1887f;
  * Needs work
  */
 .front-page {
+  body {
+    background-color: $body-bg-alt;
+  }
+
   .main {
     padding: 0 !important;
     transform: translate(0, 0) !important;
@@ -215,6 +219,8 @@ md {
 
   &.md {
     h1:first-child {
+      display: block;
+
       + p {
         background: $brand;
         border-radius: $border-radius-base;
@@ -222,6 +228,12 @@ md {
         display: inline-block;
         padding: rem(2 6);
       }
+    }
+
+    pre code {
+      overflow: auto;
+      white-space: pre;
+      word-wrap: normal;
     }
   }
 }
