@@ -1,40 +1,24 @@
-  <div class="container">
-    <h1>Timepicker</h1>
-    <hr>
-    <section class="panel">
-      <header class="panel-heading">
-        <h1 class="panel-title">Timepicker</h1>
-      </header>
-      <div class="panel-body">
-        <h3 class="h4">Examples</h3>
-        <div class="row">
-          <div class="col-xs-12 col-md-3">
-            <tink-timepicker ng-model="selectedTime"/>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <hljs data-format="html">
-              <tink-timepicker data-ng-model="selectedTime"/>
-            </hljs>
-          </div>
-        </div>
-        <table class="table-dev">
-          <thead>
-            <tr>
-              <th>Attr</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>data-ng-model <em>(required)</em></td>
-              <td><code>object</code></td>
-              <td><code>''</code></td>
-              <td>This variable holds a date object with the time</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="container" data-ng-switch="tabview" data-ng-controller="dragandropCtrl">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-timepicker-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <tink-timepicker ng-model="selectedTime"/>
       </div>
-    </section>
-  </div>
+      <div class="col-xs-12 col-md-9">
+        <hljs data-format="html">
+          <tink-timepicker data-ng-model="selectedTime"/>
+        </hljs>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-timepicker-angular/README.md" class="md"></md>
+  </section>
+
+</div>
