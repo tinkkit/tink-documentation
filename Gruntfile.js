@@ -46,6 +46,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep', 'copy:dependenciesMd']
       },
+      md: {
+        files: ['bower_components/tink-*/bower.json'],
+        tasks: ['wiredep', 'copy:dependenciesMd']
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
