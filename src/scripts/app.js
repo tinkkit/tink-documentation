@@ -19,7 +19,6 @@
    'ngTouch',
    'hljs',
    'markdown',
-   'tink.tinkApi',
    'tink.navigation',
    'tink.accordion',
    'tink.popover',
