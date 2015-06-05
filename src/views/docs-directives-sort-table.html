@@ -4,8 +4,51 @@
   <md data-url="../markdown/tink-sort-table-angular/CHANGELOG.md"></md>
   </section>
 
-  <section class="panel-docs" data-ng-switch-when="example">
-  <p>coming up</p>
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="controller as ctrl">
+    <div class="row">
+      <div class="col-xs-12">
+        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
+          <thead>
+            <tr>
+              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
+              <th tink-sort-header="familienaam">Naam</th>
+              <th tink-sort-header="voornaam">Voornaam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
+              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
+              <td>{{ rapport.familienaam }}</td>
+              <td>{{ rapport.voornaam }}</td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="margin-bottom">
+          <button ng-click="loadData()">Load table data</button>
+        </div>
+
+      </div>
+      <div class="col-xs-12">
+        <hljs data-format="html">
+        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
+          <thead>
+            <tr>
+              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
+              <th tink-sort-header="familienaam">Naam</th>
+              <th tink-sort-header="voornaam">Voornaam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
+              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
+              <td>{{ rapport.familienaam }}</td>
+              <td>{{ rapport.voornaam }}</td>
+            </tr>
+        </tbody>
+        </table>
+        </hljs>
+      </div>
+    </div>
   </section>
 
   <section class="panel-docs" data-ng-switch-default>
