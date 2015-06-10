@@ -1,12 +1,12 @@
 # Tink national number Angular directive
 
-v1.0.0
+v1.0.1
 
 ## What is this repository for?
 
-The Tink Angular national number directive provides you with an input field preformatted for national numbers.
+The Tink Angular national number directive provides you with an input field preformatted for Belgian national numbers.
 
-Tink is an in-house developed easy-to-use front end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
+Tink is an in-house developed easy-to-use front-end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
 
 ## Setup
 
@@ -20,9 +20,37 @@ Tink is an in-house developed easy-to-use front end framework for quick prototyp
 1. Go to the root of your project and type the following command in your terminal:
    `bower install tink-national-number-angular --save`
 
-2. Include `dist/tink-national-number-angular.js` and its necessary dependencies in your project.
+2. Add the following files to your project:
 
-3. On http://tink.digipolis.be you will find all necessary documentation.
+  `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+
+  `<script src="bower_components/tink-national-number-angular/dist/tink-national-number-angular.js"></script>`
+
+3. Add `tink.nationalnumber` to your app module's dependency.
+
+  `angular.module('myApp', ['tink.nationalnumber']);`
+
+4. On http://tink.digipolis.be you will find all necessary documentation.
+
+
+----------
+
+
+## How to use
+
+### tink-national-number
+
+### Component
+
+```html
+<tink-national-number required="required" name="nationalNoField" data-ng-model="nationalNoModel"></tink-national-number>
+```
+
+### Options
+
+Attr | Type | Default | Details
+--- | --- | --- | ---
+data-ng-model (required) | `[object]` | `[]` | This variable holds the preformatted text.
 
 ## Contribution guidelines
 

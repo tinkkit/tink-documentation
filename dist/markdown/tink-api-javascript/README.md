@@ -1,6 +1,6 @@
 # Tink JavaScript API
 
-v1.1.2
+v1.1.3
 
 ## What is this repository for?
 

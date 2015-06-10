@@ -1,193 +1,206 @@
-<div class="container">
-	<h1>Accordion</h1>
-	<hr>
+<div class="container" data-ng-switch="tabview">
 
-  <div class="margin-bottom">
-    <tink-accordion data-start-open="true">
-      <tink-accordion-panel data-heading="Basic accordion">
-        <h3>Example</h3>
-        <p>Click on the header of this panel to see the accordion in action.</p>
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-accordion-angular/CHANGELOG.md"></md>
+  </section>
 
-        <h3>Usage</h3>
-        <p>Wrap <code>&lt;tink-accordion&gt;</code> around at least one <code>&lt;tink-accordion-panel&gt;</code> to get the most basic version of an accordion.</p>
-        <hljs data-format="html">
-          <tink-accordion data-start-open="true">
-            <tink-accordion-panel data-heading="Basic accordion"></tink-accordion-panel>
-          </tink-accordion>
-        </hljs>
+  <section class="panel-docs" data-ng-switch-when="example">
+    <div class="margin-bottom">
+      <tink-accordion data-start-open="true">
+        <tink-accordion-panel data-heading="Basic accordion">
+          <h3>Example</h3>
+          <p>Click on the header of this panel to see the accordion in action.</p>
 
-        <h3>Options</h3>
-        <h4>Accordion</h4>
-        <div class="table-responsive">
-          <table class="table-dev">
-            <thead>
-              <tr>
-                <th>Attr</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>data-start-open</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-                <td>Whether the accordion panels are open on load or not. This can be overriden at the panel level.</td>
-              </tr>
-              <tr>
-                <td>data-one-at-a-time</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-                <td>Whether only one panel can be open at once.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h4>Accordion panel</h4>
-        <div class="table-responsive">
-          <table class="table-dev">
-            <thead>
-              <tr>
-                <th>Attr</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>data-is-collapsed</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-                <td>Whether the panel is collapsed or not.</td>
-              </tr>
-              <tr>
-                <td>data-heading</td>
-                <td><code>string</code></td>
-                <td><code>''</code></td>
-                <td>The title of the accordion.</td>
-              </tr>
-              <tr>
-                <td>data-onclick</td>
-                <td><code>function</code></td>
-                <td><code>undefined</code></td>
-                <td>Callback function that will be triggered when the accordion heading is clicked.</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="callout">
-            <p><strong>Important!</strong> <code>data-is-collapsed</code> compares by reference, not value. Make sure it's part of an object that can be referenced.</p>
-          </div>
-        </div>
-      </tink-accordion-panel>
-    </tink-accordion>
-  </div>
-
-  <div class="margin-bottom">
-    <tink-accordion>
-      <tink-accordion-panel data-heading="Accordion with callback function" data-onclick="openAccordion">
-        <div class="row">
-          <div class="col-md-6">
-            <p>Accordion code:</p>
-            <hljs data-format="html">
-              <tink-accordion>
-                <tink-accordion-panel data-heading="Accordion with callback function" data-onclick="openAccordion"></tink-accordion-panel>
-              </tink-accordion>
-            </hljs>
-          </div>
-          <div class="col-md-6">
-            <p>Controller code:</p>
-            <hljs data-format="js">scope.openAccordion = function(action,next){
-              if(action === 'loading'){
-                // Do something here
-              }
-            }
-          </hljs>
-          </div>
-        </div>
-      </tink-accordion-panel>
-    </tink-accordion>
-  </div>
-
-  <div class="margin-bottom">
-    <tink-accordion>
-      <tink-accordion-panel data-is-collapsed="accordion.collapsed" data-heading="Externally triggered accordion">
-        <div class="row">
-          <div class="col-md-4">
-            <p>Accordion code:</p>
-            <hljs data-format="html">
-              <tink-accordion>
-                <tink-accordion-panel data-is-collapsed="accordion.collapsed" data-heading="Externally triggered accordion"></tink-accordion-panel>
-              </tink-accordion>
-            </hljs>
-          </div>
-          <div class="col-md-4">
-            <p>Code to trigger accordion:</p>
-            <hljs data-format="html">
-              <button data-ng-click="accordion.collapsed=!accordion.collapsed">
-                <span data-ng-if="accordion.collapsed">Open accordion</span>
-                <span data-ng-if="!accordion.collapsed">Close accordion</span>
-              </button>
-            </hljs>
-          </div>
-          <div class="col-md-4">
-            <p>Controller code:</p>
-            <hljs data-format="js">$scope.accordion = {
-                collapsed: true
-              };
-            </hljs>
-          </div>
-        </div>
-      </tink-accordion-panel>
-    </tink-accordion>
-    <button data-ng-click="accordion.collapsed=!accordion.collapsed" class="margin-bottom margin-top">
-      <span data-ng-if="accordion.collapsed">Open accordion</span>
-      <span data-ng-if="!accordion.collapsed">Close accordion</span>
-    </button>
-  </div>
-
-  <div class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Multiple accordion panels</h1>
-    </header>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-6">
-          <p>Place multiple instances of the <code>&lt;tink-accordion-panel&gt;</code> inside a <code>&lt;tink-accordion-&gt;</code> wrapper.</p>
-          <div class="margin-bottom">
-            <tink-accordion data-start-open="false" data-one-at-a-time="true">
-              <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
-                <p>Only the first panel should be open.</p>
-              </tink-accordion-panel>
-              <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
-                <p>Only the second panel should be open.</p>
-              </tink-accordion-panel>
-              <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
-                <p>Only the third panel should be open.</p>
-              </tink-accordion-panel>
-            </tink-accordion>
-          </div>
-          <p>None of the above three panels can be open simultaneously.</p>
-        </div>
-        <div class="col-md-6">
+          <h3>Usage</h3>
+          <p>Wrap <code>&lt;tink-accordion&gt;</code> around at least one <code>&lt;tink-accordion-panel&gt;</code> to get the most basic version of an accordion.</p>
           <hljs data-format="html">
-            <tink-accordion data-start-open="false" data-one-at-a-time="true">
-              <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
-                <p>Only the first panel should be open.</p>
-              </tink-accordion-panel>
-              <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
-                <p>Only the second panel should be open.</p>
-              </tink-accordion-panel>
-              <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
-                <p>Only the third panel should be open.</p>
-              </tink-accordion-panel>
+            <tink-accordion data-start-open="true">
+              <tink-accordion-panel data-heading="Basic accordion"></tink-accordion-panel>
             </tink-accordion>
           </hljs>
+
+          <h3>Options</h3>
+          <h4>Accordion</h4>
+          <div class="table-responsive">
+            <table class="table-dev">
+              <thead>
+                <tr>
+                  <th>Attr</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-start-open</td>
+                  <td><code>boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether the accordion panels are open on load or not. This can be overriden at the panel level.</td>
+                </tr>
+                <tr>
+                  <td>data-one-at-a-time</td>
+                  <td><code>boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether only one panel can be open at once.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Accordion panel</h4>
+          <div class="table-responsive">
+            <table class="table-dev">
+              <thead>
+                <tr>
+                  <th>Attr</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-is-collapsed</td>
+                  <td><code>boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether the panel is collapsed or not.</td>
+                </tr>
+                <tr>
+                  <td>data-heading</td>
+                  <td><code>string</code></td>
+                  <td><code>''</code></td>
+                  <td>The title of the accordion.</td>
+                </tr>
+                <tr>
+                  <td>data-onclick</td>
+                  <td><code>function</code></td>
+                  <td><code>undefined</code></td>
+                  <td>Callback function that will be triggered when the accordion heading is clicked.</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="callout">
+              <p><strong>Important!</strong> <code>data-is-collapsed</code> compares by reference, not value. Make sure it's part of an object that can be referenced.</p>
+            </div>
+          </div>
+        </tink-accordion-panel>
+      </tink-accordion>
+    </div>
+
+    <div class="margin-bottom">
+      <tink-accordion>
+        <tink-accordion-panel data-heading="Accordion with callback function" data-onclick="openAccordion">
+          <div class="row">
+            <div class="col-md-6">
+              <p>Accordion code:</p>
+              <hljs data-format="html">
+                <tink-accordion>
+                  <tink-accordion-panel data-heading="Accordion with callback function" data-onclick="openAccordion"></tink-accordion-panel>
+                </tink-accordion>
+              </hljs>
+            </div>
+            <div class="col-md-6">
+              <p>Controller code:</p>
+              <hljs data-format="js">scope.openAccordion = function(action,next){
+                if(action === 'loading'){
+                  // Do something here
+                }
+              }
+            </hljs>
+            </div>
+          </div>
+        </tink-accordion-panel>
+      </tink-accordion>
+    </div>
+
+    <div class="margin-bottom">
+      <tink-accordion>
+        <tink-accordion-panel data-is-collapsed="accordion.collapsed" data-heading="Externally triggered accordion">
+          <div class="row">
+            <div class="col-md-4">
+              <p>Accordion code:</p>
+              <hljs data-format="html">
+                <tink-accordion>
+                  <tink-accordion-panel data-is-collapsed="accordion.collapsed" data-heading="Externally triggered accordion"></tink-accordion-panel>
+                </tink-accordion>
+              </hljs>
+            </div>
+            <div class="col-md-4">
+              <p>Code to trigger accordion:</p>
+              <hljs data-format="html">
+                <button data-ng-click="accordion.collapsed=!accordion.collapsed">
+                  <span data-ng-if="accordion.collapsed">Open accordion</span>
+                  <span data-ng-if="!accordion.collapsed">Close accordion</span>
+                </button>
+              </hljs>
+            </div>
+            <div class="col-md-4">
+              <p>Controller code:</p>
+              <hljs data-format="js">$scope.accordion = {
+                  collapsed: true
+                };
+              </hljs>
+            </div>
+          </div>
+        </tink-accordion-panel>
+      </tink-accordion>
+      <button data-ng-click="accordion.collapsed=!accordion.collapsed" class="margin-bottom margin-top">
+        <span data-ng-if="accordion.collapsed">Open accordion</span>
+        <span data-ng-if="!accordion.collapsed">Close accordion</span>
+      </button>
+    </div>
+
+    <div class="panel">
+      <header class="panel-heading">
+        <span class="panel-title">Multiple accordion panels</span>
+      </header>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Place multiple instances of the <code>&lt;tink-accordion-panel&gt;</code> inside a <code>&lt;tink-accordion-&gt;</code> wrapper.</p>
+            <div class="margin-bottom">
+              <tink-accordion data-start-open="false" data-one-at-a-time="true">
+                <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
+                  <p>Only the first panel should be open.</p>
+                </tink-accordion-panel>
+                <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
+                  <p>Only the second panel should be open.</p>
+                </tink-accordion-panel>
+                <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
+                  <p>Only the third panel should be open.</p>
+                </tink-accordion-panel>
+              </tink-accordion>
+            </div>
+            <p>None of the above three panels can be open simultaneously.</p>
+          </div>
+          <div class="col-md-6">
+            <hljs data-format="html">
+              <tink-accordion data-start-open="false" data-one-at-a-time="true">
+                <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
+                  <p>Only the first panel should be open.</p>
+                </tink-accordion-panel>
+                <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
+                  <p>Only the second panel should be open.</p>
+                </tink-accordion-panel>
+                <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
+                  <p>Only the third panel should be open.</p>
+                </tink-accordion-panel>
+              </tink-accordion>
+            </hljs>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <div data-ng-switch-when="example">
   </div>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <!-- <textarea data-ng-model="test"></textarea>
+  <md data-ng-model="test" class="md"></md> -->
+  <md data-url="../markdown/tink-accordion-angular/README.md" class="md"></md>
+  </section>
 
 </div>

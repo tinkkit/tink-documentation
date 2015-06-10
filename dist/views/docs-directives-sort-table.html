@@ -1,40 +1,58 @@
-  <div class="container">
-    <h1>Sort table</h1>
-    <hr>
-    <section class="panel">
-      <header class="panel-heading">
-        <h1 class="panel-title">Sort table</h1>
-      </header>
-      <div class="panel-body">
-        <h3 class="h4">Examples</h3>
-        <div class="row">
-          <div class="col-xs-12 col-md-3">
-            Example
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <hljs data-format="html">
-              Example
-            </hljs>
-          </div>
-        </div>
-        <table class="table-dev">
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-sort-table-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="controller as ctrl">
+    <div class="row">
+      <div class="col-xs-12">
+        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
           <thead>
             <tr>
-              <th>Attr</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Details</th>
+              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
+              <th tink-sort-header="familienaam">Naam</th>
+              <th tink-sort-header="voornaam">Voornaam</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>data-ng-model <em>(required)</em></td>
-              <td><code>object</code></td>
-              <td><code>''</code></td>
-              <td>This variable holds a date object with the time</td>
+            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
+              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
+              <td>{{ rapport.familienaam }}</td>
+              <td>{{ rapport.voornaam }}</td>
             </tr>
-          </tbody>
+        </tbody>
         </table>
+        <div class="margin-bottom">
+          <button ng-click="loadData()">Load table data</button>
+        </div>
+
       </div>
-    </section>
-  </div>
+      <div class="col-xs-12">
+        <hljs data-format="html">
+        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
+          <thead>
+            <tr>
+              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
+              <th tink-sort-header="familienaam">Naam</th>
+              <th tink-sort-header="voornaam">Voornaam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
+              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
+              <td>{{ rapport.familienaam }}</td>
+              <td>{{ rapport.voornaam }}</td>
+            </tr>
+        </tbody>
+        </table>
+        </hljs>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-sort-table-angular/README.md" class="md"></md>
+  </section>
+
+</div>

@@ -1,74 +1,25 @@
-<div class="container" ng-controller="datepickerCtrl">
-  <h1>Range datepicker</h1>
-  <hr>
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Range datepicker</h1>
-    </header>
-    <div class="panel-body">
-      <h3>Examples</h3>
+<div class="container" data-ng-switch="tabview">
 
-        <div class="row">
-        <p class="col-xs-12">
-          <tink-datepicker-range data-first-date="firstSelectedDate" data-last-date="lastSelectedDate">
-          </tink-datepicker-range>
-        </p>
-        <p class="col-xs-12">
-          <hljs data-format="html">
-            <tink-datepicker-range data-first-date="firstSelectedDate" data-last-date="lastSelectedDate"></tink-datepicker-range>
-          </hljs>
-        </p>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Usage</h3>
-          <p>
-            Add element <code>&lt;tink-datepicker-range&gt;&lt;/tink-datepicker-range&gt;</code> to your html page.<br/>
-            Do not forget to add the attributes <code>first-date</code> and <code>last-date</code> otherwise it wil not work !
-          </p>
-          <p>
-            To retrieve the first selected date, attach a scope variable, for example <code>firstSelectedDate</code>, from your controller to the attribute <code>first-date</code>. This is the same for the second date.
-          </p>
-          <hljs data-format="html">
-            <tink-datepicker-range data-first-date="firstSelectedDate" data-last-date="lastSelectedDate"></tink-datepicker-range>
-          </hljs>
-        </div>
-        <div class="col-xs-12">
-          <h3>Options</h3>
-          <div class="table-responsive">
-            <table class="table-dev">
-              <thead>
-                <tr>
-                  <th>Attr</th>
-                  <th>Type</th>
-                  <th>Default</th>
-                  <th>Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>data-max-date</td>
-                  <td><code>date</code></td>
-                  <td><code>null</code></td>
-                  <td>when a date cannot be larger then the given max date.</td>
-                </tr>
-                <tr>
-                  <td>data-min-date</td>
-                  <td><code>date</code></td>
-                  <td><code>null</code></td>
-                  <td>when a date cannot be minor then the given min date.</td>
-                </tr>
-                <tr>
-                  <td>data-ng-model</td>
-                  <td><code>date</code></td>
-                  <td><code>null</code></td>
-                  <td>The date value.</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-        </div>
-      </div>
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-range-datepicker-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="datepickerCtrl">
+    <div class="row">
+      <p class="col-xs-12">
+        <tink-datepicker-range data-first-date="firstSelectedDate" data-last-date="lastSelectedDate">
+        </tink-datepicker-range>
+      </p>
+      <p class="col-xs-12">
+        <hljs data-format="html">
+          <tink-datepicker-range data-first-date="firstSelectedDate" data-last-date="lastSelectedDate"></tink-datepicker-range>
+        </hljs>
+      </p>
     </div>
   </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-range-datepicker-angular/README.md" class="md"></md>
+  </section>
+
 </div>

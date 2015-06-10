@@ -1,40 +1,175 @@
-  <div class="container">
-    <h1>Stick to top</h1>
-    <hr>
-    <section class="panel">
-      <header class="panel-heading">
-        <h1 class="panel-title">Stick to top</h1>
-      </header>
-      <div class="panel-body">
-        <h3 class="h4">Examples</h3>
-        <div class="row">
-          <div class="col-xs-12 col-md-3">
-            Example
+<div class="container" data-ng-switch="tabview" data-ng-controller="dragandropCtrl">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-stick-to-top-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+    <div class="row">
+      <div class="col-xs-12">
+        <section class="panel">
+          <header class="panel-heading" data-tink-sticky>
+            <span class="panel-title">Example of single sticky</span>
+          </header>
+          <div class="panel-body">
+            <h3>Lyrics from "Stick to the Recipe" by Kris Berry</h3>
+            It's been a long time coming<br/>
+            I went away from you<br/>
+            Saw you for the first time again<br/>
+            But just couldn't get through<br/>
+            <br/>
+            You were good to me now and then<br/>
+            Now our love is overdue<br/>
+            Don't you try to understand<br/>
+            That this is not the end that I planned<br/>
+            And don't you care to figure out<br/>
+            <br/>
+            Why you can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You gotta stick to the recipe<br/>
+            <br/>
+            I've spent a long time waiting<br/>
+            For a while I was lost<br/>
+            One made her forget everything<br/>
+            But you I just can't trust<br/>
+            <br/>
+            You were good to me now and then<br/>
+            Now our love is overdue<br/>
+            And don't you try to understand<br/>
+            That this is not the end that I planned<br/>
+            And don't you care to figure out<br/>
+            <br/>
+            Why you can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You gotta stick to the recipe<br/>
+            <br/>
+            You can't mix milk with sauerkraut<br/>
+            You cannot mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You gotta stick to the recipe<br/>
+            <br/>
+            It's been a long time coming<br/>
+            I went away from you<br/>
+            Saw you for the first time again<br/>
+            But just couldn't get through<br/>
+            <br/>
+            You were good to me now and then<br/>
+            Now our love is overdue<br/>
+            And don't you try to understand<br/>
+            That this is not the end that I planned<br/>
+            And don't you care to figure out<br/>
+            <br/>
+            Why you can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You can't mix milk with sauerkraut<br/>
+            You gotta stick to the recipe<br/>
           </div>
-          <div class="col-xs-12 col-md-9">
-            <hljs data-format="html">
-              Example
-            </hljs>
-          </div>
-        </div>
-        <table class="table-dev">
-          <thead>
-            <tr>
-              <th>Attr</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>data-ng-model <em>(required)</em></td>
-              <td><code>object</code></td>
-              <td><code>''</code></td>
-              <td>This variable holds a date object with the time</td>
-            </tr>
-          </tbody>
-        </table>
+        </section>
       </div>
-    </section>
-  </div>
+      <div class="col-xs-12">
+      <section>
+      <header class="panel-heading" data-tink-sticky data-tink-level="2">
+        <h3 class="panel-title">Code example for single sticky</h3>
+      </header>
+        <hljs data-format="html">
+          <section class="panel">
+            <header class="panel-heading" data-tink-sticky>
+              <span class="panel-title">Example of single sticky</span>
+            </header>
+            <div class="panel-body">
+              <h3>Lyrics from "Stick to the Recipe" by Kris Berry</h3>
+              It's been a long time coming<br/>
+              I went away from you<br/>
+              Saw you for the first time again<br/>
+              But just couldn't get through<br/>
+              <br/>
+              You were good to me now and then<br/>
+              Now our love is overdue<br/>
+              Don't you try to understand<br/>
+              That this is not the end that I planned<br/>
+              And don't you care to figure out<br/>
+              <br/>
+              Why you can't mix milk with sauerkraut<br/>
+              You can't mix milk with sauerkraut<br/>
+              You can't mix milk with sauerkraut<br/>
+              You gotta stick to the recipe<br/>
+              <br/>
+              I've spent a long time waiting<br/>
+              For a while I was lost<br/>
+              One made her forget everything<br/>
+              But you I just can't trust<br/>
+              <br/>
+              You were good to me now and then<br/>
+              Now our love is overdue<br/>
+              And don't you try to understand<br/>
+              That this is not the end that I planned<br/>
+              And don't you care to figure out<br/>
+              ...
+            </div>
+          </section>
+        </hljs>
+      </section>
+      </div>
+      <div class="col-xs-12">
+        <section>
+        <header class="panel-heading" data-tink-sticky data-tink-level="3">
+          <h3 class="panel-title">Code example for second level sticky</h3>
+        </header>
+          <hljs data-format="html">
+            <section>
+            <header class="panel-heading" data-tink-sticky data-tink-level="2">
+              <h3 class="panel-title">Code example for single sticky</h3>
+            </header>
+              <hljs data-format="html">
+                <section class="panel">
+                  <header class="panel-heading" data-tink-sticky>
+                    <span class="panel-title">Example of single sticky</span>
+                  </header>
+                  <div class="panel-body">
+                    <h3>Lyrics from "Stick to the Recipe" by Kris Berry</h3>
+                    It's been a long time coming<br/>
+                    I went away from you<br/>
+                    Saw you for the first time again<br/>
+                    But just couldn't get through<br/>
+                    <br/>
+                    You were good to me now and then<br/>
+                    Now our love is overdue<br/>
+                    Don't you try to understand<br/>
+                    That this is not the end that I planned<br/>
+                    And don't you care to figure out<br/>
+                    <br/>
+                    Why you can't mix milk with sauerkraut<br/>
+                    You can't mix milk with sauerkraut<br/>
+                    You can't mix milk with sauerkraut<br/>
+                    You gotta stick to the recipe<br/>
+                    <br/>
+                    I've spent a long time waiting<br/>
+                    For a while I was lost<br/>
+                    One made her forget everything<br/>
+                    But you I just can't trust<br/>
+                    <br/>
+                    You were good to me now and then<br/>
+                    Now our love is overdue<br/>
+                    And don't you try to understand<br/>
+                    That this is not the end that I planned<br/>
+                    And don't you care to figure out<br/>
+                    ...
+                  </div>
+                </section>
+              </hljs>
+            </section>
+          </hljs>
+        </section>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-stick-to-top-angular/README.md" class="md"></md>
+  </section>
+
+</div>

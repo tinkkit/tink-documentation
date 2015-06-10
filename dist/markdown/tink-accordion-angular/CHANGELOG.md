@@ -16,6 +16,35 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.1.4] - 2015-06-09
+
+### Changed
+- Updated bower to Angular 1.3.15
+- Updated documentation
+
+
+
+## [1.1.3] - 2015-06-08
+
+### Changed
+- Updated documentation
+
+
+
+## [1.1.2] - 2015-06-08
+
+### Changed
+- Documentation updated
+
+
+
+## [1.1.1] - 2015-06-03
+
+### Fixed
+- Fixed an issue concerning semantics
+
+
+
 ## [1.1.0] - 2015-05-12
 
 ### Added

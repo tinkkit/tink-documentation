@@ -1,0 +1,27 @@
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-checkbox-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+
+    <p>A checkbox input can only have the state <code>checked</code> or <code>unchecked</code>, but visually there's a third state, the <code>indeterminate</code> state. This can be useful when you work with nested checkboxes.</p>
+    <p>Our indeterminate checkbox directive gives you the possibility to create these nested checkboxes, where the child elements will influence the state of the parent checkbox.</p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Example</h3>
+        <hljs data-format="html">
+          <div tink-checkbox-list data-checked="selectedIds" ng-model="data"></div>
+        </hljs>
+        <div tink-checkbox-list data-checked="selectedIds" ng-model="data"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-checkbox-angular/README.md" class="md"></md>
+  </section>
+
+</div>

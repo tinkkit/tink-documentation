@@ -16,6 +16,27 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.2.6] - 2015-06-05
+
+### Fixed
+- Fixed the faux-input that collapsed if no data was in it
+
+
+
+## [1.2.5] - 2015-06-05
+
+### Added
+- Added smoother page transition animations
+
+
+
+## [1.2.4] - 2015-06-03
+
+### Fixed
+- Fixed an accordion toggle color issue
+
+
+
 ## [1.2.3] - 2015-06-01
 
 ### Fixed

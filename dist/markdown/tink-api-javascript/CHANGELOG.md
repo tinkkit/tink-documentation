@@ -13,6 +13,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Security
 -->
+## [1.1.3] - 2015-06-03
+
+### Fixed
+- Fixed problem with urls not changing
+
 ## [1.1.2] - 2015-06-02
 
 ### Fixed

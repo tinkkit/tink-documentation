@@ -1,12 +1,12 @@
-  <div class="container">
-    <h1>Popover</h1>
-    <hr>
-    <section class="panel">
-      <header class="panel-heading">
-        <h1 class="panel-title">Popover</h1>
-      </header>
-      <div class="panel-body">
-        <div class="row">
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-popover-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+
+    <div class="row">
           <div class="col-xs-12 col-md-3">
             <p><button tink-popover tink-popover-template="views/popover-template.html">popover trigger title</button></p>
           </div>
@@ -92,6 +92,11 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
+
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-popover-angular/README.md" class="md"></md>
+  </section>
+
+</div>

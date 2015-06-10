@@ -1,133 +1,45 @@
-<div class="container" ng-controller="dragandropCtrl">
-  <h1>Upload</h1>
-  <hr>
+<div class="container" data-ng-switch="tabview" data-ng-controller="dragandropCtrl">
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Drag and drop upload</h1>
-    </header>
-    <div class="panel-body">
-      <h3>Example</h3>
-      <div class="row">
-        <div class="col-md-6">
-          <div type="file" data-multiple="true" data-allowed-types="valid" tink-upload ng-model="files">
-            Only images are allowed
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-upload-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+    <h3>Drag and drop multiple files</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div type="file" data-send-options="extraOptions" data-multiple="true" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="files" show-uploaded-files="true">
+          Maximum bestandsgrootte: 200MB
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <hljs data-format="html">
+          <div type="file" data-send-options="extraOptions" data-multiple="true" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="files" show-uploaded-files="true">
+            Maximum bestandsgrootte: 200MB
           </div>
-        </div>
-        <div class="col-md-6">
-          <hljs data-format="html">
-            <div type="file" data-multiple="true" data-allowed-types="valid" tink-upload ng-model="files">
-              Only images are allowed
-            </div>
-          </hljs>
+        </hljs>
+      </div>
+    </div>
+
+    <h3>Drag and drop a single file</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div type="file" data-send-options="extraOptions" data-multiple="false" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="file" show-uploaded-files="true">
+          Maximum bestandsgrootte: 200MB
         </div>
       </div>
-
-      <h3>Usage</h3>
-      <div class="row">
-        <div class="col-md-6">
-          <p>To upload the file to your server you can use the upload service we made. For the moment it only supports uploading.</p>
-        </div>
-        <div class="col-md-6">
-          <hljs data-format="js">// To set the url where the file need to upload to use the 'tinkUploadService' provider
-            tinkUploadService.addUrls('http://localhost:3000/upload');
-          </hljs>
-        </div>
+      <div class="col-sm-6">
+        <hljs data-format="html">
+          <div type="file" data-send-options="extraOptions" data-multiple="false" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="file" show-uploaded-files="true">
+            Maximum bestandsgrootte: 200MB
+          </div>
+        </hljs>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <p>If you want to change the upload service just override our service.</p>
-        </div>
-        <div class="col-md-6">
-          <hljs data-format="js">// The provider
-            .provider('tinkUploadService',[function () {
-              return {
-                $get: function () {
-                  return {
-                    upload: function(file,options){
-                      // This function will be called when the file is going to update
-                    },
-                    remove: function(file){
-                      // This function will be called when you remove the file
-                    }
-                  };
-                }
-              };
-            }]);
-          </hljs>
-        </div>
-      </div>
-
-      <h3>Options</h3>
-      <div class="table-responsive">
-        <table class="table-dev">
-          <thead>
-            <tr>
-              <th>Attr</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>data-max-file-size</td>
-              <td><code>String</code></td>
-              <td><code>''</code></td>
-              <td>If empty no max size allowed, file size is in kb.</td>
-            </tr>
-            <tr>
-              <td>data-allowed-types</td>
-              <td><code>Object</code></td>
-              <td><code>{}</code></td>
-              <td>If empty object all files are allowed, if you want to restrict use this object and add mimetypes and extensions.<br /><code>{mimeTypes:[],extensions:[]}</code></td>
-            </tr>
-            <tr>
-              <td>data-multiple</td>
-              <td><code>String | Boolean</code></td>
-              <td><code>true</code></td>
-              <td>If multiple files are allowed or not.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>API</h3>
-      <p>We use a wrapper for the <code>window.File</code> object and these are the options:</p>
-      <hljs data-format="js">// Create the upload file
-        var file = UploadFile(fileData);
-
-
-        // If the file was uploaded already
-        var file = UploadFile(fileData,true);
-
-        // Get the original file data
-        file.getData();
-
-        // Get the fileName
-        file.getFileName();
-
-        // Progress of the upload
-        file.getProgress();
-
-        // Get the file size
-        file.getFileSize();
-
-        // Get the file extension
-        file.getFileExtension();
-
-        // Get the file mimetype
-        file.getFileMimeType();
-
-        // Cancel the upload
-        file.cancel();
-
-        // Upload the file
-        file.upload();
-
-        // Remove the file
-        file.remove();
-      </hljs>
     </div>
   </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-upload-angular/README.md" class="md"></md>
+  </section>
+
 </div>

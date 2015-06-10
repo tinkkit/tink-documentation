@@ -1,12 +1,12 @@
 # Tink back to top Angular directive
 
-v1.0.0
+v1.0.2
 
 ## What is this repository for?
 
 The Tink back to top Angular directive provides you with a button that, when clicked, will scroll your page back to the top.
 
-Tink is an in-house developed easy-to-use front end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
+Tink is an in-house developed easy-to-use front-end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
 
 ## Setup
 
@@ -18,11 +18,40 @@ Tink is an in-house developed easy-to-use front end framework for quick prototyp
 ### Install
 
 1. Go to the root of your project and type the following command in your terminal:
+
    `bower install tink-back-to-top-angular --save`
 
-2. Include `dist/tink-back-to-top-angular.js` and its necessary dependencies in your project.
+2. Add the following files to your project:
 
-3. On http://tink.digipolis.be you will find all necessary documentation.
+  `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+
+  `<script src="bower_components/tink-back-to-top-angular/dist/tink-back-to-top-angular.js"></script>`
+  
+3. Add `tink.backtotop` to your app module's dependency.
+
+  `angular.module('myApp', ['tink.backtotop']);`
+
+
+----------
+
+
+## How to use
+
+### tink-back-to-top
+
+### Component
+
+To use this directive you have to add `tink-back-to-top` to a button in your html page.
+
+```html
+<button tink-back-to-top=""></button>
+```
+
+### Options
+
+Attr | Type | Default | Details
+--- | --- | --- | ---
+data-offset | `number` | `300` | The height in pixels, measured from the top, when the button will be visible.
 
 ## Contribution guidelines
 
