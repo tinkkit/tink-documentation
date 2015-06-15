@@ -1,133 +1,31 @@
-<div class="container" ng-controller="tableCtrl">
-  <h1>Interactive table</h1>
-  <hr>
+<div class="container" data-ng-switch="tabview">
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Interactive table</h1>
-    </header>
-    <div class="panel-body">
-      <p>With this directive you can create a table where the columns can be added or removed and the column sequence can be sorted by preference of the user. The content of the table can be sorted by clicking on the header of the column.</p>
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-interactive-table-angular/CHANGELOG.md"></md>
+  </section>
 
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Example</h3>
-          <hljs data-format="html">
-            <tink-interactive-table data-ng-model="data" data-headers="headers" data-actions="actions" data-items-per-page="pages" class="table-interactive"></tink-interactive-table>
-          </hljs>
+  <section class="panel-docs" data-ng-switch-when="example">
 
-          <tink-interactive-table data-ng-model="data" data-headers="headers" data-actions="actions" data-items-per-page="pages" class="table-interactive"></tink-interactive-table>
-        </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <tink-interactive-table tink-row-click="clicked($element)" tink-empty-message="no records are found o o " tink-name="oke" tink-pagination-key="pag1" data-ng-model="data" data-allow-column-reorder="true" tink-actions="actions" tink-headers="headers" tink-column-reorder="true" tink-change="chan($property,$order,$type)"></tink-interactive-table>
 
-        <div class="col-xs-12">
-          <h3>Usage</h3>
-          <p>This is how your controller code might look like.</p>
-          <hljs data-format="js">// Data model
-            scope.data = [
-              {
-                firstname: 'Jasper',
-                lastname: 'Van Proeyen',
-                username: '@trianglejuice'
-              },
-              {
-                firstname: 'Tom',
-                lastname: 'Wuyts',
-                username: '@pxlpanic'
-              },
-              {
-                firstname: 'Kevin',
-                lastname: 'De Mulder',
-                username: '@clopin'
-              },
-              {
-                firstname: 'Vincent',
-                lastname: 'Bouillart',
-                username: '@BouillartV'
-              },
-              {
-                firstname: 'Tom',
-                lastname: 'Hermans',
-                username: '@tomhermans'
-              },
-              {
-                firstname: 'Lieven',
-                lastname: 'Van Gestel',
-                username: '@lievenvg'
-              }
-            ];
+        <tink-pagination tink-pagination-id="pag1" tink-current-page="nums" tink-change="changed" tink-total-items="totalitems" tink-items-per-page="10" tink-items-per-page-values="perpageValue"></tink-pagination>
 
+        <h3>Table code</h3>
 
-            // The headers you want to show and whether they are already visible in the table
-            scope.headers = [
-              {
-                field: 'firstname',
-                alias: 'Voornaam',
-                checked: true
-              },
-              {
-                field: 'lastname',
-                alias: 'Achternaam',
-                checked: false
-              },
-              {
-                field: 'username',
-                alias: 'Gebruikersnaam',
-                checked: true
-              }
-            ];
+        <hljs data-format="html"><tink-interactive-table tink-row-click="clicked($element)" tink-empty-message="no records are found o o " tink-name="oke" tink-pagination-key="pag1" data-ng-model="data" data-allow-column-reorder="true" tink-actions="actions" tink-headers="headers" tink-column-reorder="true" tink-change="chan($property,$order,$type)"></tink-interactive-table></hljs>
 
-            // Some actions that become available when you check one or multiple rows
-            scope.actions = [
-              {
-                name: 'remove',
-                callback: function(items) {
-                  angular.forEach(items, function(val) {
-                    scope.data.splice(scope.data.indexOf(val),1);
-                  });
-                }
-              }
-            ];
-          </hljs>
-        </div>
-      </div>
+        <h3>Pagination code</h3>
 
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Options</h3>
-          <div class="table-responsive">
-            <table class="table-dev">
-              <thead>
-                <tr>
-                  <th>Attr</th>
-                  <th>Type</th>
-                  <th>Default</th>
-                  <th>Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>data-ng-model</td>
-                  <td><code>[Object]</code></td>
-                  <td><code>[]</code></td>
-                  <td>An array of objects wich will be viewed in the table</td>
-                </tr>
-                <tr>
-                  <td>data-headers</td>
-                  <td><code>[Object]</code></td>
-                  <td><code>[]</code></td>
-                  <td>An array of objects wich will be viewed as headers</td>
-                </tr>
-                <tr>
-                  <td>data-actions</td>
-                  <td><code>[Object]</code></td>
-                  <td><code>[]</code></td>
-                  <td>An array of objects wich will appear when you selected an item.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <hljs><tink-pagination tink-pagination-id="pag1" tink-current-page="nums" tink-change="changed" tink-total-items="totalitems" tink-items-per-page="10" tink-items-per-page-values="perpageValue"></tink-pagination></hljs>
       </div>
     </div>
+
   </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-interactive-table-angular/README.md" class="md"></md>
+  </section>
+
 </div>
