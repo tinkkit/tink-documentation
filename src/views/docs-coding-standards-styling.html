@@ -1,62 +1,55 @@
 <div class="container">
-	<h1>Styling guidelines</h1>
-	<hr>
 
-	<section class="panel">
-		<header class="panel-heading">
-			<h1 class="panel-title">CSS</h1>
-		</header>
-		<div class="panel-body">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2>Introduction</h2>
-          <p>CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").</p>
-          <h2>Guidelines</h2>
-          <ul>
-            <li>Always keep in mind that we are working mobile first.</li>
-            <li>Don’t use ids.</li>
-            <li>In general, CSS shorthand is preferred.</li>
-            <li>When grouping selectors, put each individual selector on a single line.</li>
-            <li>Use <code>//</code> for small comment blocks and <code>/** */</code> for larger ones, like the blocks on top of each SCSS file.</li>
-            <li>By default we don't apply styling directly on tags (unless they are namespaced).</li>
-            <li>Classes are separated by hyphens (<code>-</code>).</li>
-            <li>We use pseudo-selectors in favour of extra divs and spans.</li>
-            <li>Use classes with a semantical meaning.</li>
-            <li>For overrides always prepend with the classname of the element you are overriding.</li>
-          </ul>
-          <h2>Code semantics</h2>
-          <ul>
-            <li>Put spaces after the <code>:</code> in property declarations.</li>
-            <li>Put spaces before <code>{</code> in rule declarations.</li>
-            <li>Put line breaks between rulesets.</li>
-            <li>Place <code>}</code> on a new line.</li>
-            <li>Each declaration should appear on its own line.</li>
-            <li>Each declaration is indented.</li>
-            <li>Don't specify units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
-            <li>Also use a semicolon for the last property.</li>
-          </ul>
-				</div>
+  <section class="panel-docs">
+    <h1>Styling guidelines</h1>
+    <h2>CSS</h2>
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>Introduction</h3>
+        <p>CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").</p>
+        <h3>Guidelines</h3>
+        <ul>
+          <li>Always keep in mind that we are working mobile first.</li>
+          <li>Don’t use ids.</li>
+          <li>In general, CSS shorthand is preferred.</li>
+          <li>When grouping selectors, put each individual selector on a single line.</li>
+          <li>Use <code>//</code> for small comment blocks and <code>/** */</code> for larger ones, like the blocks on top of each SCSS file.</li>
+          <li>By default we don't apply styling directly on tags (unless they are namespaced).</li>
+          <li>Classes are separated by hyphens (<code>-</code>).</li>
+          <li>We use pseudo-selectors in favour of extra divs and spans.</li>
+          <li>Use classes with a semantical meaning.</li>
+          <li>For overrides always prepend with the classname of the element you are overriding.</li>
+        </ul>
+        <h3>Code semantics</h3>
+        <ul>
+          <li>Put spaces after the <code>:</code> in property declarations.</li>
+          <li>Put spaces before <code>{</code> in rule declarations.</li>
+          <li>Put line breaks between rulesets.</li>
+          <li>Place <code>}</code> on a new line.</li>
+          <li>Each declaration should appear on its own line.</li>
+          <li>Each declaration is indented.</li>
+          <li>Don't specify units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+          <li>Also use a semicolon for the last property.</li>
+        </ul>
 			</div>
-    </div>
+		</div>
+
   </section>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">SASS</h1>
-    </header>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <ul>
-            <li>If applicable, always put <code>@extend</code> first.</li>
-            <li>We alphabetize declarations. If a declaration is a mixin, check the first letter of the mixin. If a declaration has a vendor prefix, act like it isn’t there.</li>
-            <li>As a rule of thumb, avoid unnecessary nesting in SCSS. At most, aim for three levels. If you cannot help it, step back and rethink your overall strategy (either the specificity needed, or the layout of the nesting).</li>
-            <li>For combined classes we use the <code>&amp;</code> nesting style.</li>
-            <li>Global and section-specific Sass files are just table of contents</li>
-            <li>Media-queries are defined completely separately.</li>
-          </ul>
-        </div>
+  <section class="panel-docs">
+    <h2>SASS</h2>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li>If applicable, always put <code>@extend</code> first.</li>
+          <li>We alphabetize declarations. If a declaration is a mixin, check the first letter of the mixin. If a declaration has a vendor prefix, act like it isn’t there.</li>
+          <li>As a rule of thumb, avoid unnecessary nesting in SCSS. At most, aim for three levels. If you cannot help it, step back and rethink your overall strategy (either the specificity needed, or the layout of the nesting).</li>
+          <li>For combined classes we use the <code>&amp;</code> nesting style.</li>
+          <li>Global and section-specific Sass files are just table of contents</li>
+          <li>Media-queries are defined completely separately.</li>
+        </ul>
       </div>
     </div>
+
   </section>
 </div>
