@@ -372,88 +372,6 @@ md {
 
 
 /**
- * Color
- * --------------------------------
- */
-
-// no longer necessary since the color page has been redesigned
-
-// p.sg-swatch-m {
-//   background: lighten($gray-lighter, 6%);
-//   border-radius: $border-radius-base;
-//   border-top-left-radius: 0;
-//   border-top-right-radius: 0;
-//   color: $gray-dark;
-//   font-size: rem(11);
-//   font-weight: bold;
-//   height: rem(180);
-//   margin-bottom: rem(20);
-//   padding: rem(120 5 10);
-//   position: relative;
-//   text-align: center;
-
-//   &:before {
-//     box-shadow: 0 0 rem(32) rgba(0, 0, 0, .05) inset;
-//     content: "";
-//     height: rem(100);
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//     width: 100%;
-//   }
-
-//   .fw-300 {
-//     font-weight: 300;
-//   }
-// }
-
-// .bg-color1,
-// .bg-color2,
-// .bg-color3,
-// .bg-color4,
-// .bg-color5,
-// .bg-color6 {
-//   border-radius: $border-radius-base;
-//   padding: 0;
-// }
-
-// .bg-brand:before {
-//   background: $brand;
-// }
-// .bg-brand-light:before {
-//   background: $brand-light;
-// }
-// .bg-brand-success:before {
-//   background: $brand-success;
-// }
-// .bg-brand-info:before {
-//   background: $brand-info;
-// }
-// .bg-brand-warning:before {
-//   background: $brand-warning;
-// }
-// .bg-brand-danger:before {
-//   background: $brand-danger;
-// }
-// .bg-gray-darker:before {
-//   background: $gray-darker;
-// }
-// .bg-gray-dark:before {
-//   background: $gray-dark;
-// }
-// .bg-gray:before {
-//   background: $gray;
-// }
-// .bg-gray-light:before {
-//   background: $gray-light;
-// }
-// .bg-gray-lighter:before {
-//   background: $gray-lighter;
-// }
-
-
-
-/**
  * Helper classes
  */
 .responsive-utilities {
@@ -467,6 +385,21 @@ md {
       background-color: $white;
       color: $gray-light !important;
     }
+  }
+}
+
+.margin-demo {
+  background-color: $gray-lighter;
+  border: 1px solid $gray;
+  border-radius: rem($border-radius-base);
+  margin: rem(0 0 4);
+  padding: rem(4);
+
+  > span {
+    background-color: $white;
+    border-radius: rem($border-radius-base);
+    display: inline-block;
+    padding: rem(1 4);
   }
 }
 

@@ -1,7 +1,8 @@
 <div class="container">
 
   <section class="panel-docs">
-    <h1>Show and hide content via media queries</h1>
+    <h1>Helper classes</h1>
+    <h2>Show and hide content via media queries</h2>
 
     <div class="row">
       <div class="col-xs-12">
@@ -14,19 +15,19 @@
               <tr>
                 <th></th>
                 <th>
-                  Extra small devices
+                  Extra small devices<br />
                   <small>Phones (&lt;480px)</small>
                 </th>
                 <th>
-                  Small devices
+                  Small devices<br />
                   <small>Tablets (≥768px)</small>
                 </th>
                 <th>
-                  Medium devices
+                  Medium devices<br />
                   <small>Desktops (≥992px)</small>
                 </th>
                 <th>
-                  Large devices
+                  Large devices<br />
                   <small>Desktops (≥1200px)</small>
                 </th>
               </tr>
@@ -126,11 +127,10 @@
 
   </section>
 
-  <hr />
 
   <!-- SCREEN READER AND KEYBOARD NAVIGATION -->
   <section class="panel-docs">
-    <h1 class="panel-title">Screen reader and keyboard navigation</h1>
+    <h2 class="panel-title">Screen reader and keyboard navigation</h2>
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
@@ -146,11 +146,10 @@
 
   </section>
 
-  <hr />
 
   <!-- HELPERS POSITIONING -->
   <section class="panel-docs">
-    <h1>Positioning and floats</h1>
+    <h2>Positioning and floats</h2>
 
     <p>In 99% of the situations you will rely on the grid and its containers for positioning purposes, but sometimes, you might need to re-position an element individually. Helper classes are meant for those situations.</p>
     <div class="row">
@@ -197,61 +196,67 @@
 
   </section>
 
-  <hr />
 
   <!-- HELPERS -->
   <section class="panel-docs">
-    <h1>Margins</h1>
+    <h2>Margins</h2>
 
     <p>Can be applied on all elements, examples on paragraphs here.</p>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <p class="margin-top"><code>.margin-top</code></p>
+        <div class="margin-demo">
+          <span class="margin-top">Block with top-margin</span>
+        </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <hljs data-format="html">
-          <p class="mt">Paragraph with top-margin</p>
+          <span class="margin-top">Block with top-margin</span>
         </hljs>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <p class="margin-bottom"><code>.margin-bottom</code></p>
+        <div class="margin-demo">
+          <span class="margin-bottom">Block with bottom-margin</span>
+        </div>
       </div>
       <div class="col-xs-12 col-md-6">
       <hljs data-format="html">
-        <p class="mb">Paragraph with bottom-margin</p>
+        <span class="margin-bottom">Block with bottom-margin</span>
       </hljs>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <p class="margin-left"><code>.margin-left</code></p>
+        <div class="margin-demo">
+          <span class="margin-left">Block with left-margin</span>
+        </div>
       </div>
       <div class="col-xs-12 col-md-6">
       <hljs data-format="html">
-        <p class="ml">Paragraph with left-margin</p>
+        <span class="margin-left">Block with left-margin</span>
       </hljs>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <p class="margin-right"><code>.margin-right</code></p>
+        <div class="margin-demo text-right">
+          <span class="margin-right">Block with right-margin</span>
+        </div>
       </div>
       <div class="col-xs-12 col-md-6">
       <hljs data-format="html">
-        <p class="mr">Paragraph with right-margin</p>
+        <span class="margin-right">Block with right-margin</span>
       </hljs>
       </div>
     </div>
 
   </section>
 
-  <hr />
 
   <!-- HELPERS HIDE / SHOW -->
   <section class="panel-docs">
-    <h1>Show and hide</h1>
+    <h2>Show and hide</h2>
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
@@ -262,9 +267,13 @@
       </div>
       <div class="col-xs-12 col-md-6">
         <hljs data-format="html">
-          <p class="show">This paragraph is shown</p>
-          <p class="hide">This is a hidden element.</p>
-          <p class="invisible">This element's display is unmodified but it is hidden as well.</p>
+          <div class="show">This element is shown</div>
+        </hljs>
+        <hljs data-format="html">
+          <div class="hide">This is a hidden element</div>
+        </hljs>
+        <hljs data-format="html">
+          <div class="invisible">This element's display is unmodified but it is hidden as well</div>
         </hljs>
       </div>
     </div>
