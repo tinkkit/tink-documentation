@@ -2,341 +2,427 @@
   <section class="panel-docs">
     <h1>Color variants</h1>
     <h2>Primary colors</h2>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
         <p class="tink-text-brand">Brand</p>
       </div>
       <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
-        <p class="tink-bg-brand">#347ea6</p>
+        <p class="tink-bg-brand">
+          <span data-ng-if="theme.active === 'digipolis'">#347ea6</span><span data-ng-if="theme.active === 'stad'">#cf0039</span><span data-ng-if="theme.active === 'ocmw'">#416a50</span><span data-ng-if="theme.active === 'politie'">#233588</span>
+        </p>
       </div>
       <div class="col-xs-12 col-md-6 col-lg-8">
-        <hljs data-format="html">
+        <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">
           <p class="tink-text-brand">Brand</p>
           <p class="tink-bg-brand">#347ea6</p>
         </hljs>
-      </div>
-    </div>
-    <div class="row">
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-brand">Brand</p>
-        <p class="text-center tink-bg-brand">#347ea6</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-brand">Brand</p>
-        <p class="text-center tink-bg-brand">#347ea6</p>
+        <hljs data-format="html" data-ng-if="theme.active === 'stad'">
+          <p class="tink-text-brand">Brand</p>
+          <p class="tink-bg-brand">#cf0039</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'ocmw'">
+          <p class="tink-text-brand">Brand</p>
+          <p class="tink-bg-brand">#416a50</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'politie'">
+          <p class="tink-text-brand">Brand</p>
+          <p class="tink-bg-brand">#233588</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-brand-light">Brand-light</p>
-        <p class="text-center tink-bg-brand-light">#5fb1d6</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-brand-light">Brand-light</p>
       </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-brand-light">Brand-light</p>
-        <p class="text-center tink-bg-brand-light">#5fb1d6</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-brand-light">
+          <span data-ng-if="theme.active === 'digipolis'">#5fb1d6</span><span data-ng-if="theme.active === 'stad'">#f28b00</span><span data-ng-if="theme.active === 'ocmw'">#5f9770</span><span data-ng-if="theme.active === 'politie'">#0a94d6</span>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">
+          <p class="tink-text-brand-light">Brand-light</p>
+          <p class="tink-bg-brand-light">#5fb1d6</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'stad'">
+          <p class="tink-text-brand-light">Brand-light</p>
+          <p class="tink-bg-brand-light">#f28b00</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'ocmw'">
+          <p class="tink-text-brand-light">Brand-light</p>
+          <p class="tink-bg-brand-light">#5f9770</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'politie'">
+          <p class="tink-text-brand-light">Brand-light</p>
+          <p class="tink-bg-brand-light">#0a94d6</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-success">Success</p>
-        <p class="text-center tink-bg-success">#4a921f</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-success">Success</p>
       </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-success">Success</p>
-        <p class="text-center tink-bg-success">#4a921f</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-success">
+          <span data-ng-if="theme.active === 'digipolis'">#4a921f</span><span data-ng-if="theme.active === 'stad'">#0b0</span><span data-ng-if="theme.active === 'ocmw'">#00bb00</span><span data-ng-if="theme.active === 'politie'">#00b394</span>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html" data-ng-if="theme.active === 'digipolis'">
+          <p class="tink-text-success">Success</p>
+          <p class="tink-bg-success">#4a921f</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'stad'">
+          <p class="tink-text-success">Success</p>
+          <p class="tink-bg-success">#0b0</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'ocmw'">
+          <p class="tink-text-success">Success</p>
+          <p class="tink-bg-success">#00bb00</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'politie'">
+          <p class="tink-text-success">Success</p>
+          <p class="tink-bg-success">#00b394</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-info">Info</p>
-        <p class="text-center tink-bg-info">#76b9f4</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-info">Info</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-info">#76b9f4</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-info">Info</p>
-        <p class="text-center tink-bg-info">#76b9f4</p>
+          <p class="tink-text-info">Info</p>
+          <p class="tink-bg-info">#76b9f4</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-warning">Warning</p>
-        <p class="text-center tink-bg-warning">#ff8d00</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-warning">Warning</p>
       </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-warning">Warning</p>
-        <p class="text-center tink-bg-warning">#ff8d00</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-warning">
+          <span data-ng-if="theme.active !== 'politie'">#ff8d00</span><span data-ng-if="theme.active === 'politie'">#f2932e</span>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html" data-ng-if="theme.active !== 'politie'">
+          <p class="tink-text-warning">Warning</p>
+          <p class="tink-bg-warning">#ff8d00</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'politie'">
+          <p class="tink-text-warning">Warning</p>
+          <p class="tink-bg-warning">#f2932e</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-danger">Danger</p>
-        <p class="text-center tink-bg-danger">#e60038</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-danger">Danger</p>
       </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-danger">Danger</p>
-        <p class="text-center tink-bg-danger">#e60038</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-danger">
+          <span data-ng-if="theme.active !== 'politie'">#e60038</span><span data-ng-if="theme.active === 'politie'">#ff0a46</span>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html" data-ng-if="theme.active !== 'politie'">
+          <p class="tink-text-danger">Danger</p>
+          <p class="tink-bg-danger">#e60038</p>
+        </hljs>
+        <hljs data-format="html" data-ng-if="theme.active === 'politie'">
+          <p class="tink-text-danger">Danger</p>
+          <p class="tink-bg-danger">#ff0a46</p>
         </hljs>
       </div>
     </div>
-
-  <hr />
-
-    <h2>Secondary colors</h2>
-
-    <div class="row">
-      <div class="col-xs-12 col-md-4  tink-text-white">
-        <p class="text-center tink-text-blue">Blue</p>
-        <p class="text-center tink-bg-blue">#81d4fa</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-blue">Blue</p>
-        <p class="text-center tink-bg-blue">#81d4fa</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-brown">Brown</p>
-        <p class="text-center tink-bg-brown">#a1887f</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-brown">Brown</p>
-        <p class="text-center tink-bg-brown">#a1887f</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-cyan">Cyan</p>
-        <p class="text-center tink-bg-cyan">#80deea</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-cyan">Cyan</p>
-        <p class="text-center tink-bg-cyan">#80deea</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-grass">Grass</p>
-        <p class="text-center tink-bg-grass">#c5e1a5</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-grass">Grass</p>
-        <p class="text-center tink-bg-grass">#c5e1a5</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-green">Green</p>
-        <p class="text-center tink-bg-green">#a5d6a7</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-green">Green</p>
-        <p class="text-center tink-bg-green">#a5d6a7</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-lime">Lime</p>
-        <p class="text-center tink-bg-lime">#d4e157</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-lime">Lime</p>
-        <p class="text-center tink-bg-lime">#d4e157</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-orange">Orange</p>
-        <p class="text-center tink-bg-orange">#ffb74d</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-orange">Orange</p>
-        <p class="text-center tink-bg-orange">#ffb74d</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-pink">Pink</p>
-        <p class="text-center tink-bg-pink">#f8bbd0</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-pink">Pink</p>
-        <p class="text-center tink-bg-pink">#f8bbd0</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-purple">Purple</p>
-        <p class="text-center tink-bg-purple">#ce93d8</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-purple">Purple</p>
-        <p class="text-center tink-bg-purple">#ce93d8</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-red">Red</p>
-        <p class="text-center tink-bg-red">#ff8a65</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-red">Red</p>
-        <p class="text-center tink-bg-red">#ff8a65</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-teal">Teal</p>
-        <p class="text-center tink-bg-teal">#80cbc4</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-teal">Teal</p>
-        <p class="text-center tink-bg-teal">#80cbc4</p>
-        </hljs>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p class="text-center tink-text-yellow">Yellow</p>
-        <p class="text-center tink-bg-yellow">#fff176</p>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        <hljs data-format="html">
-        <p class="text-center tink-text-yellow">Yellow</p>
-        <p class="text-center tink-bg-yellow">#fff176</p>
-        </hljs>
-      </div>
-    </div>
-
-  <hr />
 
     <h2>Grays</h2>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-black">black</p>
-        <p class="text-center tink-bg-black">#000</p>
+    <div class="row margin-top">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-black">Black</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-black">#000</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-black">black</p>
-        <p class="text-center tink-bg-black">#000</p>
+          <p class="tink-text-black">Black</p>
+          <p class="tink-bg-black">#000</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-gray-darker">Gray-darker</p>
-        <p class="text-center tink-bg-gray-darker">#141414</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray-darker">Gray-darker</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-gray-darker">#141414</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray-darker">Gray-darker</p>
-        <p class="text-center tink-bg-gray-darker">#141414</p>
+          <p class="tink-text-gray-darker">Gray-darker</p>
+          <p class="tink-bg-gray-darker">#141414</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-gray-dark">Gray-dark</p>
-        <p class="text-center tink-bg-gray-dark">#333</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray-dark">Gray-dark</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-gray-dark">#333</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray-dark">Gray-dark</p>
-        <p class="text-center tink-bg-gray-dark">#333</p>
+          <p class="tink-text-gray-dark">Gray-dark</p>
+          <p class="tink-bg-gray-dark">#333</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-gray">Gray</p>
-        <p class="text-center tink-bg-gray">#888</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray">Gray</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-gray">#888</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray">Gray</p>
-        <p class="text-center tink-bg-gray">#888</p>
+          <p class="tink-text-gray">Gray</p>
+          <p class="tink-bg-gray">#888</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4 tink-text-white">
-        <p class="text-center tink-text-gray-light">Gray-light</p>
-        <p class="text-center tink-bg-gray-light">#bbb</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray-light tink-bg-black">Gray-light</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-bg-gray-light">#bbb</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray-light">Gray-light</p>
-        <p class="text-center tink-bg-gray-light">#bbb</p>
+          <p class="tink-text-gray-light">Gray-light</p>
+          <p class="tink-bg-gray-light">#bbb</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p class="text-center tink-text-gray-lighter">Gray-lighter</p>
-        <p class="text-center tink-bg-gray-lighter">#eaeaea</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray-lighter tink-bg-black">Gray-lighter</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-bg-gray-lighter">#eaeaea</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray-lighter">Gray-lighter</p>
-        <p class="text-center tink-bg-gray-lighter">#eaeaea</p>
+          <p class="tink-text-gray-lighter">Gray-lighter</p>
+          <p class="tink-bg-gray-lighter">#eaeaea</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p class="text-center tink-text-gray-lightest">Gray-lightest</p>
-        <p class="text-center tink-bg-gray-lightest">#f7f7f7</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-gray-lightest tink-bg-black">Gray-lightest</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-bg-gray-lightest">#f7f7f7</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-gray-lightest">Gray-lightest</p>
-        <p class="text-center tink-bg-gray-lightest">#f7f7f7</p>
+          <p class="tink-text-gray-light">Gray-lightest</p>
+          <p class="tink-bg-gray-lightest">#f7f7f7</p>
         </hljs>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p class="text-center tink-text-white">white</p>
-        <p class="text-center tink-bg-white">#fff</p>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-white tink-bg-black">White</p>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-bg-white">#fff</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
         <hljs data-format="html">
-        <p class="text-center tink-text-white">white</p>
-        <p class="text-center tink-bg-white">#fff</p>
+          <p class="tink-text-white">White</p>
+          <p class="tink-bg-white">#fff</p>
+        </hljs>
+      </div>
+    </div>
+
+    <h2>Secondary colors</h2>
+
+    <div class="row margin-top">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-brown">Brown</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-brown">#a1887f</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-brown">Brown</p>
+          <p class="tink-bg-brown">#a1887f</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-red">Red</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-red">#ff8a65</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-red">Red</p>
+          <p class="tink-bg-red">#ff8a65</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-orange">Orange</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-orange">#ffb74d</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-orange">Orange</p>
+          <p class="tink-bg-orange">#ffb74d</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-yellow">Yellow</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-bg-yellow">#fff176</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-yellow">Yellow</p>
+          <p class="tink-bg-yellow">#fff176</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-lime">Lime</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-lime">#d4e157</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-lime">Lime</p>
+          <p class="tink-bg-lime">#d4e157</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-grass">Grass</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-grass">#c5e1a5</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-grass">Grass</p>
+          <p class="tink-bg-grass">#c5e1a5</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-green">Green</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-green">#a5d6a7</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-green">Green</p>
+          <p class="tink-bg-green">#a5d6a7</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-teal">Teal</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-teal">#80cbc4</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-teal">Teal</p>
+          <p class="tink-bg-teal">#80cbc4</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-cyan">Cyan</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-cyan">#80deea</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-cyan">Cyan</p>
+          <p class="tink-bg-cyan">#80deea</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-blue">Blue</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-blue">#81d4fa</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-blue">Blue</p>
+          <p class="tink-bg-blue">#81d4fa</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-pink">Pink</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-pink">#f8bbd0</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-pink">Pink</p>
+          <p class="tink-bg-pink">#f8bbd0</p>
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block">
+        <p class="tink-text-purple">Purple</p>
+      </div>
+      <div class="col-xs-6 col-md-3 col-lg-2 text-center color-block tink-text-white">
+        <p class="tink-bg-purple">#ce93d8</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <hljs data-format="html">
+          <p class="tink-text-purple">Purple</p>
+          <p class="tink-bg-purple">#ce93d8</p>
         </hljs>
       </div>
     </div>

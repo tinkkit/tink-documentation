@@ -372,7 +372,7 @@ md {
 
 
 /**
- * F.A.Q.
+ * Color
  * --------------------------------
  */
 .color-block {
@@ -380,7 +380,7 @@ md {
   p {
     border-radius: rem($border-radius-base);
     box-shadow: 0 1px rem(2) rgba($black, .32);
-    padding: rem(12 4);
+    padding: rem(8 4);
   }
 }
 
