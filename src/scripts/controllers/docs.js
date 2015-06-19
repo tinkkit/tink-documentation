@@ -37,7 +37,7 @@
         subsubpage = $routeParams.subsubpage;
 
         // Show the tab bar if the subpage is in the active URLs list
-        if(activeURLs.indexOf(subpage) !== -1) {
+        if(activeURLs.indexOf(subpage) !== -1 && subsubpage !== 'overview') {
           $scope.showTabMenu = true;
         }
 
@@ -45,7 +45,6 @@
         if($location.hash() !== '') {
           subsubsubpage = $location.hash();
           $scope.tabview = subsubsubpage;
-
         } // else {
         //   $scope.tabview = 'readme';
         // }

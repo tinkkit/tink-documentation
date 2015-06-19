@@ -372,8 +372,26 @@ md {
 
 
 /**
- * Helper classes
+ * F.A.Q.
+ * --------------------------------
  */
+.color-block {
+
+  p {
+    border-radius: rem($border-radius-base);
+    box-shadow: 0 1px rem(2) rgba($black, .32);
+    padding: rem(12 4);
+  }
+}
+
+
+
+
+/**
+ * Helper classes
+ * --------------------------------
+ */
+
 .responsive-utilities {
   td {
     &.is-visible {
