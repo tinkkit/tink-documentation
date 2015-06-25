@@ -1,95 +1,92 @@
 <div class="container">
-	<h1>JavaScript guidelines</h1>
-	<hr>
 
-	<section class="panel">
-		<header class="panel-heading">
-			<h1 class="panel-title">Overview</h1>
-		</header>
-		<div class="panel-body">
-			<div class="row">
-				<div class="col-md-6">'use strict'; must be at every page top</div>
-				<div class="col-md-6">
-					<hljs data-format="js">
-						'use strict';
+  <section class="panel-docs">
+    <h1>JavaScript guidelines</h1>
+    <h2>Overview</h2>
 
-						//..... your code
-					</hljs>
-				</div>
+		<div class="row">
+			<div class="col-md-6">'use strict'; must be at every page top</div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					'use strict';
+
+					//..... your code
+				</hljs>
 			</div>
-			<div class="row">
-				<div class="col-md-6">Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code></div>
-				<div class="col-md-6">
-					<hljs data-format="js">
-						//Bad
-						if(a==b && a!=n){
-							//...
-						}
-
-						//Good
-						if(a===b && a !==b){
-							//...
-						}
-			</hljs>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code></div>
-		<div class="col-md-6">
-			<hljs data-format="js">
-				//Bad
-				if(a==b && a!= n){
-					//...
-				}
+		<div class="row">
+			<div class="col-md-6">Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code></div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					//Bad
+					if(a==b && a!=n){
+						//...
+					}
 
-				//Good
-				if(a===b && a!==b){
-					//...
-				}
-	</hljs>
-</div>
-</div>
-<div class="row">
-	<div class="col-md-6">Use readable code</div>
-	<div class="col-md-6">
-		<hljs data-format="js">
-			//Bad
-				if (variable !== '') {
-				//....
-			}
+					//Good
+					if(a===b && a !==b){
+						//...
+					}
+				</hljs>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code></div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					//Bad
+					if(a==b && a!= n){
+						//...
+					}
 
-			//Good
-			if (variable) {
-				//...
-			}
+					//Good
+					if(a===b && a!==b){
+						//...
+					}
+				</hljs>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">Use readable code</div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					//Bad
+						if (variable !== '') {
+						//....
+					}
 
-			//Bad
-			if (name.length > 0) {
-				//....
-			}
+					//Good
+					if (variable) {
+						//...
+					}
 
-			//Good
-			if (name.length) {
-				//...
-			}
-</hljs>
-</div>
-</div>
-<div class="row">
-	<div class="col-md-6">Use braces <code>{ .. }</code></div>
-	<div class="col-md-6">
-		<hljs data-format="js">
-			//Bad
-			if (eq)
-				return false;
+					//Bad
+					if (name.length > 0) {
+						//....
+					}
 
-			//Good
-			if (eq) {
-				return false;
-			}
-	</hljs>
-</div>
-</div>
+					//Good
+					if (name.length) {
+						//...
+					}
+				</hljs>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">Use braces <code>{ .. }</code></div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					//Bad
+					if (eq)
+						return false;
+
+					//Good
+					if (eq) {
+						return false;
+					}
+				</hljs>
+			</div>
+		</div>
 <!-- <div class="row">
 	<div class="col-md-6">Use blocks for readable code</div>
 	<div class="col-md-6">
@@ -104,13 +101,10 @@ function(){return false;}
 	</hljs>
 </div>
 </div> -->
-</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Objects</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>Objects</h2>
 		<div class="row">
 			<div class="col-md-6">Use the literal syntax for object creation.</div>
 			<div class="col-md-6">
@@ -133,16 +127,13 @@ function(){return false;}
 						width: 200,
 						left: 10
 					};
-			</hljs>
+				</hljs>
+			</div>
 		</div>
-	</div>
-</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Arrays</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>Arrays</h2>
 		<div class="row">
 			<div class="col-md-6">Use the literal syntax for array creation.</div>
 			<div class="col-md-6">
@@ -176,13 +167,10 @@ function(){return false;}
 				</hljs>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Strings</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>Strings</h2>
 		<div class="row">
 			<div class="col-md-6">Use single quotes <code>' '</code> for strings.</div>
 			<div class="col-md-6">
@@ -195,70 +183,68 @@ function(){return false;}
 				</hljs>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">&& and ||</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>&& and ||</h2>
+
+
 		<div class="row">
 			<div class="col-md-6">When using <code>if</code> for variable assignment use default opperator ||.</div>
 			<div class="col-md-6">
 				<hljs data-format="js">
 					// bad
 					function donation(money){
-					var donated;
+						var donated;
 
-					if(money){
-					donated = money;
-				}else{
-				donated = 'no money';
-			}
-		}
+						if(money){
+							donated = money;
+						}else{
+						donated = 'no money';
+						}
+					}
 
-		// good
-		function donation(money){
-		var donated = money || 'no money';
-	}
-</hljs>
-</div>
-</div>
-<div class="row">
-	<div class="col-md-6">Use <code>&&</code> to shortening your code.</div>
-	<div class="col-md-6">
-		<hljs data-format="js">
-			if(vincent === 'cool'){
-			if(jasper === 'cooler'){
-			//Do someting...
-		}
-	}
+					// good
+					function donation(money){
+					var donated = money || 'no money';
+					}
+				</hljs>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">Use <code>&&</code> to shortening your code.</div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					if(vincent === 'cool'){
+						if(jasper === 'cooler'){
+						//Do someting...
+						}
+					}
 
-	// good
-	if(vincent === 'cool' && jasper === 'cooler'){
-	//Do someting
-}
-</hljs>
-</div>
-</div>
-<div class="row">
-	<div class="col-md-6">Do not use <code>||</code> and <code>&&</code> for function calls.</div>
-	<div class="col-md-6">
-		<hljs data-format="js">
-			//Bad
-			scope.$$phase || (scope.$root && scope.$root.$$phase) || scope.$digest();
-			//Bad
-			attr.bsShow && doSometing();
-		</hljs>
-	</div>
-</div>
-</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Operator ?:</h1>
-	</header>
-	<div class="panel-body">
+					// good
+					if(vincent === 'cool' && jasper === 'cooler'){
+						//Do someting
+					}
+				</hljs>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">Do not use <code>||</code> and <code>&&</code> for function calls.</div>
+			<div class="col-md-6">
+				<hljs data-format="js">
+					//Bad
+					scope.$$phase || (scope.$root && scope.$root.$$phase) || scope.$digest();
+					//Bad
+					attr.bsShow && doSometing();
+				</hljs>
+			</div>
+		</div>
+
+	</section>
+<section class="panel-docs">
+		<h2>Operator ?:</h2>
+
+
 		<div class="row">
 			<div class="col-md-6">Use <code>return</code> and <code>?:</code> like this.</div>
 			<div class="col-md-6">
@@ -270,18 +256,15 @@ function(){return false;}
 						return bar();
 					}
 
-				// good
-				return val ? foo() : bar();
-		</hljs>
-	</div>
-</div>
-</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Properties</h1>
-	</header>
-	<div class="panel-body">
+					// good
+					return val ? foo() : bar();
+				</hljs>
+			</div>
+		</div>
+
+	</section>
+	<section class="panel-docs">
+		<h2>Properties</h2>
 		<div class="row">
 			<div class="col-md-6">Use dot notation when accessing properties without variable.</div>
 			<div class="col-md-6">
@@ -296,16 +279,13 @@ function(){return false;}
 
 				// good
 				var profession = vincent.profession;
-			</hljs>
+				</hljs>
+			</div>
 		</div>
-	</div>
-</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Variables</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>Variables</h2>
 		<div class="row">
 			<div class="col-md-6">Always use var to declare variables otherwhise you will create global variables !</div>
 			<div class="col-md-6">
@@ -343,13 +323,10 @@ function(){return false;}
 				</hljs>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Semicolon</h1>
-	</header>
-	<div class="panel-body">
+
+	</section>
+	<section class="panel-docs">
+		<h2>Semicolon</h2>
 		<div class="row">
 			<div class="col-md-6">Do not use a semicolon at the end of a if statement.</div>
 			<div class="col-md-6">
@@ -368,53 +345,55 @@ function(){return false;}
 				</hljs>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="panel">
-	<header class="panel-heading">
-		<h1 class="panel-title">Comments</h1>
-	</header>
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-md-6">Use <code>/** ... */</code> for multiline comments.</div>
-			<div class="col-md-6">
-				<hljs data-format="js">
-					/**
-					 * funcName() returns a new element
-					 *
-					 * @param {paramType} paramName
-					 * @return {Type} element
-					 */
-					 function funcName(paramName) {
-					  // ...stuff...
-					  return elem;
-					}
-				</hljs>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
-</div>
-			<div class="col-md-6">
-				<hljs data-format="js">
-					//Good
-					function getName() {
-					  console.log('getting name');
 
-					  // set the default name to 'john'
-					  var name = this.name || 'john';
-
-					  return name;
-					}
-				</hljs>
+	</section>
+	<section class="panel-docs">
+		<h2>Comments</h2>
+			<div class="row">
+				<div class="col-md-6">Use <code>/** ... */</code> for multiline comments.</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+						/**
+						 * funcName() returns a new element
+						 *
+						 * @param {paramType} paramName
+						 * @return {Type} element
+						 */
+						 function funcName(paramName) {
+						  // ...stuff...
+						  return elem;
+						}
+					</hljs>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">Use <code>// TODO:</code> to annotate solutions to problems</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">Use <code>// FIXME:</code> to annotate problems</div>
-		</div>
-	</div>
-</section>
+			<div class="row">
+				<div class="col-md-6">
+					<p>Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.</p>
+				</div>
+				<div class="col-md-6">
+					<hljs data-format="js">
+						//Good
+						function getName() {
+						  console.log('getting name');
+
+						  // set the default name to 'john'
+						  var name = this.name || 'john';
+
+						  return name;
+						}
+					</hljs>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p>Use <code>// TODO:</code> to annotate solutions to problems</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p>Use <code>// FIXME:</code> to annotate problems</p>
+				</div>
+			</div>
+
+	</section>
 </div>

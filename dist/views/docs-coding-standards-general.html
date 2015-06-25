@@ -1,71 +1,64 @@
 <div class="container">
-	<h1>Code standards, guidelines &amp; best practices</h1>
-	<hr>
 
-	<section class="panel">
-		<header class="panel-heading">
-			<h1 class="panel-title">General</h1>
-		</header>
-		<div class="panel-body">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2>Guidelines</h2>
-					<p>Try to follow the Code Guide: <a href="http://codeguide.co">http://codeguide.co</a>.</p>
-					<h2>Indentation</h2>
-					<p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting <kbd>Tab</kbd> in your text editor shall be equivalent to two spaces.</p>
-					<h2>Readability</h2>
-					<p>We prefer readability over file-size savings, so plenty of whitespace is encouraged. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript, since we will use build processes to automatically minify and gzip all static client-side files.</p>
-          <p>We like to work with Sublime Text. If you agree, you can just load the project file. Some project settings will automatically be applied.</p>
-				</div>
+  <section class="panel-docs">
+    <h1>Code standards, guidelines &amp; best practices</h1>
+    <h2>General</h2>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>Guidelines</h3>
+				<p>Try to follow the Code Guide: <a href="http://codeguide.co">http://codeguide.co</a>.</p>
+				<h3>Indentation</h3>
+				<p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting <kbd>Tab</kbd> in your text editor shall be equivalent to two spaces.</p>
+				<h3>Readability</h3>
+				<p>We prefer readability over file-size savings, so plenty of whitespace is encouraged. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript, since we will use build processes to automatically minify and gzip all static client-side files.</p>
+        <p>We like to work with Sublime Text. If you agree, you can just load the project file. Some project settings will automatically be applied.</p>
 			</div>
-    </div>
+		</div>
+
   </section>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Markup</h1>
-    </header>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2>Introduction</h2>
-          <ul>
-            <li>Markup defines the structure and outline of a document and offers a structured content. Markup is not intended to define the look and feel of the content on the page beyond rudimentary concepts such as headers, paragraphs, and lists. The presentation attributes of HTML have all been deprecated and style should be contained in style sheets.</li>
-            <li>We will use the HTML5 Doctype and HTML5 features when appropriate.</li>
-            <li>We will test our markup against the W3C validator, to ensure that the markup is well formed.</li>
-            <li>All markup should be delivered as UTF-8, as this is the most friendly for internationalization.</li>
-            <li>For consistency with attributes that accept whitespace, all attributes should be quoted. We always double quotes.</li>
-          </ul>
-          <h2>Guidelines</h2>
-          <ul>
-            <li>Use actual <code>&lt;p&gt;</code> elements for paragraph delimiters as opposed to multiple <code>&lt;br&gt;</code> tags.</li>
-            <li>Make use of <code>&lt;dl&gt;</code> (definition lists) and <code>&lt;blockquote&gt;</code>, when appropriate.</li>
-            <li>Items in list form should always be housed in a <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>, never a set of more than one <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>.</li>
-            <li>Use label fields to label each form field, the for attribute should associate itself with the input field, so users can click the labels.</li>
-            <li>Do not use the size attribute on your input fields. The size attribute is relative to the font-size of the text inside the input. Instead use css width.</li>
-            <li>Tables shouldn't be used for page layout.</li>
-            <li>Use microformats and/or Microdata where appropriate, specifically hCard and adr.</li>
-            <li>Make use of <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;th&gt;</code> tags (and Scope attribute) when appropriate.</li>
-            <li>Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property text-transform: uppercase/lowercase.</li>
-            <li>Use CDNs and HTTPS for third-party JS when possible.</li>
-            <li>Use WAI-ARIA attributes in documentation examples to promote accessibility.</li>
-          </ul>
-          <h2>JavaScript</h2>
-          <ul>
-            <li>We prefix all JavaScript related attributes with <code>data-</code> in order to preserve validation.</li>
-            <li>Since some browsers show some incompatibilities, we don’t use AngularJS attributes on new defined HTML5 tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, …). Use a nested <code>&lt;div&gt;</code> instead.</li>
-            <li>We always use double quotes for attributes, since some AngularJS attributes use single quotes.</li>
-          </ul>
-        </div>
+  <section class="panel-docs">
+    <h2 class="panel-title">Markup</h2>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Introduction</h3>
+        <ul>
+          <li>Markup defines the structure and outline of a document and offers a structured content. Markup is not intended to define the look and feel of the content on the page beyond rudimentary concepts such as headers, paragraphs, and lists. The presentation attributes of HTML have all been deprecated and style should be contained in style sheets.</li>
+          <li>We will use the HTML5 Doctype and HTML5 features when appropriate.</li>
+          <li>We will test our markup against the W3C validator, to ensure that the markup is well formed.</li>
+          <li>All markup should be delivered as UTF-8, as this is the most friendly for internationalization.</li>
+          <li>For consistency with attributes that accept whitespace, all attributes should be quoted. We always double quotes.</li>
+        </ul>
+        <h3>Guidelines</h3>
+        <ul>
+          <li>Use actual <code>&lt;p&gt;</code> elements for paragraph delimiters as opposed to multiple <code>&lt;br&gt;</code> tags.</li>
+          <li>Make use of <code>&lt;dl&gt;</code> (definition lists) and <code>&lt;blockquote&gt;</code>, when appropriate.</li>
+          <li>Items in list form should always be housed in a <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>, never a set of more than one <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>.</li>
+          <li>Use label fields to label each form field, the for attribute should associate itself with the input field, so users can click the labels.</li>
+          <li>Do not use the size attribute on your input fields. The size attribute is relative to the font-size of the text inside the input. Instead use css width.</li>
+          <li>Tables shouldn't be used for page layout.</li>
+          <li>Use microformats and/or Microdata where appropriate, specifically hCard and adr.</li>
+          <li>Make use of <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;th&gt;</code> tags (and Scope attribute) when appropriate.</li>
+          <li>Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property text-transform: uppercase/lowercase.</li>
+          <li>Use CDNs and HTTPS for third-party JS when possible.</li>
+          <li>Use WAI-ARIA attributes in documentation examples to promote accessibility.</li>
+        </ul>
+        <h3>JavaScript</h3>
+        <ul>
+          <li>We prefix all JavaScript related attributes with <code>data-</code> in order to preserve validation.</li>
+          <li>Since some browsers show some incompatibilities, we don’t use AngularJS attributes on new defined HTML5 tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, …). Use a nested <code>&lt;div&gt;</code> instead.</li>
+          <li>We always use double quotes for attributes, since some AngularJS attributes use single quotes.</li>
+        </ul>
       </div>
     </div>
+
   </section>
 
-  <section class="panel">
-    <header class="panel-heading">
-      <h1 class="panel-title">Definition of done</h1>
-    </header>
-    <div class="panel-body">
+  <section class="panel-docs">
+    <h2>Definition of done</h2>
+
       <div class="row">
         <div class="col-xs-12">
           <p>We consider something “done” when:</p>
@@ -76,27 +69,27 @@
             <li>documentation is updated (if applicable);</li>
             <li>all unit tests have passed (if applicable).</li>
           </ul>
-          <h2>Browser support</h2>
+          <h3>Browser support</h3>
           <p>In general, we provide support for all current browsers and 2 major versions back.</p>
           <p>If a small minority of all the listed browsers show a defect, we make use of graceful degradation.</p>
           <p>In case of incompatibility, this is a reason to rethink whatever is incompatible.</p>
           <p>Some earlier browser versions or browsers versions that are still in development may also be compatible. Note that the browsers listed below may already be outdated when reading this document.</p>
           <ul>
             <li>Internet Explorer: 11, 10, 9</li>
-            <li>Chrome: 37, 36, 35</li>
-            <li>Safari (Mac): 7.1, 7.0, 6.2</li>
-            <li>Firefox: 32, 31, 30</li>
-            <li>Opera: 24, 23, 22</li>
-            <li>Chrome for Android: 37</li>
-            <li>Safari (iOS): 8.0, 7.1, 7.0</li>
-            <li>Opera Mini: 7</li>
-            <li>Android browser: 4.4, 4.3, 4.1</li>
+            <li>Chrome: 43, 42, 41</li>
+            <li>Safari (Mac): 8.0, 7.1, 7.0</li>
+            <li>Firefox: 38, 37, 36</li>
+            <li>Opera: 30, 29, 28</li>
+            <li>Chrome for Android: 43, 42, 41</li>
+            <li>Safari (iOS): 8.3, 8.2, 8.1</li>
+            <li>Opera Mini: 9, 8, 7</li>
+            <li>Android browser: 5.1, 5.0, 4.4</li>
           </ul>
-          <h2>Accessibility</h2>
+          <h3>Accessibility</h3>
           <p>Digital information is by nature far more accessible than printed or spoken material. This is why the internet holds a great potential to become the most valuable communication and information medium available for the visually impaired, for people who can't use their hands and for other people that use assistive technologies. However, its potential can only be achieved when websites are built according to the guidelines for accessibility.</p>
           <p>In order to check whether our web components are accessible or not we follow the AnySurfer checklist (only available in Dutch or French): <a href="http://www.anysurfer.be/nl/in-de-praktijk/checklist">http://www.anysurfer.be/nl/in-de-praktijk/checklist</a></p>
         </div>
       </div>
-    </div>
+
   </section>
 </div>
