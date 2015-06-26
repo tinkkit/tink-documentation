@@ -16,6 +16,39 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.5.2] - 2015-06-26
+
+### Changed
+- Made subtle design changes to panel and accordion
+- Optimized the panel title so that basic HTML can be added
+
+
+
+## [1.5.1] - 2015-06-24
+
+### Fixed
+- Fixed the accordion toggle's position
+
+
+
+## [1.5.0] - 2015-06-24
+
+### Changed
+- Changed the panels' look
+
+### Fixed
+- Removed an unwanted dependency in the Bower file
+- Moved the panel variables to the main variables file
+
+
+
+## [1.4.3] - 2015-06-24
+
+### Fixed
+- Fixed an issue with nested panels where all descendant toggles would get the wrong styling
+
+
+
 ## [1.4.2] - 2015-06-22
 
 ### Fixed

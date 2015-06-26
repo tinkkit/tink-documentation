@@ -13,6 +13,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Security
 -->
+## [1.1.5] - 2015-06-24
+
+### Fixed
+- Fixed scrolling when clicking on other menu items
+
+## [1.1.4] - 2015-06-24
+
+### Fixed
+- Fixed accordion inside get own classes
+
 ## [1.1.3] - 2015-06-03
 
 ### Fixed
