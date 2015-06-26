@@ -39,7 +39,7 @@
     "tink-api-javascript": "latest",
     "tink-md-angular": "latest",
     "tink-stick-to-top-angular": "latest",
-    "tink-sort-table-angular": "~1.1.9"
+    "tink-sort-table-angular": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.12",
