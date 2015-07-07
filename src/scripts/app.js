@@ -91,7 +91,7 @@
     languages:['html','js','bash','css']
   });
 }).run(function($rootScope) {
-  var versionFileTinkProp = '1.5.3';
+  var versionFileTinkProp = '1.5.8';
   $rootScope.themes = {
     digipolis:['tink.'+versionFileTinkProp+'.min.css','default.'+versionFileTinkProp+'.min.css','styleguide.'+versionFileTinkProp+'.min.css'],
     stad:['tink-stad.'+versionFileTinkProp+'.min.css','default-stad.'+versionFileTinkProp+'.min.css','styleguide-stad.'+versionFileTinkProp+'.min.css'],

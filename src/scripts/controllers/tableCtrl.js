@@ -79,14 +79,12 @@ angular.module('tinkApp')
       {
         field: 'firstname',
         alias: 'Voornaam',
-        checked: true,
-        sort:true
+        checked: true
       },
       {
         field: 'lastname',
         alias: 'Achternaam',
-        checked: false,
-        sort:true
+        checked: false
       },
       {
         field: 'username',
@@ -102,13 +100,70 @@ angular.module('tinkApp')
 
     // Some actions that become available when you check one or multiple rows
    scope.actions = [
-      {
-        name: 'remove',
-        callback: function(items) {
-          angular.forEach(items, function(val) {console.log('ohoho',scope.data.indexOf(val))
-            scope.data.splice(scope.data.indexOf(val),1);
-          });
+        {
+          name: 'remove',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:1,
+          master:true,
+          icon:'fa-close'
+        },{
+          name: 'add',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:0,
+          master:true,
+          icon:'fa-edit'
+        },{
+          name: 'search',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:3,
+          master:false,
+          icon:'fa-search'
+        },
+        {
+          name: 'do someting',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:2,
+          master:false,
+          icon:'fa-arrows-h'
+        },
+        {
+          name: 'open',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:0,
+          master:false,
+          icon:'fa-bell-o'
         }
-      }
-    ];
+        ,
+        {
+          name: 'open all',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.splice(scope.data.indexOf(val),1);
+            });
+          },
+          order:0,
+          master:false,
+          icon:'fa-calculator'
+        }
+      ];
 }]);
