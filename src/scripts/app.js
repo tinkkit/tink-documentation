@@ -34,8 +34,7 @@
    'tink.interactivetable',
    'tink.identitycardnumber',
    'tink.sticktotop',
-   'tink.tooltip',
-   'yaru22.md'
+   'tink.tooltip'
    ])
  .config(function ($routeProvider) { /*, $locationProvider */
   $routeProvider
