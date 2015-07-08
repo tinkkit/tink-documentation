@@ -6,29 +6,47 @@
 
   <section class="panel-docs" data-ng-switch-when="example">
 
+    <h2>Example</h2>
+     <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <button tink-tooltip="Hier komt de tooltip content" tink-tooltip-align="top" >Open tooltip</button>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <hljs data-format="html">
+          <button tink-tooltip="Hier komt de tooltip content" tink-tooltip-align="top" >Open tooltip</button>
+        </hljs>
+      </div>
+    </div>
+
     <div class="row">
-          <div class="col-xs-12 col-md-3">
-            <p><button tink-tooltip="" tink-tooltip-align="bottom" tink-tooltip-template="views/tooltip-template.html">Open tooltip</button></p>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <hljs data-format="html">
-              <button tink-tooltip="" tink-tooltip-align="bottom" tink-tooltip-template="views/tooltip-template.html">Open tooltip</button>
-            </hljs>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <p>You can use the <code>tink-popover-place</code> and <code>tink-popover-align</code> options to position the popover container to your liking, however screen calculation will be applied to optimize the display of the popover, possibly overruling your set placement. Click one of the above examples and scroll or resize your screen to see this behaviour in action.</p>
-            <p>
-            <hljs data-format="html">
-              <button tink-popover tink-popover-place="left" tink-popover-align="bottom" tink-popover-template="views/popover-template.html">Left Popover</button>
-            </hljs>
-            </p>
-          </div>
-
-        </div>
-
+      <div class="col-xs-12 col-md-3">
+        <button tink-tooltip="Hier komt de tooltip content" tink-tooltip-trigger="click" tink-tooltip-align="top" >Open tooltip</button>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <hljs data-format="html">
+          <button tink-tooltip="Hier komt de tooltip content" tink-tooltip-trigger="click" tink-tooltip-align="top" >Open tooltip</button>
+        </hljs>
+      </div>
+    </div>
+    
+    <h2>Tooltip code</h2>
+      <div class="row">
+        <div class="col-xs-12">
+          <p>You can use the <code>tink-popover-align</code> options to position the popover container to your liking.</p>
+          <hljs data-format="html">
+            <button tink-tooltip="Hier komt content." tink-tooltip-align="bottom">Left tooltip</button>
+          </hljs>
+          <p>If you want to change the behaviour to click you can use the <code>tink-tooltip-trigger</code> options.</p>
+          <hljs data-format="html">
+            <button tink-tooltip="hier komt content." tink-tooltip-trigger="click" tink-tooltip-align="bottom">Left tooltip</button>
+          </hljs>
+          <p>When you want to use a template use the <code>tink-tooltip-template</code></p>
+          
+          <hljs data-format="html">
+            <button tink-tooltip tink-tooltip-template="views/tooltip-template.html" tink-tooltip-align="bottom">Popover</button>
+          </hljs>      
+      </div>
+    </div>
   </section>
 
   <section class="panel-docs" data-ng-switch-default>
