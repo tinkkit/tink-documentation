@@ -1,33 +1,29 @@
-<ul class="nav-top-branding">
-  <li class="logo">
+<ul class="nav-top-left">
+  <li class="nav-top-logo">
     <a href="#/" title="{{theme.text}} home"><span>{{theme.text}}</span></a>
   </li>
-  <li class="toggle" data-tink-sidenav-collapse="sideNav1" data-ng-if="sidenav.visible">
+  <li class="nav-top-toggle" data-tink-sidenav-collapse="sideNav1" data-ng-if="sidenav.visible">
     <a href="" title="Open menu"><i class="fa fa-bars"><span class="sr-only">Open menu</span></i></a>
   </li>
-  <li class="app">
+  <li class="nav-top-app">
     <h1><a href="#/" title="{{theme.text}}" data-ng-bind-html="theme.html"></a></h1>
+  </li>
+  <li data-ng-if="!sidenav.visible">
+    <a class="btn btn-xs btn-transparent" href="#/start" role="button">Lees de documentatie</a>
   </li>
 </ul>
 
-<section class="nav-top-section">
-  <ul class="nav-top-section-left" data-ng-if="!sidenav.visible">
-    <li>
-      <a class="btn btn-xs btn-transparent" href="#/start" role="button">Lees de documentatie</a>
-    </li>
-  </ul>
-  <ul class="nav-top-section-right">
-    <li>
-      <a class="btn-xs btn-primary" href="mailto:tink@digipolis.be" role="button">Geef feedback</a>
-    </li>
-    <li class="theme-switch">
-      <select data-theme-switcher>
-        <option value="digipolis">Digipolis</option>
-        <option value="stad">Stad Antwerpen</option>
-        <option value="ocmw">OCMW</option>
-        <option value="politie">Politie</option>
-      </select>
-      <a class="btn btn-xs btn-transparent" href="" role="listbox" aria-hidden="true" tabindex="-1">Wijzig stijl…</a>
-    </li>
-  </ul>
-</section>
+<ul class="nav-top-right">
+  <li>
+    <a class="btn btn-xs btn-primary" href="mailto:tink@digipolis.be">Geef feedback</a>
+  </li>
+  <li class="theme-switch">
+    <select data-theme-switcher>
+      <option value="digipolis">Digipolis</option>
+      <option value="stad">Stad Antwerpen</option>
+      <option value="ocmw">OCMW</option>
+      <option value="politie">Politie</option>
+    </select>
+    <a class="btn btn-xs btn-transparent" href="" role="listbox" aria-hidden="true" tabindex="-1">Wijzig stijl…</a>
+  </li>
+</ul>

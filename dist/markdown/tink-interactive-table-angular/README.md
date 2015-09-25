@@ -1,6 +1,6 @@
 # Tink interactive table Angular directive
 
-v2.2.4
+v3.1.0
 
 ## What is this repository for?
 
@@ -35,6 +35,8 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
    `<script src="bower_components/tink-helper-safe-apply-angular/dist/tink-helper-safe-apply-angular.js"></script>`
 
+   `<script src="bower_components/tink-tooltip-angular/dist/tink-tooltip-angular.js"></script>`
+
    `<script src="bower_components/tink-sort-table-angular/dist/tink-sort-table-angular.js"></script>`
 
 3. Add `tink.interactivetable` to your app module's dependency.
@@ -62,13 +64,31 @@ Attr | Type | Default | Details
 data-ng-model (required) | `array` | `undefined` | The table info that needs to be shown.
 data-tink-headers (required) | `array` | `undefined` | The header information for each column.
 data-tink-actions | `array` | `undefined` | When present checkboxes will appear to do some predefined actions with it.
-data-allow-column-reorder | `boolean` | `true` | If false you can't reorder the columns.
-data-tink-change | `function($property,$order,$type)` | `undefined` | will be called when the interactive table needs to be sorted!.
+data-tink-checked | `function($data,$checked)` | `undefined` | will be called when you check a checkbox.
+data-tink-loading | `Boolean` | `false` | If true the table will have a loading icon and rows won't be clickable.
+data-tink-empty-message | `string` | `` | This will the message that will be shown when there is no data.
+data-tink-force-responsive | `Boolean` | `false` | This will add a responsive wrapper class (`.table-force-responsive`) when true.
 
 ### Script example
 
 ```html
-<tink-interactive-table ng-model="data" data-tink-headers="headers" tink-actions="actions">
+<tink-interactive-table tink-checked="boxChecked($data,$checked)" tink-loading="ct.loading" tink-headers="headers" tink-data="data.content" tink-actions="actions" tink-empty-message="Geen resultaten">
+ <table>
+    <thead>
+      <tr>
+        <th ng-repeat='view in tinkHeaders'>{{ view.alias }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-click="$parent.$parent.load()" ng-repeat='view in tinkData'>
+        <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
+        <td>{{ view.lastname }}</td>
+        <td>{{ view.username }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <tink-pagination  tink-current-page="$parent.ct.nums" tink-change="$parent.changed(type,value,next)" tink-total-items="$parent.ct.totalitems" tink-items-per-page="$parent.ct.numpp"></tink-pagination>
 </tink-interactive-table>
 ```
 
@@ -97,7 +117,6 @@ data-tink-change | `function($property,$order,$type)` | `undefined` | will be ca
     ];
 ```
 
-> To **enable sorting** give the header object a **property** `sort` with the value `true`,
 > If you want to **hide a column** give the header a **property** `checked` with the value `false`.
 
 ```javascript
@@ -105,14 +124,13 @@ scope.headers = [
       {
         field: 'firstname',
         alias: 'Voornaam',
-        checked: true, //to show this header or not
-        sort: true // To enable sorting on this header
+        checked: true, //to show this header or not required
+        disabled:true, // can't change the checked value
       },
       {
         field: 'lastname',
         alias: 'Achternaam',
-        checked: false,
-        sort: true
+        checked: false
       },
       {
         field: 'username',
@@ -127,15 +145,17 @@ scope.headers = [
 ```javascript
    scope.actions = [
       {
-        name: 'remove',
-        callback: function(items,uncheck) {
-          angular.forEach(items, function(val{
-            scope.data.splice(scope.data.indexOf(val),1);
-          });
-          //this wil uncheck all the boxes !
-          uncheck()
+          name: 'remove',
+          callback: function(items) {
+            angular.forEach(items, function(val) {
+              scope.data.content.splice(scope.data.content.indexOf(val),1);
+            });
+          },
+          order:0, //orde of the button
+          master:true, //required !
+          icon:'fa-close', //the icon required.
+          single:true // only when one checkbox is selected
         }
-      }
     ];
 ```
 
@@ -162,11 +182,6 @@ tink-items-per-page (required) | `number` | `undefined` | How many items you wan
 tink-items-per-page-values (required) | `array` | `undefined` | Array of numbers that will be shown as per page value.
 tink-change | `function` | `undefined` | To receive information if the pagination or perPage value change!
 
-> To enable pagination on the interactive table add the tink-pagination-key attribute.
-
-```html
-<tink-interactive-table tink-pagination-key="pag1" ></tink-interactive-table>
-```
 
 ```javascript
  scope.changed = function(chaged,next){

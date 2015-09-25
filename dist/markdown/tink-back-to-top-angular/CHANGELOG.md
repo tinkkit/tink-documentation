@@ -14,7 +14,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [1.0.6] - 2015-08-06
 
+### Fixed
+- fixed typo in bower.json
+
+## [1.0.4] - 2015-07-29
+
+### Changed
+- changed angular version to 1.4.3
 
 ## [1.0.3] - 2015-06-11
 

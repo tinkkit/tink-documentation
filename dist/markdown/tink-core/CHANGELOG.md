@@ -16,6 +16,119 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.6.2] - 2015-09-22
+
+### Changed
+- Refactored interactive table styling
+
+
+
+## [1.6.1] - 2015-09-21
+
+### Fixed
+- Fixed a bug where in some case default variable values could not be overwritten
+
+
+
+## [1.6.0] - 2015-09-21
+
+### Added
+- Added an arrow component and applied it to the popover and tooltip component
+- Added a basic loader
+- Added buttons with a transparent background
+
+### Changed
+- Refactored the bar component to support flex properties
+- Labels are not bold by default anymore
+- Tweaked the default styling of some form elements
+- Added possibility to right-align the datepicker
+
+### Deprecated
+- Deprecated the panel component in favour of the card component (panel code will be dropped in the next release)
+
+### Fixed
+- Fixed a bug where in Firefox the select element had to be clicked twice before it would open
+- Fixed an overflow issue in the modal dialog
+- Fixed a datepicker layout issue when used inside a modal dialog
+
+
+
+## [1.5.11] - 2015-08-12
+
+### Changed
+- Upgraded to Font Awesome 4.4
+
+### Fixed
+- Fixed miscellaneous styling issues
+- Fixed hardcoded breakpoint
+
+
+
+## [1.5.10] - 2015-07-14
+
+### Changed
+- Separated overflow styling from modal dialog
+
+
+
+## [1.5.9] - 2015-07-09
+
+### Fixed
+- Fixed wrong use of buttons in navigation bar
+- Fixed popover menu for interactive table
+
+
+
+## [1.5.8] - 2015-07-06
+
+### Fixed
+- Fixed transition for tooltip
+
+### Added
+- Added new stylings to bar list items
+
+
+
+## [1.5.7] - 2015-07-02
+
+### Fixed
+- Reverted to 1.5.4, but kept borked builds
+
+
+
+## [1.5.6] - 2015-07-02
+
+### Fixed
+- Fixed faulty build
+
+
+
+## [1.5.5] - 2015-07-02
+
+### Fixed
+- Fixed mixup in bower file
+
+### Added
+- Added extra stylings to bar list items
+- Added extra breakpoint for JavaScript
+
+
+
+## [1.5.4] - 2015-07-02
+
+### Added
+- Added different stylings to bar list items
+- Added breakpoint content for JavaScript
+
+
+
+## [1.5.3] - 2015-06-30
+
+### Added
+- Added tooltip styling
+
+
+
 ## [1.5.2] - 2015-06-26
 
 ### Changed
