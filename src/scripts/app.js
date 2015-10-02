@@ -92,10 +92,11 @@
     languages:['html','js','bash','css']
   });
 }).run(function($rootScope) {
-  var versionFileTinkProp = '1.6.2';
+  var versionFileTinkProp = '1.6.3';
   $rootScope.themes = {
     digipolis:['tink.'+versionFileTinkProp+'.min.css','default.'+versionFileTinkProp+'.min.css','styleguide.'+versionFileTinkProp+'.min.css'],
     stad:['tink-stad.'+versionFileTinkProp+'.min.css','default-stad.'+versionFileTinkProp+'.min.css','styleguide-stad.'+versionFileTinkProp+'.min.css'],
+    brandweer:['tink-brandweer.'+versionFileTinkProp+'.min.css','default-brandweer.'+versionFileTinkProp+'.min.css','styleguide-brandweer.'+versionFileTinkProp+'.min.css'],
     ocmw:['tink-ocmw.'+versionFileTinkProp+'.min.css','default-ocmw.'+versionFileTinkProp+'.min.css','styleguide-ocmw.'+versionFileTinkProp+'.min.css'],
     politie:['tink-politie.'+versionFileTinkProp+'.min.css','default-politie.'+versionFileTinkProp+'.min.css','styleguide-politie.'+versionFileTinkProp+'.min.css']
   };

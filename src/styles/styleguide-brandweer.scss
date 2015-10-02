@@ -1,0 +1,31 @@
+/**
+ * Brandweer styleguide
+ */
+@import "../../bower_components/tink-theme-brandweer/dist/brandweer/variables";
+@import "styleguide/styleguide";
+
+.jumbotron {
+  background-image: image-url('main/bg-brandweer.jpg');
+
+  .btn-lg {
+    color: $primary;
+  }
+}
+
+.panel-docs {
+  h1:not(.ignore) {
+    color: $tink-teal;
+  }
+
+  h2:not(.ignore) {
+    color: $tink-lime;
+  }
+
+  h3:not(.ignore) {
+    color: $gray;
+  }
+
+  h4:not(.ignore) {
+    color: $gray-dark;
+  }
+}

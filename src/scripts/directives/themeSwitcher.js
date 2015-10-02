@@ -60,6 +60,10 @@ angular.module('tinkApp')
                 $rootScope.theme.text = 'Tink (Stad Antwerpen)';
                 $rootScope.theme.html = 'Tink <span>(Stad Antwerpen)</span>';
                 break;
+              case 'brandweer':
+                $rootScope.theme.text = 'Tink (Brandweer)';
+                $rootScope.theme.html = 'Tink <span>(Brandweer)</span>';
+                break;
               case 'ocmw':
                 $rootScope.theme.text = 'Tink (OCMW)';
                 $rootScope.theme.html = 'Tink <span>(OCMW)</span>';
