@@ -1,0 +1,19 @@
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-theme-brandweer/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+  <h1>Example</h1>
+  <p>Use the theme switcher in the top right to activate this theme.</p>
+  </section>
+
+  <div data-ng-switch-when="example">
+  </div>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-theme-brandweer/README.md" class="md"></md>
+  </section>
+
+</div>
