@@ -132,7 +132,7 @@ angular.module('tinkApp')
           icon:'fa-search'
         },
         {
-          name: 'do someting',
+          name: 'do something',
           callback: function(items) {
             angular.forEach(items, function(val) {
               scope.data.splice(scope.data.indexOf(val),1);
