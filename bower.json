@@ -48,7 +48,7 @@
     "tink-theme-ocmw": "latest",
     "tink-theme-politie": "latest",
     "tink-theme-stad": "latest",
-    "tink-theme-brandweer": "file:///Users/lievenvg/Documents/Projecten/tink-theme-brandweer/.git#v1.0.0"
+    "tink-theme-brandweer": "latest"
     },
   "overrides": {
     "marked": {
