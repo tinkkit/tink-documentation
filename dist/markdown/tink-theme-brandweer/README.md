@@ -1,10 +1,10 @@
-# Tink core
+# Tink Brandweer theme
 
-v1.7.0
+v0.1.1
 
 ## What is this repository for?
 
-The Tink core is the center of Tink. It provides all necessary base styling.
+The Tink Brandweer theme gives you all the necessary styling to develop a Brandweer app.
 
 Tink is an in-house developed easy-to-use front end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
 
@@ -18,9 +18,9 @@ Tink is an in-house developed easy-to-use front end framework for quick prototyp
 ### Install
 
 1. Go to the root of your project and type the following command in your terminal:
-   `bower install tink-core --save`
+   `bower install tink-theme-brandweer --save`
 
-2. Include `dist/tink.css` and its necessary dependencies in your project.
+2. Include `dist/tink-brandweer.css` and its necessary dependencies in your project.
 
 3. On http://tink.digipolis.be you will find all necessary documentation.
 
@@ -41,7 +41,7 @@ Tink is an in-house developed easy-to-use front end framework for quick prototyp
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Stad Antwerpen
+Copyright (c) 2015 Stad Antwerpen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -14,6 +14,38 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [3.1.4] - 2015-10-07
+
+### Added
+- Added an option that can add a column with checkboxes to the table, even if there are no actions defined
+
+### Fixed
+- Fixed an issue in the documentation
+
+
+
+## [3.1.3] - 2015-10-06
+
+### Changed
+- Updated the documentation
+
+
+
+## [3.1.2] - 2015-10-05
+
+### Changed
+- Changed the behaviour of the actions menu
+- Upgraded the sort table dependency as the previous version had a bug where table headers would always be styled as sortable
+
+
+
+## [3.1.1] - 2015-09-25
+
+### Fixed
+- Fixed a select issue in the pagination that was only occurring in Firefox
+
+
+
 ## [3.1.0] - 2015-09-22
 
 ### Changed

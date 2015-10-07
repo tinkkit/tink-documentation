@@ -8,21 +8,139 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <tink-interactive-table tink-row-click="clicked($element)" tink-empty-message="no records are found o o " tink-name="oke" tink-pagination-key="pag1" data-ng-model="data" data-allow-column-reorder="true" tink-actions="actions" tink-headers="headers" tink-column-reorder="true" tink-change="chan($property,$order,$type)"></tink-interactive-table>
 
-        <tink-pagination tink-pagination-id="pag1" tink-current-page="nums" tink-change="changed" tink-total-items="totalitems" tink-items-per-page="10" tink-items-per-page-values="perpageValue"></tink-pagination>
+        <h2>Example</h2>
+        <tink-interactive-table tink-checked="boxChecked($data,$checked)" tink-headers="headers" tink-data="data" tink-actions="actions" tink-empty-message="Geen data beschikbaar">
+          <table tink-sort-table="data.content" tink-callback="sorted($property,$order,$type)" tink-asc="asc" tink-sort-field="firstname">
+            <thead>
+               <tr>
+                  <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+               </tr>
+            </thead>
+             <tbody>
+                <!-- We have to use $parent.$parent because our load functions is 2 scope higher (ngRepeat scope , tinkInteractive scope)-->
+                 <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
+                    <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
+                    <td>{{ view.lastname }}</td>
+                    <td>{{ view.username }}</td>
+                 </tr>
+             </tbody>
+           </table>
+           <tink-pagination  tink-current-page="1"  tink-total-items="6" tink-items-per-page="5"></tink-pagination>
+        </tink-interactive-table>
 
-        <h3>Table code</h3>
+        <h2>Table code</h2>
 
-        <hljs data-format="html"><tink-interactive-table tink-row-click="clicked($element)" tink-empty-message="no records are found o o " tink-name="oke" tink-pagination-key="pag1" data-ng-model="data" data-allow-column-reorder="true" tink-actions="actions" tink-headers="headers" tink-column-reorder="true" tink-change="chan($property,$order,$type)"></tink-interactive-table></hljs>
+        There are three attributes you have to define to use the interactive table.<br/>
+        <h3>tink-headers</h3>
+          you have to bind the headers you want to use to this attribute <br/>
+          the tink-headers is an array that contain objects that are from the following structure.
+          <hljs data-format="js">scope.headers = [
+            {
+              field: 'firstname', // The property name that is the same as in the tinkData object
+              alias: 'Voornaam', // The alias how it's going to be called in the table.
+              checked: true, // If you can to show this inside the table true or false.
+            }
+          ]
+          </hljs>
 
-        <h3>Pagination code</h3>
+          <h3>tink-data</h3>
+          you have to bind the data of the rows you want to view to this attribute <br/>
+          the tink-data is an array that contain a object with properties of your choise.
 
-        <hljs><tink-pagination tink-pagination-id="pag1" tink-current-page="nums" tink-change="changed" tink-total-items="totalitems" tink-items-per-page="10" tink-items-per-page-values="perpageValue"></tink-pagination></hljs>
+          <h3>tink-actions</h3>
+          You can also defined actions in the interactive table <br/>
+          To use these actions you have to add an array of objects with the folowing structre to the tink-actions attribute.
+
+          <hljs data-format="js">scope.actions = [
+            {
+              name: 'remove', // the name of the actions
+              callback: function(items) {
+                // here you are going to write what happen when they clicked on the button.
+                // The items variable contains the items that are checked.
+              },
+              order:0, // The order the button is viewed in the bar
+              master:false, // If the button is a master button or not ! this value is required.
+              icon:'fa-bell-o' // The icon ('font-awesome') thats going to be showed. this is required !
+            }
+          ]
+          </hljs>
+
+
+        <hljs data-format="html">
+          <tink-interactive-table tink-headers="headers" tink-data="data" tink-actions="actions">
+            <table>
+              <thead>
+                 <tr>
+                    <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+                 </tr>
+              </thead>
+               <tbody>
+                  <!-- We have to use $parent.$parent because our load functions is 2 scope higher (ngRepeat scope , tinkInteractive scope)-->
+                   <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
+                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
+                      <td>{{ view.lastname }}</td>
+                      <td>{{ view.username }}</td>
+                   </tr>
+               </tbody>
+             </table>
+          </tink-interactive-table>
+        </hljs>
+        <h3>Pagination</h3>
+
+        <hljs data-format="html">
+          <tink-interactive-table tink-headers="headers" tink-data="data.content" tink-actions="actions">
+            <table tink-pagination-key="pag1">
+              <thead>
+                 <tr>
+                    <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+                 </tr>
+              </thead>
+               <tbody>
+                   <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
+                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
+                      <td>{{ view.lastname }}</td>
+                      <td>{{ view.username }}</td>
+                   </tr>
+               </tbody>
+             </table>
+             <tink-pagination tink-pagination-id="pag1" tink-current-page="$parent.nums" tink-change="$parent.changed(page,perPage,next)" tink-total-items="$parent.totalitems" tink-items-per-page="10" tink-items-per-page-values="$parent.perpageValue"></tink-pagination>
+          </tink-interactive-table>
+        </hljs>
+
+        <hljs data-format="js">scope.changed = function(type,value,next){
+          // type: a string value with type of change = 'perPage' (number of rows per page) or 'page' (number of page clicked)
+          // value : the value
+          // next: a function you have to call when you changed the data. -> next();
+        }
+        </hljs>
+
+          <h3>Sorting</h3>
+
+
+          <hljs data-format="html"><tink-interactive-table tink-headers="headers" tink-data="data.content" tink-actions="actions">
+            <table tink-sort-table="tinkData" >
+              <thead>
+                 <tr>
+                    <th tink-sort-header="{{view.name}}" ng-repeat='view in tinkHeaders'>{{ view.alias }}</th>
+                 </tr>
+              </thead>
+               <tbody>
+                   <tr ng-click="$parent.$parent.load()" ng-repeat='view in tinkData'>
+                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
+                      <td>{{ view.lastname }}</td>
+                      <td>{{ view.username }}</td>
+                   </tr>
+               </tbody>
+             </table>
+          </tink-interactive-table>
+          </hljs>
+
+
       </div>
     </div>
-
   </section>
+
 
   <section class="panel-docs" data-ng-switch-default>
   <md data-url="../markdown/tink-interactive-table-angular/README.md" class="md"></md>
