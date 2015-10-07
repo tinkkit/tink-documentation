@@ -62,19 +62,18 @@
     &:hover {
       cursor: pointer;
 
-      + .btn-transparent {
-        background-color: $btn-transparent-hover-bg;
+      + .btn-transparent-invert {
+        background-color: $btn-transparent-invert-hover-bg;
       }
     }
 
     &:focus {
-      + .btn-transparent {
-        background-color: $btn-transparent-hover-bg;
+      + .btn-transparent-invert {
+        background-color: $btn-transparent-invert-hover-bg;
       }
     }
   }
 }
-
 
 
 
@@ -351,11 +350,17 @@ md {
  * --------------------------------
  */
 .color-block {
-
   p {
     border-radius: rem($border-radius-base);
     box-shadow: 0 1px rem(2) rgba($black, .32);
     padding: rem(8 4);
+  }
+}
+
+.btn-bg-block {
+  p {
+    display: inline-block;
+    padding: rem(8);
   }
 }
 
