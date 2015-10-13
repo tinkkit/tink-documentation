@@ -79,11 +79,13 @@ angular.module('tinkApp')
       {
         field: 'firstname',
         alias: 'Voornaam',
+        sort: 'firstname',
         checked: true
       },
       {
         field: 'lastname',
         alias: 'Achternaam',
+        sort: 'lastname',
         checked: false
       },
       {

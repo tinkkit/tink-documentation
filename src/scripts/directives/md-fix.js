@@ -1,5 +1,5 @@
 'use strict';
-
+/*global marked, hljs*/
 angular.module('tinkApp').directive('md',['$templateRequest',function ($templateRequest) {
   if (typeof hljs !== 'undefined') {
     marked.setOptions({
@@ -24,7 +24,7 @@ angular.module('tinkApp').directive('md',['$templateRequest',function ($template
             html.find('[id=example]').removeAttr('id');
             html.find('[id=changelog]').removeAttr('id');
             $elem.html(html);
-        }, 
+        },
         function() {
             console.warn('couldn\'t read url: '+$attrs.url);
           }
