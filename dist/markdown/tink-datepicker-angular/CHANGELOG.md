@@ -14,6 +14,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [1.2.2] - 2015-10-15
+
+### Fixed
+- Fixed a bug where addTime function cause invalid dates
+
+
+## [1.2.1] - 2015-10-08
+
+### Fixed
+- Fixed a bug where validation wouldn't work when the required attribute wasn't present
+
+
+
 ## [1.2.0] - 2015-09-03
 
 ### Added

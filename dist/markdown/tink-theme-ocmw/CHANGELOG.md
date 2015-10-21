@@ -16,6 +16,42 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.7.5] - 2015-10-21
+
+### Changed
+- Changed the zebra striping in the striped table
+- Changed the table highlight color
+- Added hoverable and selected states to table rows
+- The loader now also works inline and will adjust its size to its parent
+
+### Fixed
+- Fixed a bug where the datepicker would collapse when its container was too small
+- Fixed a panel heading background issue
+- Fixed an issue where the popover animation would start too early
+
+
+
+## [1.7.4] - 2015-10-13
+
+### Changed
+- Changed more components to the new color scheme
+
+
+
+## [1.7.3] - 2015-10-13
+
+### Fixed
+- Fixed the brand colors
+
+
+
+## [1.7.2] - 2015-10-13
+
+### Changed
+- Changed the OCMW logo
+
+
+
 ## [1.7.1] - 2015-10-05
 
 ### Fixed

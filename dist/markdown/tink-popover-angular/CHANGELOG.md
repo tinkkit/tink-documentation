@@ -14,10 +14,35 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+
+
+## [1.0.6] - 2015-10-21
+
+### Fixed
+- Optimized the animation delay fix
+
+
+
+## [1.0.5] - 2015-10-20
+
+### Fixed
+- Fixed an issue where an animation would start too early
+
+
+
+## [1.0.4] - 2015-10-20
+
+### Added
+- Added possibility to hide popover arrow
+
+
+
 ## [1.0.3] - 2015-07-29
 
 ### Changed
 - Changed angular version to 1.4.3
+
+
 
 ## [1.0.2] - 2015-06-10
 
