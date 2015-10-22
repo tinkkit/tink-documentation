@@ -400,6 +400,11 @@ module.exports = function (grunt) {
     cssmin: {
       dist: {
         files: {
+          '<%= yeoman.dist %>/styles/tink-brandweer.<%= yeoman.version %>.min.css': ['bower_components/tink-theme-brandweer/dist/tink-brandweer.css'],
+          '<%= yeoman.dist %>/styles/default-brandweer.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
+          '<%= yeoman.dist %>/styles/styleguide-brandweer.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide-brandweer.css'],
+
+
           '<%= yeoman.dist %>/styles/tink-politie.<%= yeoman.version %>.min.css': ['bower_components/tink-theme-politie/dist/tink-politie.css'],
           '<%= yeoman.dist %>/styles/default-politie.<%= yeoman.version %>.min.css': ['bower_components/highlightjs/styles/default.css'],
           '<%= yeoman.dist %>/styles/styleguide-politie.<%= yeoman.version %>.min.css': ['.tmp/styles/styleguide-politie.css'],
