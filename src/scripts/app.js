@@ -1,11 +1,6 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name tinkApp
- * @description
- * # tinkApp
- *
  * Main module of the application.
  */
  angular
@@ -73,9 +68,9 @@
     templateUrl: 'views/shame.html',
     controller: 'ShameCtrl'
   })
-  .when('/docs/themes', {
-    redirectTo: '/docs/themes/stad',
-  })
+  // .when('/docs/themes', {
+  //   redirectTo: '/docs/themes/stad',
+  // })
   .otherwise({
     redirectTo: '/'
   });
