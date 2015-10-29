@@ -22,7 +22,7 @@
     "highlightjs": "latest",
     "jquery": "~2.1.3",
     "js-beautify": "latest",
-    "tink-core": "file:///Users/trianglejuice/Sites/Work/DUX/Tink/tink-core/.git#v1.8.0-beta.1",
+    "tink-core": "latest",
     "tink-accordion-angular": "latest",
     "tink-back-to-top-angular": "latest",
     "tink-checkbox-angular": "latest",
