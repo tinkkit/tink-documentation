@@ -22,7 +22,7 @@
     "highlightjs": "latest",
     "jquery": "~2.1.3",
     "js-beautify": "latest",
-    "tink-core": "latest",
+    "tink-core": "~1.8.0",
     "tink-accordion-angular": "latest",
     "tink-back-to-top-angular": "latest",
     "tink-checkbox-angular": "latest",
