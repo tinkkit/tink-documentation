@@ -16,6 +16,22 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.8.0] - 2015-10-30
+
+### Added
+- Added buttons groups
+- Added a filter bar component
+- Added a timeline component
+- Added another possibility to always leave the sidenav open
+
+### Changed
+- Changed the way z-indexes are handled
+
+### Fixed
+- Fixed an issue that broke the navbar in IE9 in some cases
+
+
+
 ## [1.7.1] - 2015-10-21
 
 ### Changed

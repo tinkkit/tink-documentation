@@ -1,6 +1,6 @@
 # Tink documentation
 
-v1.7.2
+v1.8.0
 
 ## What is this repository for?
 
