@@ -75,6 +75,25 @@
       <p>You can use the <code>tink-popover-place</code> and <code>tink-popover-align</code> options to position the popover to your liking. However, screen calculation will be applied to optimize the display of the popover, possibly overruling your defined values.</p>
     </div>
 
+    <h3>Close popover from your controller</h3>
+    <div class="row">
+      <div class="col-xs-12">
+        <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-template="views/popover-template.html">Open popover with this button</button> <button class="margin-bottom margin-left" data-ng-click="closePopoverFromController()">Close popover with this button</button></div>
+      </div>
+      <div class="col-xs-12">
+        <hljs data-format="html">
+          <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-template="views/popover-template.html">Open popover with this button</button> <button class="margin-bottom margin-left" data-ng-click="closePopoverFromController()">Close popover with this button</button>
+        </hljs>
+      </div>
+      <div class="col-xs-12">
+        <hljs data-format="js">// In your controller
+$scope.closePopoverFromController = function() {
+  $rootScope.$broadcast('popover-open', { group: 'my-group' });
+};
+        </hljs>
+      </div>
+    </div>
+
   </section>
 
   <section class="panel-docs" data-ng-switch-default>

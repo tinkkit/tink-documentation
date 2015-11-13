@@ -8,7 +8,7 @@
  * Controller of the tinkApp
  */
  angular.module('tinkApp')
- .controller('DocsCtrl', function ($scope, $location, $routeParams, $document, stickyService) {
+ .controller('DocsCtrl', function ($scope, $rootScope, $location, $routeParams, $document, stickyService) {
 
   // --- Define Controller Variables. ----------------- //
   var subpage = '';
@@ -71,6 +71,10 @@
   //this is for the accordion docs
   $scope.accordion = {
     collapsed: true
+  };
+
+  $scope.closePopoverFromController = function() {
+    $rootScope.$broadcast('popover-open', { group: 'my-group' });
   };
 
   $scope.openAccordion = function(action,next){
