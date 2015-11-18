@@ -282,9 +282,158 @@
       </fieldset>
     </form>
 
-  </section>
 
-  <section class="panel-docs">
+    <h2>Horizontal forms</h2>
+
+    <p>Use grid classes to align labels and groups of form controls in a horizontal layout by adding <code>.form-horizontal</code> to the form (which doesn't have to be a form).</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+          <form class="form-horizontal">
+            <div class="row form-group">
+                <div class="col-sm-4">
+                  <label for="input-name">Name</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" id="input-name" placeholder="Your name">
+                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-4">
+                <label for="location1">Location</label>
+              </div>
+              <div class="select col-sm-8">
+                <select id="location1">
+                  <option>Antwerp</option>
+                  <option>Brussels</option>
+                  <option>Ghent</option>
+                </select>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                <div class="checkbox">
+                  <input type="checkbox" id="chck1" name="chck1" value="" disabled="">
+                  <label for="chck1">Remember me</label>
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            </div>
+          </form>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <hljs data-format="html">
+          <form class="form-horizontal">
+            <div class="row form-group">
+                <div class="col-sm-4">
+                  <label for="input-name">Name</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" id="input-name" placeholder="Your name">
+                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-4">
+                <label for="location1">Location</label>
+              </div>
+              <div class="select col-sm-8">
+                <select id="location1">
+                  <option>Antwerp</option>
+                  <option>Brussels</option>
+                  <option>Ghent</option>
+                </select>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                <div class="checkbox">
+                  <input type="checkbox" id="chck1" name="chck1" value="" disabled="">
+                  <label for="chck1">Remember me</label>
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            </div>
+          </form>
+        </hljs>
+      </div>
+    </div>
+
+
+    <h2>Inline forms</h2>
+
+    <p>Add <code>.form-inline</code> to your form (which doesn't have to be a form) for left-aligned and inline-block controls. This only applies to forms within viewports that are at least 768px wide. Use <code>.form-force-inline</code> if u want to set the form elements inline on all viewports.</p>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="input-name2">Name</label>
+            <input type="text" id="input-name2" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="location2">Location</label>
+            <div class="select">
+              <select id="location2">
+                <option>Antwerp</option>
+                <option>Brussels</option>
+                <option>Ghent</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <input type="checkbox" id="chck2" name="chck2" value="" disabled="">
+              <label for="chck2">Remember me</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <hljs data-format="html">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="input-name2">Name</label>
+              <input type="text" id="input-name2" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="location2">Location</label>
+              <div class="select">
+                <select id="location2">
+                  <option>Antwerp</option>
+                  <option>Brussels</option>
+                  <option>Ghent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <input type="checkbox" id="chck2" name="chck2" value="" disabled="">
+                <label for="chck2">Remember me</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </form>
+        </hljs>
+      </div>
+    </div>
+
 
     <h2>Validation states</h2>
     <form role="form">
