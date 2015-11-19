@@ -14,6 +14,21 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+
+## [1.3.0] - 2015-11-18
+
+### Added
+- Added weekdays
+
+
+
+## [1.2.3] - 2015-11-18
+
+### Fixed
+- Fixed focus bug
+
+
+
 ## [1.2.2] - 2015-10-15
 
 ### Fixed
