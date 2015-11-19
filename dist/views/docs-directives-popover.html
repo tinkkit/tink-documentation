@@ -6,7 +6,7 @@
 
   <section class="panel-docs" data-ng-switch-when="example">
 
-    <h3>Basic popover</h3>
+    <h2>Basic popover</h2>
     <div class="row">
       <div class="col-xs-12">
         <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-template="views/popover-template.html">Open simple popover</button></div>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <h3>Popover groups</h3>
+    <h2>Popover groups</h2>
     <div class="row">
       <div class="col-xs-12">
         <div><button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">Try</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">to</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">open</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">two</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">popovers</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">at</button> <button class="margin-bottom" data-tink-popover data-tink-popover-template="views/popover-template.html" data-tink-popover-group="my-group">once</button></div>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <h3>Popover without arrow</h3>
+    <h2>Popover without arrow</h2>
     <div class="row">
       <div class="col-xs-12">
         <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-arrow="false" data-tink-popover-template="views/popover-template.html">Popover without arrow</button></div>
@@ -44,10 +44,14 @@
       </div>
     </div>
 
-    <h3>Popover placement</h3>
+    <h2>Popover placement</h2>
     <div class="row">
       <div class="col-xs-12">
-        <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="top" data-tink-popover-template="views/popover-template.html">Open popover to the top</button> <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="right" data-tink-popover-template="views/popover-template.html">Open popover to the right</button> <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="bottom" data-tink-popover-template="views/popover-template.html">Open popover to the bottom</button> <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="left" data-tink-popover-template="views/popover-template.html">Open popover to the left</button></div>
+        <div>
+          <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="top" data-tink-popover-template="views/popover-template.html">Open popover to the top</button>
+          <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="right" data-tink-popover-template="views/popover-template.html">Open popover to the right</button>
+          <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="bottom" data-tink-popover-template="views/popover-template.html">Open popover to the bottom</button>
+          <button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="left" data-tink-popover-template="views/popover-template.html">Open popover to the left</button></div>
       </div>
       <div class="col-xs-12">
         <hljs data-format="html">
@@ -59,7 +63,7 @@
       </div>
     </div>
 
-    <h3>Popover alignment</h3>
+    <h2>Popover alignment</h2>
     <div class="row">
       <div class="col-xs-12">
         <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-place="top" data-tink-popover-align="right" data-tink-popover-template="views/popover-template.html">Open popover to the top, aligned to right</button></div>
@@ -75,7 +79,7 @@
       <p>You can use the <code>tink-popover-place</code> and <code>tink-popover-align</code> options to position the popover to your liking. However, screen calculation will be applied to optimize the display of the popover, possibly overruling your defined values.</p>
     </div>
 
-    <h3>Close popover from your controller</h3>
+    <h2>Close popover from your controller</h2>
     <div class="row">
       <div class="col-xs-12">
         <div><button class="margin-bottom" data-tink-popover data-tink-popover-group="my-group" data-tink-popover-template="views/popover-template.html">Open popover with this button</button> <button class="margin-bottom margin-left" data-ng-click="closePopoverFromController()">Close popover with this button</button></div>

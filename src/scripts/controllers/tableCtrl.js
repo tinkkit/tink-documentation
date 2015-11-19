@@ -94,7 +94,7 @@ angular.module('tinkApp')
         checked: true
       }
     ];
-    scope.nums=0;
+    scope.nums=4;
     scope.changenums = function(){
       scope.nums = scope.nums+1;
     };
