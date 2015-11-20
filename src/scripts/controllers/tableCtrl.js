@@ -89,9 +89,11 @@ angular.module('tinkApp')
         checked: false
       },
       {
-        field: 'username',
-        alias: 'Gebruikersnaam',
-        checked: true
+        field: 'username', // The property name that is the same as in the tinkData object
+        alias: 'Gebruikersnaam', // The alias how it's going to be called in the table.
+        checked: true, // If the column is visible or not (can be changed in the column sorter).
+        disabled: false, // If its 'checked' status can be changed or not
+        sortalias: 'Gebruiker' // Different name in the sorter
       }
     ];
     scope.nums=4;
