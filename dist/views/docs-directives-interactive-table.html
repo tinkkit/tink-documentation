@@ -37,9 +37,11 @@
           the tink-headers is an array that contain objects that are from the following structure.
           <hljs data-format="js">scope.headers = [
             {
-              field: 'firstname', // The property name that is the same as in the tinkData object
-              alias: 'Voornaam', // The alias how it's going to be called in the table.
-              checked: true, // If you can to show this inside the table true or false.
+              field: 'username', // The property name that is the same as in the tinkData object
+              alias: 'Gebruikersnaam', // The alias how it's going to be called in the table.
+              checked: true, // If the column is visible or not (can be changed in the column sorter).
+              disabled: false, // If its 'checked' status can be changed or not
+              sortalias: 'Gebruiker' // Different name in the sorter
             }
           ]
           </hljs>

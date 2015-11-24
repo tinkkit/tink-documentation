@@ -14,7 +14,7 @@
   var subpage = '';
   var subsubpage = '';
   var subsubsubpage = '';
-  var activeURLs = ['directives', 'themes'];
+  var activeURLs = ['directives', 'services', 'themes'];
 
   // --- Define Scope Variables. ---------------------- //
   $scope.subview = '';

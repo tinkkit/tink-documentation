@@ -40,7 +40,8 @@
     "tink-md-angular": "latest",
     "tink-stick-to-top-angular": "latest",
     "tink-sort-table-angular": "latest",
-    "tink-tooltip-angular": "latest"
+    "tink-tooltip-angular": "latest",
+    "tink-smooth-scroll-angular": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.3",
@@ -49,7 +50,7 @@
     "tink-theme-politie": "latest",
     "tink-theme-stad": "latest",
     "tink-theme-brandweer": "latest"
-    },
+  },
   "overrides": {
     "marked": {
       "main": [

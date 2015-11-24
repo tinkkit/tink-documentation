@@ -28,6 +28,7 @@
    'tink.checkbox',
    'tink.interactivetable',
    'tink.identitycardnumber',
+   'tink.smoothscroll',
    'tink.sticktotop',
    'tink.tooltip',
    'yaru22.md'
