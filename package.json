@@ -1,7 +1,7 @@
 {
   "name": "tink-documentation",
   "description": "Tink documentation",
-  "version": "1.0.1",
+  "version": "1.4.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:tinkkit/tink-documentation.git"

@@ -14,6 +14,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+
+## [3.2.1] - 2015-11-20
+
+### Changed
+- changed `headeralias` to `sortalias` as it was a clearer property
+
+
+
+## [3.2.0] - 2015-11-20
+
+### Added
+- Added an option to give an alternative heading text in the column sorter
+
+### Changed
+- Optimized the behaviour of sorting columns
+
+
+
 ## [3.1.6] - 2015-11-10
 
 ### Added
