@@ -16,6 +16,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.9.2] - 2015-11-25
+
+### Fixed
+- Fixed an issue where an unwanted scrollbar would block the table view in certain versions of IE
+- Fixed a small styling issue in the column sorter of the interactive table
+
+
+
 ## [1.9.1] - 2015-11-19
 
 ### Added
