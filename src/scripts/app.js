@@ -26,6 +26,7 @@
    'tink.upload',
    'tink.timepicker',
    'tink.checkbox',
+   'tink.iban',
    'tink.interactivetable',
    'tink.identitycardnumber',
    'tink.sticktotop',
