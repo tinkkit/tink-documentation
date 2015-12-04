@@ -115,7 +115,7 @@ angular.module('tinkApp')
           master:true,
           icon:'fa-close'
         },{
-          name: 'add',
+          name: 'remove all',
           callback: function(items) {
             angular.forEach(items, function(val) {
               scope.data.splice(scope.data.indexOf(val),1);
@@ -123,7 +123,8 @@ angular.module('tinkApp')
           },
           order:0,
           master:true,
-          icon:'fa-edit'
+          checkedAll:true,
+          icon:'fa-trash'
         },{
           name: 'search',
           callback: function(items) {
@@ -133,6 +134,7 @@ angular.module('tinkApp')
           },
           order:3,
           master:false,
+          alwaysDisabled:true,
           icon:'fa-search'
         },
         {
@@ -143,6 +145,7 @@ angular.module('tinkApp')
             });
           },
           order:2,
+          alwaysVisible: true,
           master:false,
           icon:'fa-arrows-h'
         },
@@ -154,6 +157,7 @@ angular.module('tinkApp')
             });
           },
           order:0,
+          single: true,
           master:false,
           icon:'fa-bell-o'
         },
@@ -166,6 +170,7 @@ angular.module('tinkApp')
           },
           order:0,
           master:false,
+          checkedAll:true,
           icon:'fa-calculator'
         }
       ];
