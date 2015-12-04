@@ -5,7 +5,8 @@
   </section>
 
   <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="datepickerCtrl">
-    <h3>Basic examples</h3>
+    <h2>Examples</h2>
+    <h3>Basic datepicker</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">
         <data-tink-datepicker data-ng-model="selectedDate1"></data-tink-datepicker>
@@ -16,27 +17,29 @@
         </hljs>
       </div>
     </div>
+    <h3>Datepicker with minimum date and no day labels</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-        <data-tink-datepicker data-min-date="mindate" data-ng-model="selectedDate2"></data-tink-datepicker>
+        <data-tink-datepicker data-min-date="mindate" data-show-day-labels="false" data-ng-model="selectedDate2"></data-tink-datepicker>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-8 form-group">
         <hljs data-format="html">
-           <data-tink-datepicker data-min-date="mindate" data-ng-model="selectedDate2"></data-tink-datepicker>
+           <data-tink-datepicker data-min-date="mindate" data-show-day-labels="false" data-ng-model="selectedDate2"></data-tink-datepicker>
         </hljs>
       </div>
     </div>
+    <h3>Datepicker with maximum date that aligns to the right</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-        <data-tink-datepicker data-max-date="maxdate" data-ng-model="selectedDate3"></data-tink-datepicker>
+        <data-tink-datepicker data-max-date="maxdate" data-aligns-right="true" data-ng-model="selectedDate3"></data-tink-datepicker>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-8 form-group">
         <hljs data-format="html">
-           <data-tink-datepicker data-max-date="maxdate" data-ng-model="selectedDate3"></data-tink-datepicker>
+           <data-tink-datepicker data-max-date="maxdate" data-aligns-right="true" data-ng-model="selectedDate3"></data-tink-datepicker>
         </hljs>
       </div>
     </div>
-    <h3>Validation</h3>
+    <h2>Validation</h2>
     <div class="row">
       <div class="col-xs-12 col-md-12">
         <form name="dateForm" novalidate>
