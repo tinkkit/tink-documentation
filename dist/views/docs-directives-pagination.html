@@ -1,0 +1,29 @@
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-pagination-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example">
+    <div class="row">
+      <div class="col-xs-12" data-ng-controller="tableCtrl">
+        <tink-pagination tink-current-page="1"  tink-total-items="6000" tink-items-per-page="5"></tink-pagination>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <tink-pagination ng-model="selectedTime"/>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <hljs data-format="html">
+          <tink-pagination data-ng-model="selectedTime"/>
+        </hljs>
+      </div>
+    </div> -->
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-pagination-angular/README.md" class="md"></md>
+  </section>
+
+</div>

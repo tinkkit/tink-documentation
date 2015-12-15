@@ -28,7 +28,6 @@
     "tink-checkbox-angular": "latest",
     "tink-datepicker-angular": "latest",
     "tink-iban-angular": "latest",
-    "tink-interactive-table-angular": "latest",
     "tink-identity-card-number-angular": "latest",
     "tink-modal-angular": "latest",
     "tink-national-number-angular": "latest",
@@ -41,7 +40,9 @@
     "tink-md-angular": "latest",
     "tink-stick-to-top-angular": "latest",
     "tink-sort-table-angular": "latest",
-    "tink-tooltip-angular": "latest"
+    "tink-tooltip-angular": "latest",
+    "tink-pagination-angular": "latest",
+    "tink-interactive-table-angular": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.3",
@@ -50,7 +51,7 @@
     "tink-theme-politie": "latest",
     "tink-theme-stad": "latest",
     "tink-theme-brandweer": "latest"
-    },
+  },
   "overrides": {
     "marked": {
       "main": [

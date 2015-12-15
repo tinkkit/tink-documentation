@@ -29,6 +29,7 @@
    'tink.iban',
    'tink.interactivetable',
    'tink.identitycardnumber',
+   'tink.pagination',
    'tink.sticktotop',
    'tink.tooltip',
    'yaru22.md'
