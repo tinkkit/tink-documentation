@@ -21,6 +21,12 @@ angular.module('tinkApp')
       });
     };
 
+    scope.openInternalModal=function(){
+      $modal.open({
+        templateUrl: 'internalModal'
+      });
+    };
+
 
   }]);
   angular.module('tinkApp').controller('ModalInstanceCtrl',['$scope','$modalInstance', function ($scope, $modalInstance) {

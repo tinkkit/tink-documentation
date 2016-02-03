@@ -153,26 +153,23 @@
 
     <div class="panel">
       <header class="panel-heading">
-        <span class="panel-title">Multiple accordion panels</span>
+        <h2>Multiple accordion panels</h2>
+        <p>Place multiple instances of the <code>&lt;tink-accordion-panel&gt;</code> inside a <code>&lt;tink-accordion-&gt;</code> wrapper.</p>
       </header>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-6">
-            <p>Place multiple instances of the <code>&lt;tink-accordion-panel&gt;</code> inside a <code>&lt;tink-accordion-&gt;</code> wrapper.</p>
-            <div class="margin-bottom">
-              <tink-accordion data-start-open="false" data-one-at-a-time="true">
-                <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
-                  <p>Only the first panel should be open.</p>
-                </tink-accordion-panel>
-                <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
-                  <p>Only the second panel should be open.</p>
-                </tink-accordion-panel>
-                <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
-                  <p>Only the third panel should be open.</p>
-                </tink-accordion-panel>
-              </tink-accordion>
-            </div>
-            <p>None of the above three panels can be open simultaneously.</p>
+          <div class="col-md-6 margin-bottom">
+            <tink-accordion data-start-open="false" data-one-at-a-time="true">
+              <tink-accordion-panel data-is-collapsed="true" data-heading="First accordion panel">
+                <p>Only the first panel should be open.</p>
+              </tink-accordion-panel>
+              <tink-accordion-panel data-is-collapsed="true" data-heading="Second accordion panel">
+                <p>Only the second panel should be open.</p>
+              </tink-accordion-panel>
+              <tink-accordion-panel data-is-collapsed="true" data-heading="Third accordion panel">
+                <p>Only the third panel should be open.</p>
+              </tink-accordion-panel>
+            </tink-accordion>
           </div>
           <div class="col-md-6">
             <hljs data-format="html">

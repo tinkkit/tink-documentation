@@ -14,10 +14,10 @@ angular.module('tinkApp')
   $scope.maxDateStr = dateCalculator.format(hulpmax,'dd/mm/yyyy');
   $scope.minDateStr = dateCalculator.format(hulpmin,'dd/mm/yyyy');
 
-  $scope.selectedDate1 = null;
-  $scope.selectedDate2 = null;
-  $scope.selectedDate3 = null;
-  $scope.selectedDate4 = null;
+  // $scope.selectedDate1 = null;
+  // $scope.selectedDate2 = '';
+  // $scope.selectedDate3 = null;
+  // $scope.selectedDate4 = null;
   $scope.mindate = mindate;
   $scope.maxdate = maxdate;
   $scope.validate = function(){
