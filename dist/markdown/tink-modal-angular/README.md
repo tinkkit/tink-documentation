@@ -1,6 +1,6 @@
 # Tink modal Angular directive
 
-v1.0.4
+v1.1.1
 
 ## What is this repository for?
 
@@ -31,20 +31,23 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
    `angular.module('myApp', ['tink.modal']);`
 
-
-
 ----------
-
-
 
 ## How to use
 
-### modalCtrl
+### Basic modal
 
-For a somewhat more extended modal, you can use a separate HTML template for the content of the modal and an Angular controller to call the modal dialog.
+Create a modal instance in your controller and define a HTML template. As will be in most of the use cases, you can use a separate HTML template for the content of the modal and optionally an Angular controller.
 
-```javascript
-// Angular controller
+#### In your HTML:
+
+```
+<button data-ng-click="openModal()">Open modal</button>
+```
+
+#### In your controller:
+
+```
 angular.module('tinkApp')
   .controller('modalCtrl', ['$scope', '$modal', function(scope, $modal) {
     scope.openModal = function() {
@@ -53,6 +56,8 @@ angular.module('tinkApp')
         templateUrl: 'views/modal-template.html',
         controller: 'ModalInstanceCtrl',
         resolve: {
+          backdrop: false,
+          keyboard: true,
           items: function() {
             return ['test Array'];
           }
@@ -69,12 +74,26 @@ angular.module('tinkApp')
   }]);
 ```
 
-###### Optionally, your modal template can also have an Angular controller: ######
+#### Possible content inside `modal-template.html`:
 
-```html
+```
+<div data-ng-controller="ModalInstanceCtrl">
+  <h3>Modal title</h3>
+  <p>Modal text</p>
+  <button data-ng-click="ok()">Dismiss</button>
+  <button data-ng-click="cancel()">Close</button>
+</div>
+```
+
+#### Optionally, your modal template can also have an Angular controller:
+
+```
 // Angular controller
 angular.module('tinkApp')
-  .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
+  .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items' function($scope, $modalInstance, 'items') {
+
+    var passFromResolveObj = items;
+
     $scope.ok = function() {
       $modalInstance.$close('ok is pressed'); // To close the controller with a success message
     }
@@ -86,65 +105,51 @@ angular.module('tinkApp')
   }]);
 ```
 
-###### Button code: ######
-
-```html
-<button data-ng-click="openModal()">How does the internet work?</button>
-```
-
-###### Possible content inside `modal-template.html`: ######
-
-```html
-<div data-ng-controller="ModalInstanceCtrl">
-  <h3>Modal title</h3>
-  <p>Modal text</p>
-  <button data-ng-click="ok()">Dismiss</button>
-  <button data-ng-click="cancel()">Close</button>
-</div>
-```
-
-### Options
+#### Options
 
 Attr | Type | Default | Details
 --- | --- | --- | ---
 data-template-url | `string` | `''` | The template url you want to use for the modal.
-data-controller | `string` | `''` | The controller you want to inject in the modal
+data-controller | `string` | `''` | The controller you want to inject in the modal.
 data-resolve | `object` | `null` | An object with data you want to inject into the controller of the modal.
 
+#### Resolve object options
 
+Attr | Type | Default | Details
+--- | --- | --- | ---
+backdrop | `boolean` | `false` | Whether the modal can be closed by clicking on the backdrop
+keyboard | `boolean` | `true` | Whether the modal can be closed by the ESC key
 
-----------
+### Modal without external template
 
+While it is better practice to use an external template for your modal dialog, in certain cases it's better to reference one that's already in the DOM. If this is the case, wrap your modal content within `<script></script>` tags and refer to this script template via its `id`.
 
+#### In your HTML:
 
-### tink-modal
-
-While it is better practice to use an external template for your modal dialog, in certain cases it's better to reference one that's already in the DOM. If this is the case, wrap your modal content within `script tags and refer to this script template via its `id`.
-
-###### Button code: ######
-
-```html
-<button tink-modal="" data-tink-modal-template="modalcontentid" data-tink-modal-success="close" data-tink-modal-dismiss="dismissed">Open modal</button>
 ```
-
-###### Script: ######
-
-```javascript
+<button data-ng-click="openInternalModal()">Open modal</button>
 <script type="text/ng-template" id="modalcontentid">
-  // Your HTML content here
+  <h3>Modal title</h3>
+  <p>Modal text</p>
+  <button data-ng-click="$dismiss('close')">Dismiss</button>
+  <button data-ng-click="$close('close')">Close</button>
 </script>
 ```
 
-###### Possible modal content: ######
+#### In your controller
 
-```html
-<h3>Modal title</h3>
-<p>Modal text</p>
-<button data-ng-click="$dismiss('close')">Dismiss</button>
-<button data-ng-click="$close('close')">Close</button>
+```
+angular.module('tinkApp')
+  .controller('modalCtrl', ['$scope', '$modal', function(scope, $modal) {
+    scope.openInternalModal = function() {
+      var modalInstance = $modal.open({
+        templateUrl: 'modalcontentid'
+      });
+    };
+  }
 ```
 
-### Options
+#### Options
 
 Attr | Type | Default | Details
 --- | --- | --- | ---

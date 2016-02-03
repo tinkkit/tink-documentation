@@ -15,10 +15,60 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 -->
 
 
+
+## [3.3.0] - 2016-01-15
+
+### Added
+- Added a default active state (background color) for selected rows
+- Added an option to turn of the active state
+
+
+
+## [3.2.10] - 2016-01-05
+
+### Fixed
+- The Tink pagination is now an automatic dependency
+
+
+
+## [3.2.9] - 2015-12-18
+
+### Fixed
+- Fixed Bower
+
+
+
+## [3.2.8] - 2015-12-14
+
+### Fixed
+- Fixed issues
+
+
+
+## [3.2.7] - 2015-12-11
+
+### Fixed
+- Fixed the bug when there are all primaire actions.
+
+
+
+## [3.2.6] - 2015-12-08
+
+### Fixed
+- Fixed the bug when there are more then 5 elements, and he show the 5 same elements in 'meer acties' menu.
+
+
+
+## [3.2.5] - 2015-12-07
+
+### Changed
+- Changed the way how alwaysVisible buttons are aligned.
+
 ## [3.2.4] - 2015-12-04
 
 ### Changed
 - Changed `alwaysVisible` to `alwaysEnabled` to keep the variable naming consistent
+
 
 
 ## [3.2.3] - 2015-12-03
@@ -27,11 +77,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed an issue where subactions would become enabled even when `checkedAll` was set to `true`
 
 
+
 ## [3.2.2] - 2015-12-02
 
 ### Added
 - Added option to permanently disable action buttons
 - Added option that enables an action button only when all rows are selected
+
 
 
 ## [3.2.1] - 2015-11-20

@@ -5,15 +5,53 @@
     <div class="row margin-bottom">
       <div class="col-xs-12">
         <p>The bar component is a more modern alternative to the grid, especially useful when you need to guarantee proper responsive behaviour.</p>
-        <p>Basically it permits simple alignment for lists of items. You can choose to put your items in left-aligned, right-aligned or centered lists.</p>
+        <p>Basically it permits simple alignment for items. You can choose to put your items in left-aligned, right-aligned or centered containers.</p>
         <div class="callout">
           <p>To guarantee complete compatibility with Internet Explorer 9 <code>.bar-center</code> must come last in your html code.</p>
         </div>
       </div>
     </div>
+
+    <h2>Regular bar</h2>
     <div class="row margin-bottom">
       <div class="col-xs-12">
+        <div class="bar">
+          <div class="bar-left">
+            <div>Left items go here</div>
+          </div>
+          <div class="bar-right">
+            <div>Right items go here</div>
+          </div>
+          <div class="bar-center">
+            <div>Center items go here</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-xs-12">
+        <hljs data-format="html">
+          <div class="bar">
+            <div class="bar-left">
+              <div>Left items go here</div>
+            </div>
+            <div class="bar-right">
+              <div>Right items go here</div>
+            </div>
+            <div class="bar-center">
+              <div>Center items go here</div>
+            </div>
+          </div>
+        </hljs>
+      </div>
+    </div>
+
+
+    <h2>List bar</h2>
+
+    <div class="row margin-bottom">
+      <div class="col-xs-12">
         <div class="bar">
           <ul class="bar-left">
             <li><div class="checkbox"><input type="checkbox" id="checkbox1" name="checkbox1"><label for="checkbox1">Left</label></div></li>
@@ -34,9 +72,9 @@
             <li>Here</li>
           </ul>
         </div>
-
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12">
         <hljs data-format="html">

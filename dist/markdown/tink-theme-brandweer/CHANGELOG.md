@@ -16,6 +16,81 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.6.1] - 2016-02-03
+
+### Fixed
+- Fixed broken documentation
+
+
+
+## [1.6.0] - 2016-02-03
+
+### Added
+- Upgraded the bar component to also work with divs
+- Added small margin classes
+
+### Changed
+- Updated the appearance of cards and accordions
+- Updated the appearance of tabs
+
+### Fixed
+- Fixed more specificity problems with buttons
+- Fixed a broken loader when Tink was minified for a second time (by external minifiers)
+- Fixed inline CSS in the datepicker
+- Fixed a <select> padding hack
+
+
+
+## [1.5.0] - 2016-02-01
+
+### Added
+- Changed the theme to match the new Brandweer styleguide
+
+
+
+## [1.4.1] - 2016-01-25
+
+### Fixed
+- Fixed a display bug in the datepicker that was introduced by the specificity fix
+
+
+
+## [1.4.0] - 2016-01-20
+
+### Added
+- Added vertical variant of button groups
+- Added inverted variant of loaders
+
+### Fixed
+- Fixed a specificity problem with buttons
+- Fixed small display bug in pagination
+
+
+
+## [1.3.1] - 2015-12-18
+
+### Fixed
+- Fixed an issue with variables
+
+
+
+## [1.3.0] - 2015-12-18
+
+### Added
+- Added a clear button in the timepicker
+- Added larger margin helper classes
+- Added an option for a compacter timeline
+
+### Changed
+- Completely revamped the timeline
+- Removed margins from callouts, cards and breadcrumbs
+
+### Fixed
+- Fixed a bug where all modal content would become selected when clicked inside the modal dialog
+- Fixed the pagination view on mobile
+
+
+
 ## [1.2.2] - 2015-11-25
 
 ### Fixed

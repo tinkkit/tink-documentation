@@ -14,15 +14,48 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+
+## [1.1.0] - 2016-02-01
+
+### Added
+- Added possibility to clear timepicker
+
+
+
+## [1.0.9] - 2015-12-15
+
+### Fixed
+- Fixed invalid date check
+
+
+
+## [1.0.8] - 2015-12-08
+
+### Fixed
+- Fixed some editable fieldset issues
+
+
+
+## [1.0.7] - 2015-12-07
+
+### Fixed
+- Fixed some editable fieldset issues
+
+
+
 ## [1.0.6] - 2015-11-30
 
 ### Added
-- features for editable fieldset
+- Added features for editable fieldset
+
+
 
 ## [1.0.5] - 2015-11-18
 
 ### Fixed
-- selectable when disabled
+- Time is now selectable when disabled
+
+
 
 ## [1.0.4] - 2015-10-19
 

@@ -10,12 +10,12 @@
     <div class="row margin-top">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">
         <p>
-          <button data-ng-click="openModal()">How does the internet work?</button>
+          <button data-ng-click="openModal()">Explain the internet</button>
         </p>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-8 form-group">
         <hljs data-format="html">
-           <button data-ng-click="openModal()">How does the internet work?</button>
+           <button data-ng-click="openModal()">Explain the internet</button>
         </hljs>
       </div>
     </div>
@@ -24,8 +24,8 @@
     <div class="row margin-top">
       <div class="col-xs-12 col-sm-6 col-md-4 form-group">
         <p>
-          <button tink-modal data-tink-modal-success="lose" data-tink-modal-dismiss="ismissed" data-tink-modal-template="modalcontentid">Open modal</button>
-          <script type="text/ng-template" id="modalcontentid">
+          <button data-ng-click="openInternalModal()" data-tink-modal-success="close" data-tink-modal-dismiss="dismissed">Another modal</button>
+          <script type="text/ng-template" id="internalModal">
             <h3>Modal title</h3>
             <p>Modal text</p>
             <button data-ng-click="$dismiss('close')">Dismiss</button>
@@ -35,7 +35,14 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-8 form-group">
         <hljs data-format="html">
-          <button tink-modal data-tink-modal-template="modalcontentid" data-tink-modal-success="close" data-tink-modal-dismiss="dismissed">Open modal</button>
+          <button data-ng-click="openInternalModal()" data-tink-modal-success="close" data-tink-modal-dismiss="dismissed">Another modal</button>
+
+          <script type="text/ng-template" id="internalModal">
+            <h3>Modal title</h3>
+            <p>Modal text</p>
+            <button data-ng-click="$dismiss('close')">Dismiss</button>
+            <button data-ng-click="$close('close')">Close</button>
+          </script>
         </hljs>
       </div>
     </div>

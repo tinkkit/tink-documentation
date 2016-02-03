@@ -4,22 +4,19 @@
   <md data-url="../markdown/tink-pagination-angular/CHANGELOG.md"></md>
   </section>
 
-  <section class="panel-docs" data-ng-switch-when="example">
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="tableCtrl">
     <div class="row">
-      <div class="col-xs-12" data-ng-controller="tableCtrl">
-        <tink-pagination tink-current-page="1"  tink-total-items="6000" tink-items-per-page="5"></tink-pagination>
+      <div class="col-xs-12">
+        <tink-pagination tink-current-page="2" tink-items-per-page-values="[5,50,500]" tink-total-items="100" tink-items-per-page="5"></tink-pagination>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <tink-pagination ng-model="selectedTime"/>
-      </div>
-      <div class="col-xs-12 col-md-9">
+    <div class="row margin-top">
+      <div class="col-xs-12">
         <hljs data-format="html">
-          <tink-pagination data-ng-model="selectedTime"/>
+          <tink-pagination tink-current-page="2" tink-items-per-page-values="[5,50,500]" tink-total-items="100" tink-items-per-page="5"></tink-pagination>
         </hljs>
       </div>
-    </div> -->
+    </div>
   </section>
 
   <section class="panel-docs" data-ng-switch-default>

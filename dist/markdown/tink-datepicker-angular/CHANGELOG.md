@@ -14,6 +14,21 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [1.3.6] - 2016-01-04
+
+### Fixed
+- Fixed ng-change call when first run.
+
+## [1.3.5] - 2016-01-04
+
+### Fixed
+- Fixed When an element is destroyed remove the scope.
+
+## [1.3.4] - 2015-12-14
+
+### Added
+- Added ngdirty attribute when you select a date from the datepicker
+
 ## [1.3.3] - 2015-12-04
 
 ### Added
