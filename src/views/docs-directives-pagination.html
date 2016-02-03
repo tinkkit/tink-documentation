@@ -1,0 +1,26 @@
+<div class="container" data-ng-switch="tabview">
+
+  <section class="panel-docs" data-ng-switch-when="changelog">
+  <md data-url="../markdown/tink-pagination-angular/CHANGELOG.md"></md>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="tableCtrl">
+    <div class="row">
+      <div class="col-xs-12">
+        <tink-pagination tink-current-page="2" tink-items-per-page-values="[5,50,500]" tink-total-items="100" tink-items-per-page="5"></tink-pagination>
+      </div>
+    </div>
+    <div class="row margin-top">
+      <div class="col-xs-12">
+        <hljs data-format="html">
+          <tink-pagination tink-current-page="2" tink-items-per-page-values="[5,50,500]" tink-total-items="100" tink-items-per-page="5"></tink-pagination>
+        </hljs>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel-docs" data-ng-switch-default>
+  <md data-url="../markdown/tink-pagination-angular/README.md" class="md"></md>
+  </section>
+
+</div>
