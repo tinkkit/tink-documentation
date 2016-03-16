@@ -16,6 +16,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.7.0] - 2016-02-19
+
+### Changed
+- Adjusted theme to new requirements
+
+
+
 ## [1.6.1] - 2016-02-03
 
 ### Fixed

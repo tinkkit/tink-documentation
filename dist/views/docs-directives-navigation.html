@@ -5,12 +5,94 @@
   </section>
 
   <section class="panel-docs" data-ng-switch-when="example">
-	  <h3>Example</h3>
+	  <h2>Basic example</h2>
 	  <p>Click on the navigation elements of this website to see the navigation directive in action.</p>
+
+    <h3>Left navigation</h3>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        When working with a left menu.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-left">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
+
+    <h3>Right navigation</h3>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        When working with a right menu.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-right">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
+
+
+    <h2>Other implementations</h2>
+    <h3>Left navigation can always be closed</h3>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        In order to permanently show the hamburger menu for the left menu.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-left nav-left-can-always-close">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        In order to permanently show the hamburger menu for the left menu and start with the left menu open.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-left nav-left-can-always-close-and-starts-open">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
+
+    <h3>Right navigation can always be closed</h3>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        In order to permanently show the hamburger menu for the right menu.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-right nav-right-can-always-close">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        In order to permanently show the hamburger menu for the right menu and start with the right menu open.
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <hljs data-format="html">
+           &lt;html class="has-nav-right nav-right-can-always-close-and-starts-open">
+           …
+           &lt;/html&gt;
+        </hljs>
+      </div>
+    </div>
 	</section>
 
   <section class="panel-docs" data-ng-switch-default>
-  <md data-url="../markdown/tink-navigation-angular/README.md" class="md"></md>
+    <md data-url="../markdown/tink-navigation-angular/README.md" class="md"></md>
   </section>
 
 </div>

@@ -16,16 +16,36 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.12.4] - 2016-02-23
+
+### Fixed
+- Fixed inclusion of unwanted files and folders
+
+
+
+## [1.12.3] - 2016-02-23
+
+### Added
+- Tink can now be installed as an NPM package
+
+
+
+## [1.12.2] - 2016-02-19
+
+### Added
+- Added logo padding variable (mostly as a helper for the Brandweer theme)
+
+### Changed
+- Upgraded to Font Awesome 4.5
+
+
+
 ## [1.12.1] - 2016-02-03
 
 ### Fixed
 - Fixed broken documentation
 
 
-
-## [1.12.0] - 2016-02-03
-
-### Added
 
 ## [1.12.0] - 2016-02-03
 

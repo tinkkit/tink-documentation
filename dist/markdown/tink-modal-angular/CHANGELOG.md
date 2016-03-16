@@ -16,6 +16,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.1.3] - 2016-02-18
+
+### Fixed
+- Fixed incorrect documentation
+
+
+
+## [1.1.2] - 2016-02-18
+
+### Added
+- isOpen property on $modal
+
+
+
 ## [1.1.1] - 2016-02-01
 
 ### Fixed
