@@ -1,177 +1,79 @@
 'use strict';
 
 angular.module('tinkApp')
-  .controller('tableCtrl',['$scope','$timeout',function (scope,timeout) {
+  .controller('tableCtrl', ['$scope', 'TableService', function (scope, TableService) {
 
-    // Override default items per page
-    scope.pages = '5, 10, 25';
-
-    scope.changed = function(data,next){
-      console.log(data,scope.nums);
-
-      timeout(function(){
-        // Data model
-        scope.data = [
-        ];
-        scope.totalitems = 200;
-        next();
-      },300);
-    };
-
-    scope.totalitems = 200;
-    scope.chan = function(prop,or,typ){
-      console.log('changed',prop,or,typ);
-      timeout(function(){
-      // Data model
-      scope.data = [
-        {
-          firstname: 'Jasper',
-          lastname: 'Van Proeyen',
-          username: '@trianglejuice'
-        },
-        {
-          firstname: 'Tom',
-          lastname: 'Wuyts',
-          username: '@pxlpanic'
-        },
-        {
-          firstname: 'Kevin',
-          lastname: 'De Mulder',
-          username: '@clopin'
-        },
-        {
-          firstname: 'Vincent',
-          lastname: 'Bouillart',
-          username: '@BouillartV'
-        }
-      ];
-    },300);
-    };
-
-    timeout(function(){
-      // Data model
-      scope.data = [
-        {
-          firstname: 'Jasper',
-          lastname: 'Van Proeyen',
-          username: '@trianglejuice'
-        },
-        {
-          firstname: 'Tom',
-          lastname: 'Wuyts',
-          username: '@pxlpanic'
-        },
-        {
-          firstname: 'Kevin',
-          lastname: 'De Mulder',
-          username: '@clopin'
-        },
-        {
-          firstname: 'Vincent',
-          lastname: 'Bouillart',
-          username: '@BouillartV'
-        }
-      ];
-    },700);
-
-    // The headers you want to show and whether they are already visible in the table
-    scope.headers = [
-      {
-        field: 'firstname',
-        alias: 'Voornaam',
-        sort: 'firstname',
-        checked: true
+    scope.tinkTable = {
+      data: [],
+      emptyMessage: 'Geen data beschikbaar',
+      loading: true,
+      paging: {
+        current: 4,
+        itemsPerPage: 5,
+        total: 0,
+        options: [5, 10, 25]
       },
-      {
-        field: 'lastname',
-        alias: 'Achternaam',
-        sort: 'lastname',
-        checked: false
+      sorting: {
+        type: '',
+        asc: false,
+        property: 'title'
       },
-      {
-        field: 'username', // The property name that is the same as in the tinkData object
-        alias: 'Gebruikersnaam', // The alias how it's going to be called in the table.
-        checked: true, // If the column is visible or not (can be changed in the column sorter).
-        disabled: false, // If its 'checked' status can be changed or not
-        sortalias: 'Gebruiker' // Different name in the sorter
-      }
-    ];
-    scope.nums=4;
-    scope.changenums = function(){
-      scope.nums = scope.nums+1;
-    };
-    scope.perpageValue=[10,20,25,30,45];
-
-    // Some actions that become available when you check one or multiple rows
-   scope.actions = [
+      headers: [
+        {
+          field: 'title',
+          alias: 'Titel',
+          checked: true,
+          sort: 'title'
+        },
+        {
+          field: 'body',
+          alias: 'Post',
+          checked: true,
+          sort: 'body'
+        }
+      ],
+      actions: [
         {
           name: 'remove',
           callback: function(items) {
             angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
+              scope.tinkTable.data.splice(scope.tinkTable.data.indexOf(val),1);
             });
+            scope.tinkTable.paging.total = scope.tinkTable.data.length;
           },
-          order:1,
-          master:true,
-          icon:'fa-close'
-        },{
-          name: 'remove all',
-          callback: function(items) {
-            angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
-            });
-          },
-          order:0,
-          master:true,
-          checkedAll:true,
-          icon:'fa-trash'
-        },{
-          name: 'search',
-          callback: function(items) {
-            angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
-            });
-          },
-          order:3,
-          master:false,
-          alwaysDisabled:true,
-          icon:'fa-search'
-        },
-        {
-          name: 'do something',
-          callback: function(items) {
-            angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
-            });
-          },
-          order:2,
-          alwaysVisible: true,
-          master:false,
-          icon:'fa-arrows-h'
-        },
-        {
-          name: 'open',
-          callback: function(items) {
-            angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
-            });
-          },
-          order:0,
-          single: true,
-          master:false,
-          icon:'fa-bell-o'
-        },
-        {
-          name: 'open all',
-          callback: function(items) {
-            angular.forEach(items, function(val) {
-              scope.data.splice(scope.data.indexOf(val),1);
-            });
-          },
-          order:0,
-          master:false,
-          checkedAll:true,
-          icon:'fa-calculator'
+          order: 1,
+          master: true,
+          icon: 'fa-trash-o'
         }
-      ];
+      ]
+    };
+
+    // Sort order was changed
+    scope.sortHeader = function sortHeader(property, order, type) {
+      console.log(property, order, type);
+      scope.tinkTable.sorting.property = property;
+      scope.tinkTable.sorting.asc = order;
+      scope.tinkTable.sorting.type = type;
+    };
+
+    // Pagination has changed
+    scope.changePage = function changePage(page, perPage, next){
+      // console.log(page,perPage,next);
+      scope.tinkTable.paging.current = page;
+      scope.tinkTable.paging.itemsPerPage = perPage;
+      next();
+    };
+
+    function initialize() {
+      TableService.getPosts()
+        .then(function(data) {
+          scope.tinkTable.data = data;
+          scope.tinkTable.paging.total = data.length;
+          scope.tinkTable.loading = false;
+        });
+    }
+
+    initialize();
+
+
 }]);

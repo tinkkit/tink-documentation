@@ -10,24 +10,23 @@
       <div class="col-xs-12">
 
         <h2>Example</h2>
-        <tink-interactive-table tink-checked="boxChecked($data,$checked)" tink-headers="headers" tink-data="data" tink-actions="actions" tink-empty-message="Geen data beschikbaar">
-          <table tink-sort-table="data.content" tink-callback="sorted($property,$order,$type)" tink-asc="asc" tink-sort-field="firstname">
+        <tink-interactive-table tink-checked="boxChecked($data,$checked)" tink-headers="tinkTable.headers" tink-data="tinkTable.data" tink-actions="tinkTable.actions" tink-empty-message="{{tinkTable.emptyMessage}}" tink-loading="tinkTable.loading">
+          <table tink-pagination-key="ourTable" tink-sort-table="tinkData" tink-callback="$parent.sortHeader($property, $order, $type)" tink-asc="$parent.tinkTable.sorting.asc" tink-sort-field="$parent.tinkTable.sorting.property">
             <thead>
                <tr>
-                  <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+                  <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{view.alias}}</th>
                </tr>
             </thead>
              <tbody>
-                <!-- We have to use $parent.$parent because our load functions is 2 scope higher (ngRepeat scope , tinkInteractive scope)-->
-                 <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
-                    <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
-                    <td>{{ view.lastname }}</td>
-                    <td>{{ view.username }}</td>
+                 <tr ng-click="tinkCallback" ng-repeat="view in tinkData | limitTo : $parent.tinkTable.paging.itemsPerPage : $parent.tinkTable.paging.current | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc">
+                    <td>{{ view.title }}</td>
+                    <td>{{ view.body }}</td>
                  </tr>
              </tbody>
            </table>
-           <tink-pagination tink-current-page="1"  tink-total-items="6000" tink-items-per-page="5"></tink-pagination>
+           <tink-pagination tink-items-per-page-values="$parent.tinkTable.paging.options" tink-current-page="$parent.tinkTable.paging.current" tink-total-items="$parent.tinkTable.paging.total" tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
         </tink-interactive-table>
+
 
         <h2>Table code</h2>
 
