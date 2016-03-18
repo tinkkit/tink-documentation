@@ -5,13 +5,13 @@ angular.module('tinkApp')
 
     scope.tinkTable = {
       data: [],
-      emptyMessage: 'Geen data beschikbaar',
+      emptyMessage: 'No users available',
       loading: true,
       paging: {
-        current: 4,
-        itemsPerPage: 5,
+        current: 1,
+        itemsPerPage: 3,
         total: 0,
-        options: [5, 10, 25]
+        options: [3, 5, 10]
       },
       sorting: {
         type: '',
@@ -20,16 +20,30 @@ angular.module('tinkApp')
       },
       headers: [
         {
-          field: 'title',
-          alias: 'Titel',
+          field: 'name',
+          alias: 'Name',
           checked: true,
-          sort: 'title'
+          sort: 'name',
+          disabled: true
         },
         {
-          field: 'body',
-          alias: 'Post',
+          field: 'username',
+          alias: 'User name',
           checked: true,
-          sort: 'body'
+          sort: 'username'
+        },
+        {
+          field: 'email',
+          alias: 'Email',
+          checked: true,
+          sort: 'email',
+          sortalias: 'Email address'
+        },
+        {
+          field: 'phone',
+          alias: 'Phone',
+          checked: false,
+          sort: 'phone'
         }
       ],
       actions: [
@@ -50,7 +64,7 @@ angular.module('tinkApp')
 
     // Sort order was changed
     scope.sortHeader = function sortHeader(property, order, type) {
-      console.log(property, order, type);
+      // console.log(property, order, type);
       scope.tinkTable.sorting.property = property;
       scope.tinkTable.sorting.asc = order;
       scope.tinkTable.sorting.type = type;
@@ -64,13 +78,48 @@ angular.module('tinkApp')
       next();
     };
 
+    // Retrieve user data from table service
     function initialize() {
-      TableService.getPosts()
+      // TableService.getPosts()
+      //   .then(function(data) {
+      //     scope.tinkTable.data = data;
+      //     scope.tinkTable.paging.total = data.length;
+      //     scope.tinkTable.loading = false;
+      // });
+      TableService.getUsers()
         .then(function(data) {
           scope.tinkTable.data = data;
           scope.tinkTable.paging.total = data.length;
           scope.tinkTable.loading = false;
-        });
+      });
+
+      // scope.tinkTable.data = [
+      //   {
+      //     firstname: 'Jasper',
+      //     lastname: 'Van Proeyen',
+      //     username: '@trianglejuice'
+      //   },
+      //   {
+      //     firstname: 'Tom',
+      //     lastname: 'Wuyts',
+      //     username: '@pxlpanic'
+      //   },
+      //   {
+      //     firstname: 'Kevin',
+      //     lastname: 'De Mulder',
+      //     username: '@clopin'
+      //   },
+      //   {
+      //     firstname: 'Vincent',
+      //     lastname: 'Bouillart',
+      //     username: '@bouillartv'
+      //   },
+      //   {
+      //     firstname: 'Lieven',
+      //     lastname: 'Van Gestel',
+      //     username: 'xxx'
+      //   }
+      // ];
     }
 
     initialize();

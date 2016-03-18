@@ -4,10 +4,20 @@
   function TableService($q, $http) {
     var apiHost = 'http://jsonplaceholder.typicode.com';
 
+    // Posts
     function getPosts() {
       var request = $http({
         method: 'get',
         url: apiHost + '/posts',
+      });
+      return request.then(handleSuccess, handleError);
+    }
+
+    // Users
+    function getUsers() {
+      var request = $http({
+        method: 'get',
+        url: apiHost + '/users',
       });
       return request.then(handleSuccess, handleError);
     }
@@ -24,7 +34,8 @@
     }
 
     var service = {
-      getPosts: getPosts
+      getPosts: getPosts,
+      getUsers: getUsers
     };
 
     return service;
