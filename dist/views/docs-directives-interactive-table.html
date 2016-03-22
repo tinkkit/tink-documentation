@@ -10,133 +10,151 @@
       <div class="col-xs-12">
 
         <h2>Example</h2>
-        <tink-interactive-table tink-checked="boxChecked($data,$checked)" tink-headers="headers" tink-data="data" tink-actions="actions" tink-empty-message="Geen data beschikbaar">
-          <table tink-sort-table="data.content" tink-callback="sorted($property,$order,$type)" tink-asc="asc" tink-sort-field="firstname">
+
+        <tink-interactive-table data-tink-checked="boxChecked($data,$checked)" data-tink-headers="tinkTable.headers" data-tink-data="tinkTable.data" data-tink-actions="tinkTable.actions" data-tink-empty-message="{{tinkTable.emptyMessage}}" data-tink-loading="tinkTable.loading">
+          <table data-tink-pagination-key="ourTable" data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
             <thead>
                <tr>
-                  <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+                  <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
                </tr>
             </thead>
-             <tbody>
-                <!-- We have to use $parent.$parent because our load functions is 2 scope higher (ngRepeat scope , tinkInteractive scope)-->
-                 <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
-                    <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
-                    <td>{{ view.lastname }}</td>
-                    <td>{{ view.username }}</td>
-                 </tr>
+            <tbody>
+                <tr data-ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
+                  <td>{{view.name}}</td>
+                  <td>{{view.username}}</td>
+                  <td>{{view.email}}</td>
+                  <td>{{view.phone}}</td>
+                </tr>
              </tbody>
            </table>
-           <tink-pagination tink-current-page="1"  tink-total-items="6000" tink-items-per-page="5"></tink-pagination>
+           <tink-pagination data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
         </tink-interactive-table>
 
         <h2>Table code</h2>
 
-        There are three attributes you have to define to use the interactive table.<br/>
-        <h3>tink-headers</h3>
-          you have to bind the headers you want to use to this attribute <br/>
-          the tink-headers is an array that contain objects that are from the following structure.
-          <hljs data-format="js">scope.headers = [
-            {
-              field: 'username', // The property name that is the same as in the tinkData object
-              alias: 'Gebruikersnaam', // The alias how it's going to be called in the table.
-              checked: true, // If the column is visible or not (can be changed in the column sorter).
-              disabled: false, // If its 'checked' status can be changed or not
-              sortalias: 'Gebruiker' // Different name in the sorter
-            }
-          ]
-          </hljs>
+        <h3>TL;DR</h3>
+        <ul>
+          <li>Bind a data array to your interactive table</li>
+          <li>Bind the headers via a preformatted array</li>
+          <li>Define actions for your interactive table</li>
+          <li>Add optional options</li>
+          <li>Add optional sorting</li>
+          <li>Add optional pagination</li>
+        </ul>
 
-          <h3>tink-data</h3>
-          you have to bind the data of the rows you want to view to this attribute <br/>
-          the tink-data is an array that contain a object with properties of your choise.
-
-          <h3>tink-actions</h3>
-          You can also defined actions in the interactive table <br/>
-          To use these actions you have to add an array of objects with the folowing structre to the tink-actions attribute.
-
-          <hljs data-format="js">scope.actions = [
-            {
-              name: 'remove', // the name of the actions
-              callback: function(items) {
-                // here you are going to write what happen when they clicked on the button.
-                // The items variable contains the items that are checked.
-              },
-              order:0, // The order the button is viewed in the bar
-              master:false, // If the button is a master button or not ! this value is required.
-              icon:'fa-bell-o' // The icon ('font-awesome') thats going to be showed. this is required !
-            }
-          ]
-          </hljs>
-
-
+        <h3 class="margin-top-lg">Template</h3>
         <hljs data-format="html">
-          <tink-interactive-table tink-headers="headers" tink-data="data" tink-actions="actions">
-            <table>
+          <tink-interactive-table data-tink-checked="boxChecked($data,$checked)" data-tink-headers="tinkTable.headers" data-tink-data="tinkTable.data" data-tink-actions="tinkTable.actions" data-tink-empty-message="{{tinkTable.emptyMessage}}" data-tink-loading="tinkTable.loading">
+            <table data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
               <thead>
                  <tr>
-                    <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
+                    <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
                  </tr>
               </thead>
-               <tbody>
-                  <!-- We have to use $parent.$parent because our load functions is 2 scope higher (ngRepeat scope , tinkInteractive scope)-->
-                   <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
-                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
-                      <td>{{ view.lastname }}</td>
-                      <td>{{ view.username }}</td>
-                   </tr>
+              <tbody>
+                  <tr data-ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
+                    <td>{{view.name}}</td>
+                    <td>{{view.username}}</td>
+                    <td>{{view.email}}</td>
+                    <td>{{view.phone}}</td>
+                  </tr>
                </tbody>
              </table>
+             <tink-pagination data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
           </tink-interactive-table>
         </hljs>
-        <h3>Pagination</h3>
+        <h3 class="margin-top-lg">Controller</h3>
+<hljs data-format="js">
+scope.tinkTable = {
+  data: [],
+  emptyMessage: 'No users available',
+  loading: true,
+  paging: {
+    current: 1,
+    itemsPerPage: 3,
+    total: 0,
+    options: [3, 5, 10]
+  },
+  sorting: {
+    type: '',
+    asc: false,
+    property: 'title'
+  },
+  headers: [
+    {
+      field: 'name', // reference to the same property in the data object
+      alias: 'Name', // the property's display name in the header
+      checked: true, // whether the column is visible or not (can be changed in the column sorter)
+      sort: 'name', // the sort property
+      disabled: true // whether the column can be hidden or not
+    },
+    {
+      field: 'username',
+      alias: 'User name',
+      checked: true,
+      sort: 'username'
+    },
+    {
+      field: 'email',
+      alias: 'Email',
+      checked: true,
+      sort: 'email',
+      sortalias: 'Email address' // if you want an other name displayed in the sorter
+    },
+    {
+      field: 'phone',
+      alias: 'Phone',
+      checked: false,
+      sort: 'phone'
+    }
+  ],
+  actions: [
+    {
+      name: 'remove', // action name
+      callback: function(items) { // when the action is triggered; the items variable are all the checked rows
+        angular.forEach(items, function(val) {
+          scope.tinkTable.data.splice(scope.tinkTable.data.indexOf(val),1);
+        });
+        scope.tinkTable.paging.total = scope.tinkTable.data.length;
+      },
+      master: true, // REQUIRED… actions are divided in primary and secondary actions
+      icon: 'fa-trash-o' // REQUIRED… the Font Awesome icon that will be used in the action button
+      order: 1, // to control the action buttons' display order
+      single: false, // indicates that the action is only available when one row is checked; defaults to false
+      checkedAll: false // indicates that the action is only available when all rows are checked; defaults to false
+      alwaysEnabled: false // indicates that the action is always available, even if no row is checked; defaults to false
+      alwaysDisabled: false // indicates that the action is never available, even if all rows are checked; defaults to false
+      notSmall: true, // works in combination with alwaysEnabled to show the buttons with text and not with a tooltip; defaults to false
+    }
+  ]
+};
 
-        <hljs data-format="html">
-          <tink-interactive-table tink-headers="headers" tink-data="data.content" tink-actions="actions">
-            <table tink-pagination-key="pag1">
-              <thead>
-                 <tr>
-                    <th ng-repeat="view in tinkHeaders" tink-sort-header="{{view.sort}}">{{ view.alias }}</th>
-                 </tr>
-              </thead>
-               <tbody>
-                   <tr ng-click="$parent.$parent.load()" ng-repeat="view in tinkData">
-                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
-                      <td>{{ view.lastname }}</td>
-                      <td>{{ view.username }}</td>
-                   </tr>
-               </tbody>
-             </table>
-             <tink-pagination tink-pagination-id="pag1" tink-current-page="$parent.nums" tink-change="$parent.changed(page,perPage,next)" tink-total-items="$parent.totalitems" tink-items-per-page="10" tink-items-per-page-values="$parent.perpageValue"></tink-pagination>
-          </tink-interactive-table>
-        </hljs>
+// Sort order was changed
+scope.sortHeader = function sortHeader(property, order, type) {
+  scope.tinkTable.sorting.property = property;
+  scope.tinkTable.sorting.asc = order;
+  scope.tinkTable.sorting.type = type;
+};
 
-        <hljs data-format="js">scope.changed = function(type,value,next){
-          // type: a string value with type of change = 'perPage' (number of rows per page) or 'page' (number of page clicked)
-          // value : the value
-          // next: a function you have to call when you changed the data. -> next();
-        }
-        </hljs>
+// Pagination has changed
+scope.changePage = function changePage(page, perPage, next){
+  scope.tinkTable.paging.current = page; // a string value with type of change = 'perPage' (number of rows per page) or 'page' (number of page clicked)
+  scope.tinkTable.paging.itemsPerPage = perPage; // the value
+  next(); // a function you have to call when you changed the data
+};
 
-          <h3>Sorting</h3>
+// Retrieve user data from table service
+function initialize() {
+  TableService.getUsers()
+    .then(function(data) {
+      scope.tinkTable.data = data;
+      scope.tinkTable.paging.total = data.length;
+      scope.tinkTable.loading = false;
+  });
+}
 
-
-          <hljs data-format="html"><tink-interactive-table tink-headers="headers" tink-data="data.content" tink-actions="actions">
-            <table tink-sort-table="tinkData" >
-              <thead>
-                 <tr>
-                    <th tink-sort-header="{{view.name}}" ng-repeat='view in tinkHeaders'>{{ view.alias }}</th>
-                 </tr>
-              </thead>
-               <tbody>
-                   <tr ng-click="$parent.$parent.load()" ng-repeat='view in tinkData'>
-                      <td>{{ view.firstname | date:'dd/MM/yyyy' }}</td>
-                      <td>{{ view.lastname }}</td>
-                      <td>{{ view.username }}</td>
-                   </tr>
-               </tbody>
-             </table>
-          </tink-interactive-table>
-          </hljs>
+initialize();
+</hljs>
 
 
       </div>
