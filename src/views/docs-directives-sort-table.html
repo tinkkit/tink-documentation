@@ -4,55 +4,100 @@
   <md data-url="../markdown/tink-sort-table-angular/CHANGELOG.md"></md>
   </section>
 
-  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="controller as ctrl">
+  <section class="panel-docs" data-ng-switch-when="example" data-ng-controller="sortTableCtrl as ctrl">
     <div class="row">
       <div class="col-xs-12">
-        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
+        <table data-tink-sort-table="ctrl.rapporten.data" data-tink-callback="sorted($property,$order,$type)" data-tink-asc="ctrl.asc" data-tink-sort-field="ctrl.header">
           <thead>
             <tr>
-              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
-              <th tink-sort-header="familienaam">Naam</th>
-              <th tink-sort-header="voornaam">Voornaam</th>
+              <th data-tink-sort-header="datum" data-tink-sort-type="date">Datum</th>
+              <th data-tink-sort-header="familienaam">Naam</th>
+              <th data-tink-sort-header="voornaam">Voornaam</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
-              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
-              <td>{{ rapport.familienaam }}</td>
-              <td>{{ rapport.voornaam }}</td>
+            <tr data-ng-repeat="rapport in ctrl.rapporten.data | orderBy:ctrl.header : ctrl.asc">
+              <td>{{rapport.datum | date:'dd/MM/yyyy'}}</td>
+              <td>{{rapport.familienaam}}</td>
+              <td>{{rapport.voornaam}}</td>
             </tr>
-        </tbody>
+          </tbody>
         </table>
-        <div class="margin-bottom">
-          <button ng-click="loadData()">Load table data</button>
-        </div>
+        <button data-ng-click="loadData()" data-ng-if="!ctrl.rapporten.data">Load table data</button>
 
       </div>
+
       <div class="col-xs-12">
+        <h2>Table code</h2>
+
+        <h3>Template</h3>
         <hljs data-format="html">
-        <table tink-sort-table="ctrl.rapporten.data" tink-callback="sorted($property,$order,$type)" class="table-responsive table-interactive">
-          <thead>
-            <tr>
-              <th tink-sort-header="volgnummer" tink-sort-type="date">Nummer</th>
-              <th tink-sort-header="familienaam">Naam</th>
-              <th tink-sort-header="voornaam">Voornaam</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="rapport in ctrl.rapporten.data" class="clickableTableRow">
-              <td>{{ rapport.volgnummer | date:'dd/MM/yyyy'}}</td>
-              <td>{{ rapport.familienaam }}</td>
-              <td>{{ rapport.voornaam }}</td>
-            </tr>
-        </tbody>
-        </table>
+          <table data-tink-sort-table="ctrl.rapporten.data" data-tink-callback="sorted($property,$order,$type)" data-tink-asc="ctrl.asc" data-tink-sort-field="ctrl.header">
+            <thead>
+              <tr>
+                <th data-tink-sort-header="datum" data-tink-sort-type="date">Datum</th>
+                <th data-tink-sort-header="familienaam">Naam</th>
+                <th data-tink-sort-header="voornaam">Voornaam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-ng-repeat="rapport in ctrl.rapporten.data | orderBy:ctrl.header : ctrl.asc">
+                <td>{{rapport.datum | date:'dd/MM/yyyy'}}</td>
+                <td>{{rapport.familienaam}}</td>
+                <td>{{rapport.voornaam}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <button data-ng-click="loadData()" data-ng-if="!ctrl.rapporten.data">Load table data</button>
+        </hljs>
+      </div>
+
+      <div class="col-xs-12">
+        <h3 class="margin-top-lg">Controller</h3>
+        <hljs data-format="js">
+$scope.loadData = function(){
+  ctrl.rapporten = {
+    data:[
+      {
+        datum: new Date(),
+        familienaam: 'Bouillart',
+        voornaam: 'Vincent'
+      },
+      {
+        datum: new Date(),
+        familienaam: 'De Mulder',
+        voornaam: 'Kevin'
+      },
+      {
+        datum: new Date(),
+        familienaam: 'Van Proeyen',
+        voornaam: 'Jasper'
+      },
+      {
+        datum: new Date(),
+        familienaam: 'Wuyts',
+        voornaam: 'Tom'
+      },
+      {
+        datum: 102544,
+        familienaam: 'Hermans',
+        voornaam: 'Tom'
+      },
+      {
+        datum: 102544,
+        familienaam: 'Van Gestel',
+        voornaam: 'Lieven'
+      }
+    ]
+  };
+};
         </hljs>
       </div>
     </div>
   </section>
 
   <section class="panel-docs" data-ng-switch-default>
-  <md data-url="../markdown/tink-sort-table-angular/README.md" class="md"></md>
+    <md data-url="../markdown/tink-sort-table-angular/README.md" class="md"></md>
   </section>
 
 </div>

@@ -12,18 +12,18 @@
         <h2>Example</h2>
 
         <tink-interactive-table data-tink-checked="boxChecked($data,$checked)" data-tink-headers="tinkTable.headers" data-tink-data="tinkTable.data" data-tink-actions="tinkTable.actions" data-tink-empty-message="{{tinkTable.emptyMessage}}" data-tink-loading="tinkTable.loading">
-          <table data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
+          <table data-tink-pagination-key="ourTable" data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
             <thead>
                <tr>
-                  <th ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
+                  <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
                </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
-                  <td>{{ view.name }}</td>
-                  <td>{{ view.username }}</td>
-                  <td>{{ view.email }}</td>
-                  <td>{{ view.phone }}</td>
+                <tr data-ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
+                  <td>{{view.name}}</td>
+                  <td>{{view.username}}</td>
+                  <td>{{view.email}}</td>
+                  <td>{{view.phone}}</td>
                 </tr>
              </tbody>
            </table>
@@ -48,11 +48,11 @@
             <table data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
               <thead>
                  <tr>
-                    <th ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
+                    <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
                  </tr>
               </thead>
               <tbody>
-                  <tr ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
+                  <tr data-ng-repeat="view in tinkData | orderBy : $parent.tinkTable.sorting.property : $parent.tinkTable.sorting.asc | limitTo : $parent.tinkTable.paging.itemsPerPage : (($parent.tinkTable.paging.current-1) * $parent.tinkTable.paging.itemsPerPage)">
                     <td>{{view.name}}</td>
                     <td>{{view.username}}</td>
                     <td>{{view.email}}</td>
