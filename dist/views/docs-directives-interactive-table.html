@@ -12,7 +12,7 @@
         <h2>Example</h2>
 
         <tink-interactive-table data-tink-checked="boxChecked($data,$checked)" data-tink-headers="tinkTable.headers" data-tink-data="tinkTable.data" data-tink-actions="tinkTable.actions" data-tink-empty-message="{{tinkTable.emptyMessage}}" data-tink-loading="tinkTable.loading">
-          <table data-tink-pagination-key="ourTable" data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
+          <table data-tink-pagination-key="tableKey" data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
             <thead>
                <tr>
                   <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
@@ -27,7 +27,7 @@
                 </tr>
              </tbody>
            </table>
-           <tink-pagination data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
+           <tink-pagination data-tink-pagination-id="tableKey" data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
         </tink-interactive-table>
 
         <h2>Table code</h2>
@@ -45,7 +45,7 @@
         <h3 class="margin-top-lg">Template</h3>
         <hljs data-format="html">
           <tink-interactive-table data-tink-checked="boxChecked($data,$checked)" data-tink-headers="tinkTable.headers" data-tink-data="tinkTable.data" data-tink-actions="tinkTable.actions" data-tink-empty-message="{{tinkTable.emptyMessage}}" data-tink-loading="tinkTable.loading">
-            <table data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
+            <table data-tink-pagination-key="tableKey" data-tink-sort-table="tinkData" data-tink-callback="$parent.sortHeader($property, $order, $type)" data-tink-asc="$parent.tinkTable.sorting.asc" data-tink-sort-field="$parent.tinkTable.sorting.property">
               <thead>
                  <tr>
                     <th data-ng-repeat="view in tinkHeaders" data-tink-sort-header="{{view.sort}}">{{view.alias}}</th>
@@ -60,7 +60,7 @@
                   </tr>
                </tbody>
              </table>
-             <tink-pagination data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
+             <tink-pagination data-tink-pagination-id="tableKey" data-tink-items-per-page-values="$parent.tinkTable.paging.options" data-tink-current-page="$parent.tinkTable.paging.current" data-tink-total-items="$parent.tinkTable.paging.total" data-tink-items-per-page="$parent.tinkTable.paging.itemsPerPage" data-tink-change="$parent.changePage(page, perPage, next)"></tink-pagination>
           </tink-interactive-table>
         </hljs>
         <h3 class="margin-top-lg">Controller</h3>
